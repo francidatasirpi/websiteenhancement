@@ -1,0 +1,27 @@
+[
+    {
+      "icon": "personalazied_icon.svg",
+      "title": "Personalized CRM Solutions",
+      "description": "Tailored to enhance your business workflows.."
+    },
+    {
+      "icon": "automation_icon.svg",
+      "title": "Automation that Saves Time",
+      "description": "Simplifies repetitive tasks for increased efficiency."
+    },
+    {
+      "icon": "driven_icon.svg",
+      "title": "Data-Driven Insights",
+      "description": "Actionable analytics to power smarter decisions."
+    },
+    {
+      "icon": "enhanced_icon.svg",
+      "title": "Enhanced Customer Engagement",
+      "description": "Tools to build stronger customer relationships."
+    },
+    {
+        "icon":"collabration_icon.svg",
+        "title": "Seamless Team Collaboration",
+        "description": "A unified platform that keeps everyone connected."
+      }
+  ]

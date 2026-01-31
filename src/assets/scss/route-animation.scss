@@ -1,0 +1,21 @@
+.slide-enter {
+    opacity: 0;
+    transform: translateY(100%); /* Start off-screen at the bottom */
+}
+
+.slide-enter-active {
+    opacity: 1;
+    transform: translateY(0); /* Slide into view */
+    transition: transform 800ms ease-out, opacity 800ms ease-out;
+}
+
+.slide-exit {
+    opacity: 1;
+    transform: translateY(0); /* Start at the current position */
+}
+
+.slide-exit-active {
+    opacity: 0;
+    transform: translateY(-100%); /* Slide out to the top */
+    transition: transform 800ms ease-in, opacity 800ms ease-in;
+}

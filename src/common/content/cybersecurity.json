@@ -1,0 +1,27 @@
+[
+    {
+      "icon": "treart_icon.svg",
+      "title": "Advanced Threat Protection",
+      "description": "Stay ahead of cyber threats with proactive defenses."
+    },
+    {
+      "icon": "incident_icon.svg",
+      "title": "Incident Response Expertise",
+      "description": "Swift action to minimize risks and downtime."
+    },
+    {
+      "icon": "complains_icon.svg",
+      "title": "Compliance Made Easy",
+      "description": "Meet industry standards with expert guidance."
+    },
+    {
+      "icon": "datasystem_icon.svg",
+      "title": "Data and System Security",
+      "description": "Comprehensive solutions to safeguard sensitive information."
+    },
+    {
+        "icon":"monitoring_icon.svg",
+        "title": "24/7 Monitoring",
+        "description": "Continuous protection and peace of mind around the clock."
+      }
+  ]

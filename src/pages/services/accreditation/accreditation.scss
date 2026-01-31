@@ -1,0 +1,143 @@
+@import "../../../assets/scss/variables.scss";
+
+// Define color variables
+$gradient-start: $gradient1-start;
+$gradient-mid: $gradient1-end3;
+$gradient-end: $gradient1-end8;
+$card-shadow: rgba(0, 0, 0, 0.3);
+$white: $white;
+
+// Background and border radius variables
+$border-radius: 16px;
+$border-radius-sm: 8px;
+
+// Card-related variables
+$card-padding: 2rem;
+$subtitle-font-size: 32px;
+$title-font-size: 48px;
+
+// Accreditation Card Container styles
+.accreditation-card-container {
+  background-image: url("../../../assets/images/Accretitation_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: $border-radius;
+  padding: 3rem 1rem;
+}
+
+// Accreditation Card styles
+.accreditation-card {
+  background: transparent !important;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 20px $card-shadow;
+  overflow: hidden;
+}
+
+// Card styles
+.card {
+  background-color: transparent;
+}
+
+// Card Header styles
+.card-header {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: $title-font-size;
+  line-height: 56px;
+  leading-trim: both;
+  text-edge: cap;
+  color: $white;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+// Card Body styles
+.accreditation-card .card-body {
+  padding: $card-padding;
+}
+
+// Card Subtitle with Gradient Text
+.accreditation-card .card-subtitle {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: $subtitle-font-size;
+  line-height: 38px;
+  background: linear-gradient(90deg, $gradient-start 0%, $gradient-mid 50.5%, $gradient-end 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Card Title styles
+.accreditation-card .card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: $white;
+}
+
+// Card Text styles
+.accreditation-card .card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+// ISO Badge styles
+.iso-badge {
+  max-width: 180px;
+  margin: auto;
+}
+
+// Media Queries for responsive adjustments
+
+@media (min-width: 768px) {
+  .accreditation-card .card-title {
+    font-size: 2.5rem;
+  }
+
+  .accreditation-card .card-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .accreditation-card .card-text {
+    font-size: 1.1rem;
+  }
+
+  .iso-badge {
+    max-width: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  .accreditation-card .card-title {
+    font-size: 3rem;
+  }
+
+  .accreditation-card .card-subtitle {
+    font-size: 1.7rem;
+  }
+
+  .accreditation-card .card-text {
+    font-size: 1.2rem;
+  }
+}
+
+// Final Styles for Accreditation Card Container and Badge
+.accreditation-card-container {
+  border-radius: $border-radius-sm;
+}
+
+.accreditation-card {
+  border-radius: $border-radius-sm;
+  box-shadow: 0 4px 20px $card-shadow;
+}
+
+.iso-badge {
+  max-width: 220px;
+  margin: auto;
+}

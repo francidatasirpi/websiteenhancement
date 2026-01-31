@@ -1,0 +1,26 @@
+@import "../../../assets/scss/variables.scss";
+
+.application-container {
+    .about-banner {
+        position: relative; /* Ensures the overlay stays on top of the image */
+        border-radius: 8px; /* Add rounded corners */
+        overflow: hidden; /* Ensure content doesn't spill out of the card */
+    }
+
+    .feature-card-dark {
+        background: $feature-card-bg;
+        border-radius: 24px;
+        height: 100%;
+
+        .feature-title {
+            color: #F8F8F8;
+        }
+
+        .feature-description {
+            color: #8D8C8C;
+            line-height: 38px;
+        }
+    }
+}
+
+

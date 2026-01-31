@@ -1,0 +1,72 @@
+{
+  "platforms": {
+    "title": "Platform Engineering",
+    "shortTitle": "Platform Engineering",
+    "description": "Build powerful, scalable platforms with intelligent automation, auto-scaling, and modern cloud-native infrastructure for enterprise-grade performance.",
+    "alt": "Platform Engineering",
+    "isAI": false,
+    "icon": "🏗️",
+    "features": [
+      "Cloud-Native Architecture",
+      "Auto-Scaling Infrastructure",
+      "Infrastructure as Code",
+      "Microservices Design"
+    ]
+  },
+  "applications": {
+    "title": "Application Development",
+    "shortTitle": "Application Engineering",
+    "description": "Create user-centric, high-performing applications tailored to your needs. From web to mobile, we deliver intuitive solutions that drive efficiency.",
+    "alt": "Application Engineering",
+    "isAI": false,
+    "icon": "📱",
+    "features": [
+      "Custom Web Applications",
+      "Mobile Development",
+      "API Integration",
+      "Cross-Platform Solutions"
+    ]
+  },
+  "salesforce": {
+    "title": "Salesforce & CRM Solutions",
+    "shortTitle": "Salesforce CRM",
+    "description": "Maximize your CRM potential with customized Salesforce solutions. We help you streamline sales, boost productivity, and gain insights that drive smarter decisions.",
+    "alt": "Salesforce CRM",
+    "isAI": false,
+    "icon": "☁️",
+    "features": [
+      "Salesforce Implementation",
+      "CRM Customization",
+      "Sales Cloud & Service Cloud",
+      "Workflow Automation"
+    ]
+  },
+  "cybersecurity": {
+    "title": "Cybersecurity Solutions",
+    "shortTitle": "Cyber Security",
+    "description": "Protect your enterprise with advanced threat detection, security compliance, automated response systems, and proactive security measures.",
+    "alt": "Cyber Security",
+    "isAI": false,
+    "icon": "🛡️",
+    "features": [
+      "Threat Detection",
+      "Security Compliance",
+      "Automated Response",
+      "Risk Assessment"
+    ]
+  },
+  "data": {
+    "title": "Data & Analytics",
+    "shortTitle": "Data Analytics",
+    "description": "Transform your data into actionable insights with real-time analytics, predictive modeling, and business intelligence dashboards.",
+    "alt": "Data Analytics",
+    "isAI": false,
+    "icon": "📊",
+    "features": [
+      "Real-Time Analytics",
+      "Business Intelligence",
+      "Data Visualization",
+      "Reporting Dashboards"
+    ]
+  }
+}

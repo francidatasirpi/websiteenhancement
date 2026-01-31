@@ -1,0 +1,112 @@
+@import "../../../assets/scss/variables.scss";
+
+// Define color and font variables
+$font-family: "Roboto";
+$font-weight-regular: 500;
+$font-weight-bold: 600;
+$font-weight-semi-bold: 700;
+$color-light-gray: #939393;
+$color-dark-gray: #9b9b9b;
+$btn-bg-color: $color-light-gray;
+$btn-hover-bg-color: $color-light-gray;
+$font-size-md: 1.3rem;
+$font-size-sm: 1rem;
+$font-size-lg: 48px;
+$line-height-lg: 88px;
+$transition-speed: 0.2s;
+
+// Bussiness Content Styling
+.bussiness_content {
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-lg;
+  line-height: $line-height-lg;
+  color: $black;
+}
+
+/* Form Container Styling */
+.form-container {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Form Specific Styling */
+.business-form {
+  z-index: 1;
+}
+
+.business-form h4 {
+  font-weight: $font-weight-bold;
+  text-align: center;
+}
+
+.business-form .btn-primary {
+  background-color: $btn-bg-color;
+  border-color: $btn-bg-color;
+}
+
+.business-form .btn-primary:hover {
+  background-color: $btn-hover-bg-color;
+  border-color: $btn-hover-bg-color;
+}
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.form__group .form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $color-dark-gray;
+  outline: 0;
+  font-size: $font-size-md;
+  color: $black;
+  padding: 16px 0;
+  background: transparent;
+  transition: border-color $transition-speed;
+}
+
+.form__group .form__field::placeholder {
+  color: transparent;
+}
+
+.form__group .form__field:placeholder-shown ~ .form__label {
+  font-size: $font-size-md;
+  cursor: text;
+  top: 20px;
+}
+
+.form__group .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: $transition-speed;
+  font-size: $font-size-sm;
+  color: $color-dark-gray;
+}
+
+.form__group .form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: $transition-speed;
+  font-size: $font-size-sm;
+  color: $color-dark-gray;
+  font-weight: $font-weight-semi-bold;
+}
+
+.form__group .form__field:focus {
+  padding-bottom: 6px;
+  border-width: 3px;
+  border-image-slice: 1;
+}
+
+.form__group .form__field:required,
+.form__group .form__field:invalid {
+  box-shadow: none;
+}

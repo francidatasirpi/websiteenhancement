@@ -1,0 +1,58 @@
+@import "../../../../assets/scss/variables.scss";
+
+.service-options {
+  .service-item {
+    cursor: pointer;
+    position: relative;
+
+    .service-img-wrapper {
+      position: relative;
+      width: 200px;
+      height: 100px;
+      padding: 3px; // Border thickness
+      border-radius: 9px;
+      display: inline-block; // Ensure proper size
+
+      .service-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 6px; // Slightly smaller than wrapper's border radius
+        display: block;
+      }
+  
+    }
+
+  
+    .service-label {
+      color: #1e1e1e;
+      font-family: Roboto;
+      font-weight: 400;
+    }
+
+    svg {
+      visibility: hidden;
+    }
+
+    // Text gradient effect on hover
+    &:hover {
+      .service-label {
+        background: $button-gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        transition: color 0.5s;
+      }
+
+      // Wrapper for the image with gradient border
+      .service-img-wrapper {
+        background: $button-gradient;
+      }
+
+      svg {
+        visibility: visible;
+        color: $gradient1-end8;
+      }
+    }
+  }
+}

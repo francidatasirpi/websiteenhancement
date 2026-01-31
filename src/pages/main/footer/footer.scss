@@ -1,0 +1,44 @@
+@import "../../../assets/scss/variables.scss";
+
+$title-color: #8e8e8e;
+$copyright-color: #616161;
+
+.footer-card-container {
+  background-image: url("../../../assets/images/footer_bg.png"); /* Add your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  padding: 4%;
+
+  .foo-nav-title {
+    color: $title-color;
+    font-weight: 600;
+    font-size: 28px;
+  }
+
+  .copyright {
+    color: $copyright-color;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .footer-link {
+    svg {
+      visibility: hidden;
+    }
+
+    &:hover {
+      background: $navbar-active-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+
+      svg {
+        visibility: visible;
+        color: $gradient1-end8;
+      }
+    }
+  }
+}

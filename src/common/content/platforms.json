@@ -1,0 +1,27 @@
+[
+    {
+      "icon": "settings_icon.svg",
+      "title": "Cutting-Edge Technology:",
+      "description": "Future-ready platforms using the latest advancements."
+    },
+    {
+      "icon": "seamless_icon.svg",
+      "title": "Seamless System Integration",
+      "description": "Easily connects with your current tools and systems."
+    },
+    {
+      "icon": "optimized_icon.svg",
+      "title": "Optimized for Performance",
+      "description": "Built for speed, reliability, and efficiency."
+    },
+    {
+      "icon": "scalable_icon.svg",
+      "title": "Scalable and Flexible",
+      "description": "Platforms that adapt seamlessly as your business grows."
+    },
+    {
+        "icon":"tailered_icon.svg",
+        "title": "Custom-Tailored Solutions:",
+        "description": "Designed specifically to meet your unique requirements."
+      }
+  ]

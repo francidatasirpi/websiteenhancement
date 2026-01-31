@@ -1,0 +1,27 @@
+[
+    {
+      "icon": "usercentric_icon.svg",
+      "title": "User-Centric Design",
+      "description": "Intuitive interfaces for exceptional user experiences."
+    },
+    {
+      "icon": "highperformance_icon.svg",
+      "title": "High-Performance Apps",
+      "description": "Reliable, fast, and built for peak efficiency."
+    },
+    {
+      "icon": "customized_icon.svg",
+      "title": "Customized to Your Needs",
+      "description": "Applications crafted to solve your specific challenges."
+    },
+    {
+      "icon": "secure_icon.svg",
+      "title": "Secure Development",
+      "description": "Ensuring data safety and compliance from day one."
+    },
+    {
+        "icon":"lifecycle_icon.svg",
+        "title": "Full Lifecycle Support",
+        "description": "Guidance from concept to launch and beyond."
+      }
+  ]

@@ -1,0 +1,37 @@
+.about-container {
+    .sub-title {
+        color: #717171;
+    }
+
+    .sub-header {
+        color: #525252;
+    }
+
+    .sub-text {
+        color: #8A8A8A;
+    }
+
+    .small-text {
+        color: #8C8C8C;
+    }
+
+    .about-banner {
+        position: relative; /* Ensures the overlay stays on top of the image */
+        border-radius: 8px; /* Add rounded corners */
+        overflow: hidden; /* Ensure content doesn't spill out of the card */
+      }
+
+      .gray-text {
+        color: #909090
+      }
+
+      .world-map-text {
+        color: #727272; 
+        font-family: Roboto; 
+        font-style: italic; 
+        font-weight: 700; 
+        text-transform: capitalize; 
+        line-height: 60px; 
+        word-wrap: break-word
+      }
+}

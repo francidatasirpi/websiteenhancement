@@ -1,0 +1,329 @@
+@import "../../assets/scss/variables.scss";
+
+// ============================================
+// SERVICES SECTION
+// ============================================
+.services-section {
+  padding: $space-12 0;
+  background: $background-off-white;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(180deg, $surface-dark 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+// ============================================
+// SECTION HEADER
+// ============================================
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto $space-10;
+  padding: 0 $space-4;
+  position: relative;
+  z-index: 1;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: $radius-full;
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  color: $gray-600;
+  margin-bottom: $space-4;
+  box-shadow: $shadow-sm;
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: $gradient-brand;
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+.section-title {
+  font-size: $text-4xl;
+  font-weight: $font-bold;
+  color: $gray-900;
+  margin-bottom: $space-4;
+  line-height: $leading-tight;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $text-3xl;
+  }
+}
+
+.section-description {
+  font-size: $text-lg;
+  color: $gray-500;
+  line-height: $leading-relaxed;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $text-base;
+  }
+}
+
+// ============================================
+// SERVICES CONTENT
+// ============================================
+.services-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-4;
+}
+
+// ============================================
+// SPECIALIZATION CARDS
+// ============================================
+.specialization-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-6;
+  margin-bottom: $space-10;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.specialization-card {
+  position: relative;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  min-height: 350px;
+  transition: all $transition-slow;
+
+  &:hover {
+    transform: translateY(-8px);
+
+    .card-image {
+      transform: scale(1.05);
+    }
+
+    .card-overlay {
+      background: linear-gradient(180deg,
+          transparent 0%,
+          rgba(0, 0, 0, 0.7) 50%,
+          rgba(0, 0, 0, 0.95) 100%);
+    }
+  }
+}
+
+.card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $transition-slower;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.85) 100%);
+  transition: background $transition-base;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: $space-6;
+  z-index: 1;
+}
+
+.card-enterprise-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, rgba(126, 70, 225, 0.2) 0%, rgba(0, 255, 251, 0.15) 100%);
+  border: 1px solid rgba(126, 70, 225, 0.4);
+  border-radius: $radius-full;
+  font-size: $text-xs;
+  font-weight: $font-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: $brand-purple;
+  margin-bottom: $space-3;
+
+  .badge-icon {
+    font-size: 12px;
+  }
+}
+
+.card-title {
+  font-size: $text-2xl;
+  font-weight: $font-bold;
+  color: $white;
+  margin-bottom: $space-2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $text-xl;
+  }
+}
+
+.card-text {
+  font-size: $text-base;
+  color: $gray-300;
+  line-height: $leading-relaxed;
+  margin-bottom: $space-4;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $text-sm;
+  }
+}
+
+.card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.feature-chip {
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: $radius-full;
+  font-size: $text-xs;
+  color: $gray-300;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+// ============================================
+// FEATURE CARDS (Sub-content)
+// ============================================
+.feature-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $space-5;
+  margin-bottom: $space-8;
+}
+
+.feature-card {
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: $radius-lg;
+  padding: $space-6;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $brand-purple;
+    box-shadow: 0 8px 30px rgba(126, 70, 225, 0.1);
+    transform: translateY(-4px);
+  }
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 255, 251, 0.1) 0%, rgba(126, 70, 225, 0.1) 100%);
+  border-radius: $radius-lg;
+  margin-bottom: $space-4;
+
+  i,
+  svg {
+    font-size: $text-2xl;
+    color: $brand-purple;
+  }
+}
+
+.feature-title {
+  font-size: $text-lg;
+  font-weight: $font-semibold;
+  color: $gray-900;
+  margin-bottom: $space-2;
+}
+
+.feature-description {
+  font-size: $text-sm;
+  color: $gray-500;
+  line-height: $leading-relaxed;
+}
+
+// ============================================
+// GRADIENT CARDS (Legacy Support)
+// ============================================
+.gradient-card-1 {
+  background: linear-gradient(135deg, #e8fffe 0%, #ede8ff 50%, #ffe8f5 100%);
+}
+
+.gradient-card-2 {
+  background: linear-gradient(135deg, #fffbe8 0%, #ffe8e6 50%, #ffe8f5 100%);
+}
+
+.gradient-card-3 {
+  background: linear-gradient(135deg, #e8fffe 0%, #f0ffe8 50%, #fffce8 100%);
+}
+
+.gradient-card-4 {
+  background: linear-gradient(135deg, #fffee8 0%, #ffe8ea 50%, #fff5e8 100%);
+}
+
+// ============================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================
+@media (max-width: $breakpoint-md) {
+  .services-section {
+    padding: $space-10 0;
+  }
+
+  .section-header {
+    margin-bottom: $space-8;
+  }
+
+  .specialization-card {
+    min-height: 280px;
+  }
+
+  .card-content {
+    padding: $space-4;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .specialization-card {
+    min-height: 240px;
+  }
+
+  .card-features {
+    display: none;
+  }
+}

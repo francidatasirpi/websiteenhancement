@@ -1,0 +1,13 @@
+.salesforce-container {
+    .sub-text {
+        color: #636363; 
+        font-family: Roboto;  
+        font-weight: 400; 
+    }
+
+    .about-banner {
+        position: relative; /* Ensures the overlay stays on top of the image */
+        border-radius: 8px; /* Add rounded corners */
+        overflow: hidden; /* Ensure content doesn't spill out of the card */
+      }
+}

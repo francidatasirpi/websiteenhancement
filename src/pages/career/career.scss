@@ -1,0 +1,49 @@
+$career-text-color: #5E5E5E;
+
+.career-bg-container {
+    background-image: url("../../assets/images/career/career_bg.png");
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Roboto';
+
+    @media (max-width: 992px) {
+      .title {
+        font-size: 1rem !important;
+      }
+
+      .sub-title {
+        font-size: 0.8rem !important;
+      }
+    }
+  }
+
+
+  .career-img-1-text {
+    color: $career-text-color;
+    font-family: Roboto; 
+    font-weight: 400; 
+    line-height: 56px; 
+    word-wrap: break-word;
+
+    @media (max-width: 992px) {
+      line-height: 25px;
+    }
+  }
+
+  .career-img-2-text {
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    width: 53% !important;
+    font-size: 24px;
+
+    @media (max-width: 992px) {
+      font-size: 18px;
+    }
+  }
+
+
+

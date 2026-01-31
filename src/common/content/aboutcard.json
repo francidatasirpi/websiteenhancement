@@ -1,0 +1,22 @@
+[
+  {
+    "image": "Consulting.jpg",
+    "title": "Consultant",
+    "description": "Boost your business with Datasirpi's software consultation services. We understand your unique challenges and craft solutions that streamline processes, save time, and drive growth. Our friendly experts are here to guide you every step of the way. Let's work together to bring your ideas to life!"
+  },
+  {
+    "image": "Development.jpg",
+    "title": "Development",
+    "description": "We create custom software and platforms tailored to your business needs, making your processes smoother and more efficient. With innovative and dependable technology, we help you achieve your goals faster. Let’s build the solutions that drive your success!"
+  },
+  {
+    "image": "Implementation.jpg",
+    "title": "Implementation",
+    "description": "At Datasirpi, we ensure smooth and efficient implementation of your software solutions. Our team handles every detail with precision, aligning technology with your business goals for the best results. Let’s turn your plans into reality with seamless execution!"
+  },
+  {
+    "image": "Support.jpg",
+    "title": "Support & Maintenance",
+    "description": "Datasirpi keeps your systems running flawlessly with proactive support and regular maintenance. We ensure peak performance so you can focus on growing your business. Count on us to be there whenever you need!"
+  }
+]

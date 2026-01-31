@@ -1,0 +1,419 @@
+@import "./variables.scss";
+
+// ============================================
+// ENTERPRISE COMMON CLASSES
+// ============================================
+
+$borderRadius: 100px;
+$borderWidth: 2px;
+
+@mixin negativeBorder {
+    top: $borderWidth * -1;
+    bottom: $borderWidth * -1;
+    left: $borderWidth * -1;
+    right: $borderWidth * -1;
+}
+
+a {
+    text-decoration: none;
+}
+
+// ============================================
+// PRIMARY BUTTON (DS-BTN)
+// ============================================
+.ds-btn {
+    cursor: pointer;
+    background-color: $white;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    border-radius: $borderRadius;
+    transition: all $transition-base;
+    font-size: $text-sm;
+
+    &::after {
+        content: "";
+        position: absolute;
+        background: $button-gradient;
+        @include negativeBorder;
+        z-index: -1;
+        border-radius: $borderRadius + 1px;
+        transition: opacity $transition-base;
+    }
+
+    span {
+        background: $gradient-text;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        transition: color $transition-base;
+        line-height: 20px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        svg {
+            color: $brand-coral;
+            transition: color $transition-base, transform $transition-base;
+        }
+    }
+
+    &:hover {
+        background-color: transparent;
+        transform: translateY(-2px);
+        box-shadow: $glow-brand;
+
+        span {
+            color: $white;
+
+            svg {
+                color: $white;
+                transform: translateX(2px) translateY(-2px);
+            }
+        }
+    }
+
+    &.alt {
+        &::after {
+            background: $button-gradient;
+            transition: background-position $transition-slow;
+        }
+
+        &:hover {
+            background-color: $white;
+            color: $white;
+
+            &::after {
+                background-position: 0% 0;
+            }
+        }
+    }
+
+    &.rounded-8px {
+        border-radius: $radius-md;
+
+        &::after {
+            border-radius: $radius-md + 1px;
+        }
+    }
+}
+
+// ============================================
+// GLASSMORPHIC CARDS
+// ============================================
+.glass-card {
+    background: $glass-card-bg;
+    backdrop-filter: blur($blur-md);
+    -webkit-backdrop-filter: blur($blur-md);
+    border: $glass-card-border;
+    border-radius: $radius-xl;
+    box-shadow: $glass-card-shadow;
+    transition: all $transition-base;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: $glass-card-shadow, $glow-brand;
+    }
+}
+
+.glass-card-light {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur($blur-md);
+    -webkit-backdrop-filter: blur($blur-md);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: $radius-xl;
+    box-shadow: $shadow-lg;
+}
+
+// ============================================
+// GRADIENT TEXT
+// ============================================
+.gradient-text {
+    background: $gradient-text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradient-text-animated {
+    background: linear-gradient(90deg, $brand-cyan, $brand-purple, $brand-coral, $brand-purple, $brand-cyan);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientFlow 3s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+// ============================================
+// SECTION STYLES
+// ============================================
+.section-enterprise {
+    padding: $space-10 0;
+    position: relative;
+}
+
+.section-dark {
+    background: $surface-dark;
+    color: $white;
+}
+
+.section-light {
+    background: $background-off-white;
+    color: $gray-900;
+}
+
+.section-gradient {
+    background: linear-gradient(180deg, $surface-base 0%, $surface-elevated 100%);
+}
+
+// ============================================
+// TYPOGRAPHY UTILITIES
+// ============================================
+.heading-display {
+    font-size: $text-5xl;
+    font-weight: $font-bold;
+    line-height: $leading-tight;
+    letter-spacing: -0.02em;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: $text-4xl;
+    }
+}
+
+.heading-section {
+    font-size: $text-3xl;
+    font-weight: $font-semibold;
+    line-height: $leading-snug;
+
+    @media (max-width: $breakpoint-md) {
+        font-size: $text-2xl;
+    }
+}
+
+.text-muted-enterprise {
+    color: $gray-400;
+}
+
+.text-lead {
+    font-size: $text-lg;
+    line-height: $leading-relaxed;
+    color: $gray-400;
+}
+
+// ============================================
+// AI BADGE
+// ============================================
+.ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, rgba(0, 255, 251, 0.15) 0%, rgba(126, 70, 225, 0.15) 100%);
+    border: 1px solid rgba(0, 255, 251, 0.3);
+    border-radius: $radius-full;
+    font-size: $text-xs;
+    font-weight: $font-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $brand-cyan;
+
+    svg,
+    .ai-icon {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.enterprise-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: $radius-full;
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    color: $gray-300;
+}
+
+// ============================================
+// GRADIENT BORDERS
+// ============================================
+.gradient-border {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 1px;
+        background: $gradient-brand;
+        border-radius: inherit;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: xor;
+        -webkit-mask-composite: xor;
+        pointer-events: none;
+    }
+}
+
+// ============================================
+// ANIMATIONS
+// ============================================
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 251, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(0, 255, 251, 0.4);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+// ============================================
+// LEGACY CLASSES (Backward compatibility)
+// ============================================
+.bottom-text {
+    color: $bottom-text-color;
+    font-family: Spectral;
+    font-weight: 500;
+    line-height: 53px;
+    word-wrap: break-word;
+    font-style: italic;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.img-bg-cover {
+    background-size: cover;
+}
+
+// ============================================
+// STATS COUNTER
+// ============================================
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: $space-10;
+    flex-wrap: wrap;
+    padding: $space-8 0;
+}
+
+.stat-item {
+    text-align: center;
+
+    .stat-number {
+        font-size: $text-5xl;
+        font-weight: $font-bold;
+        background: $gradient-text;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1;
+        margin-bottom: $space-2;
+    }
+
+    .stat-label {
+        font-size: $text-sm;
+        font-weight: $font-medium;
+        color: $gray-400;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
+// ============================================
+// ICON CONTAINERS
+// ============================================
+.icon-box {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $gradient-card-1;
+    border-radius: $radius-lg;
+
+    svg {
+        width: 32px;
+        height: 32px;
+        color: $brand-purple;
+    }
+}
+
+.icon-box-glow {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 255, 251, 0.1) 0%, rgba(126, 70, 225, 0.1) 100%);
+    border: 1px solid rgba(0, 255, 251, 0.2);
+    border-radius: $radius-xl;
+    box-shadow: $glow-cyan;
+
+    svg {
+        width: 36px;
+        height: 36px;
+        color: $brand-cyan;
+    }
+}

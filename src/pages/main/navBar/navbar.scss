@@ -1,0 +1,241 @@
+@import "../../../assets/scss/variables.scss";
+
+// ============================================
+// NAVBAR CONTAINER
+// ============================================
+.navbar-container {
+  padding: $space-5 $space-8;
+  position: relative;
+  z-index: $z-sticky;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-4;
+  }
+}
+
+// ============================================
+// NAVBAR
+// ============================================
+.navbar {
+  background-color: transparent !important;
+  box-shadow: none;
+  font-family: $font-primary;
+  transition: all $transition-base;
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    gap: $space-7;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .responsive-logo {
+    height: auto;
+    width: 100%;
+    max-width: 160px;
+    transition: all $transition-base;
+
+    @media (max-width: $breakpoint-md) {
+      max-width: 130px;
+    }
+  }
+
+  // NAV LINK
+  .nav-link {
+    color: $white;
+    font-size: $text-lg;
+    font-weight: $font-medium;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: $space-2 $space-3;
+    border-radius: $radius-md;
+    transition: all $transition-base;
+    position: relative;
+
+    @media (max-width: $breakpoint-lg) {
+      font-size: $text-base;
+    }
+  }
+
+  .nav-link:hover {
+    background: $navbar-hover-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    svg {
+      color: $brand-purple;
+    }
+  }
+
+  // ACTIVE STATE
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link.show {
+    background: $navbar-active-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: $font-semibold;
+
+    svg {
+      color: $brand-purple;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -4px;
+      width: 30px;
+      height: 3px;
+      background: $underline-gradient;
+      border-radius: $radius-full;
+    }
+  }
+
+  .nav-item {
+    gap: 0;
+
+    svg {
+      transition: transform $transition-base;
+    }
+
+    &:hover svg {
+      transform: translateY(2px);
+    }
+  }
+
+  // SEPARATE PAGE NAV (Light theme)
+  &.separate-nav {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur($blur-lg);
+    -webkit-backdrop-filter: blur($blur-lg);
+    border-bottom: 1px solid $gray-200;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    .navbar-container {
+      padding: $space-4 $space-8;
+    }
+
+    .nav-link {
+      color: $gray-700;
+      font-size: $text-base;
+
+      svg {
+        color: $gray-500;
+      }
+
+      &:hover {
+        svg {
+          color: $brand-purple;
+        }
+      }
+    }
+
+    .navbar-nav .nav-link.active {
+      svg {
+        color: $brand-purple;
+      }
+    }
+  }
+}
+
+// ============================================
+// MOBILE MENU
+// ============================================
+.mobile-menu-toggle {
+  display: none;
+
+  @media (max-width: $breakpoint-lg) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: $glass-bg-light;
+    border: 1px solid $glass-border;
+    border-radius: $radius-md;
+    color: $white;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover {
+      background: $glass-bg-medium;
+      border-color: $brand-cyan;
+    }
+  }
+}
+
+// ============================================
+// DROPDOWN MENU
+// ============================================
+.dropdown-menu {
+  border-radius: $radius-lg !important;
+  border: 1px solid $glass-border !important;
+  box-shadow: $shadow-xl !important;
+  padding: $space-4 !important;
+
+  &.bg-dark {
+    background: rgba(18, 18, 26, 0.95) !important;
+    backdrop-filter: blur($blur-lg);
+    -webkit-backdrop-filter: blur($blur-lg);
+  }
+
+  &.bg-light {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur($blur-lg);
+    -webkit-backdrop-filter: blur($blur-lg);
+  }
+
+  .nav-item {
+    margin-bottom: $space-2;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ============================================
+// OFFCANVAS (SERVICE MEGA MENU)
+// ============================================
+.custom-offcanvas {
+  min-height: 400px !important;
+  background: $surface-dark !important;
+  border-bottom: 1px solid $glass-border !important;
+
+  .offcanvas-body {
+    padding: 0;
+  }
+}
+
+// ============================================
+// DS BUTTON IN NAVBAR
+// ============================================
+.navbar .ds-btn {
+  padding: 10px 20px;
+  font-size: $text-sm;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $glow-brand;
+  }
+}
+
+// ============================================
+// SCROLL STATE (Applied via JS)
+// ============================================
+.navbar-scrolled {
+  .navbar-container {
+    padding: $space-3 $space-8;
+    background: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur($blur-lg);
+    -webkit-backdrop-filter: blur($blur-lg);
+    border-bottom: 1px solid $glass-border;
+  }
+}
