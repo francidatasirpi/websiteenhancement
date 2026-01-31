@@ -1,34 +1,34 @@
 {
   "home": {
-    "mainHeading": "Enterprise Digital Solutions",
-    "subHeading": "Empowering Your Business with Next-Generation Technology",
+    "mainHeading": "Building Digital Products That Matter",
+    "subHeading": "We help businesses turn complex challenges into elegant software solutions",
     "subHeadings": [
       "Platform Engineering",
       "Application Development",
       "Salesforce & CRM",
       "Cybersecurity"
     ],
-    "ctaText": "Explore Solutions",
+    "ctaText": "Our Work",
     "ctaSecondary": "Contact Us"
   },
   "about": {
     "title": "About ",
-    "description": "At datasirpi, we're a dedicated team crafting innovative technology solutions to tackle real-world challenges. From serving global clients to supporting small businesses, our mission remains the same: propelling progress through technology. Join us in building a brighter future where possibilities are endless, and together, we make a meaningful impact.",
-    "buttonText": "Know more about us ?",
+    "description": "We are a team of engineers, designers, and strategists who build software that solves real problems. From startups to established businesses, we partner with organizations that value quality, transparency, and long-term thinking.",
+    "buttonText": "Learn more about us",
     "buttonLink": "/about-us"
   },
   "stats": {
     "projects": "50+",
     "projectsLabel": "Projects Delivered",
     "clients": "25+",
-    "clientsLabel": "Enterprise Clients",
+    "clientsLabel": "Happy Clients",
     "years": "6+",
-    "yearsLabel": "Years in Market",
+    "yearsLabel": "Years Experience",
     "countries": "10+",
     "countriesLabel": "Countries Served"
   },
   "enterprise": {
-    "tagline": "Trusted by Leading Enterprises",
-    "description": "We partner with forward-thinking organizations to deliver cutting-edge solutions that drive measurable business outcomes."
+    "tagline": "Trusted by Growing Businesses",
+    "description": "We work with organizations who want reliable technology partners, not just vendors."
   }
 }

@@ -3,7 +3,7 @@ import "./about.scss";
 import logo from "../../../assets/images/Logo/dsweb_logo.png";
 import contentData from "../../../common/content/content.json";
 import WhatWeDo from "./WhatWeDo";
-import { BsArrowUpRight, BsCheckCircleFill } from "react-icons/bs";
+import { BsArrowUpRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { elementIds, routesPath } from "../../../constants";
 
@@ -18,15 +18,10 @@ function AboutMain() {
 
   return (
     <>
-      {/* About Section */}
       <section className="about-section" id={elementIds.about}>
         <div className="container">
           <div className="about-content">
             <div className="about-header">
-              <span className="about-badge">
-                <BsCheckCircleFill size={14} />
-                Enterprise Partner
-              </span>
               <h2 className="about-heading">
                 {content.title}
                 <img src={logo} alt="Logo" className="about-logo" />
@@ -41,7 +36,6 @@ function AboutMain() {
               </div>
             </div>
 
-            {/* Stats Bar */}
             <div className="stats-bar">
               <div className="stat-item">
                 <span className="stat-number">{stats.projects}</span>
@@ -67,7 +61,6 @@ function AboutMain() {
         </div>
       </section>
 
-      {/* What We Do Section */}
       <section className="whatwedo-section">
         <div className="container">
           <WhatWeDo />

@@ -2,7 +2,7 @@
   "platforms": {
     "title": "Platform Engineering",
     "shortTitle": "Platform Engineering",
-    "description": "Build powerful, scalable platforms with intelligent automation, auto-scaling, and modern cloud-native infrastructure for enterprise-grade performance.",
+    "description": "Build powerful, scalable platforms with intelligent automation, auto-scaling, and modern cloud-native infrastructure.",
     "alt": "Platform Engineering",
     "isAI": false,
     "icon": "🏗️",
@@ -44,7 +44,7 @@
   "cybersecurity": {
     "title": "Cybersecurity Solutions",
     "shortTitle": "Cyber Security",
-    "description": "Protect your enterprise with advanced threat detection, security compliance, automated response systems, and proactive security measures.",
+    "description": "Protect your business with advanced threat detection, security compliance, automated response systems, and proactive security measures.",
     "alt": "Cyber Security",
     "isAI": false,
     "icon": "🛡️",

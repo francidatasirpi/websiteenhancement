@@ -1,5 +1,5 @@
 import React from "react";
-import "./footer.scss"; // Include custom styles
+import "./footer.scss";
 import logo from "../../../assets/images/Logo/dsweb_logo.png";
 import whatsappIcon from "../../../assets/images/icons/whatsapp_icon.svg";
 import linkedInIcon from "../../../assets/images/icons/linkedin_icon.svg";
@@ -10,87 +10,115 @@ import links from "../../../common/content/links.json";
 import { BsArrowUpRight } from "react-icons/bs";
 
 const Footer = () => {
-
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="footer-card-container d-flex flex-column text-white m-4 p-5">
-      <div className="row p-0 m-0">
-        <div className="col-6 col-lg-2">
-          <img
-            src={logo}
-            alt="logo"
-            className="w-75"
-          />
+    <footer className="footer">
+      <div className="footer-inner">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <a href={links.datasirpi}>
+              <img src={logo} alt="DataSirpi" className="footer-logo" />
+            </a>
+            <p className="footer-tagline">
+              Building digital products that help businesses grow.
+            </p>
+          </div>
+
+          <div className="footer-nav">
+            <h4 className="footer-nav-title">Pages</h4>
+            <ul className="footer-links">
+              <li>
+                <Link to={routesPath.home}>
+                  Home <BsArrowUpRight size={10} />
+                </Link>
+              </li>
+              <li>
+                <Link to={routesPath.about}>
+                  About Us <BsArrowUpRight size={10} />
+                </Link>
+              </li>
+              <li>
+                <Link to={routesPath.career}>
+                  Career <BsArrowUpRight size={10} />
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-nav">
+            <h4 className="footer-nav-title">Services</h4>
+            <ul className="footer-links">
+              <li>
+                <Link to={routesPath.platformEngineering}>
+                  Platform Engineering <BsArrowUpRight size={10} />
+                </Link>
+              </li>
+              <li>
+                <Link to={routesPath.applicationEngineering}>
+                  Application Engineering <BsArrowUpRight size={10} />
+                </Link>
+              </li>
+              <li>
+                <Link to={routesPath.salesforceCrm}>
+                  Salesforce CRM <BsArrowUpRight size={10} />
+                </Link>
+              </li>
+              <li>
+                <Link to={routesPath.cyberSecurity}>
+                  Cyber Security <BsArrowUpRight size={10} />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="col-12 col-lg-2 d-flex flex-column text-center">
-          <div className="foo-nav-title">
-            Pages
+
+        <div className="footer-bottom">
+          <div className="footer-social">
+            {links.whatsapp && (
+              <a
+                href={`https://wa.me/${links.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <img src={whatsappIcon} alt="WhatsApp" />
+              </a>
+            )}
+            {links.linkedin && (
+              <a
+                href={links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <img src={linkedInIcon} alt="LinkedIn" />
+              </a>
+            )}
+            {links.telegram && (
+              <a
+                href={links.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+              >
+                <img src={telegramIcon} alt="Telegram" />
+              </a>
+            )}
           </div>
-          <div className="mt-2">
-            <Link className="text-white footer-link" to={routesPath.home}>Home <BsArrowUpRight strokeWidth={1} size={12} /></Link>
-          </div>
-          <div className="mt-2">
-            <Link className="text-white footer-link" to={routesPath.about}>About Us <BsArrowUpRight strokeWidth={1} size={12} /></Link>
-          </div>
-          <div className="mt-2">
-            <Link className="text-white footer-link" to={routesPath.service}>Service <BsArrowUpRight strokeWidth={1} size={12} /></Link>
-          </div>
-          <div className="mt-2">
-            <Link className="text-white footer-link" to={routesPath.career}>Career <BsArrowUpRight strokeWidth={1} size={12} /></Link>
-          </div>
-        </div>
-        <div className="mt-4 mt-lg-0 col-12 col-lg-3 d-flex flex-column text-center">
-          <div className="foo-nav-title">
-            Service
-          </div>
-          <div className="mt-2">
-            <Link className="text-white footer-link" to={routesPath.platformEngineering}>Platform Engineering <BsArrowUpRight strokeWidth={1} size={12} /></Link>
-          </div>
-          <div className="mt-2">
-            <Link className="text-white footer-link" to={routesPath.applicationEngineering}>Application Engineering <BsArrowUpRight strokeWidth={1} size={12} /></Link>
-          </div>
-          <div className="mt-2">
-            <Link className="text-white footer-link" to={routesPath.salesforceCrm}>Salesforce CRM <BsArrowUpRight strokeWidth={1} size={12} /></Link>
-          </div>
-          <div className="mt-2">
-            <Link className="text-white footer-link" to={routesPath.cyberSecurity}>Cyber Security <BsArrowUpRight strokeWidth={1} size={12} /></Link>
+
+          <div className="footer-legal">
+            <span className="footer-copyright">
+              {currentYear} DataSirpi. All Rights Reserved.
+            </span>
+            <div className="footer-legal-links">
+              <Link to={routesPath.privacy}>Privacy Policy</Link>
+              <Link to={routesPath.terms}>Terms & Conditions</Link>
+            </div>
           </div>
         </div>
       </div>
-      <div className="row p-0 m-0 mt-5">
-        <div className="col-6 d-flex flex-row">
-        {links.whatsapp && (
-            <a href={'https://wa.me/'+links.whatsapp} target="_blank" rel="noopener noreferrer">
-              <img src={whatsappIcon} alt="Whatsapp" />
-            </a>
-          )}
-          {links.linkedin && (
-            <a className="ms-4 cursor-pointer" href={links.linkedin} target="_blank" rel="noopener noreferrer">
-              <img src={linkedInIcon} alt="LinkedIn" />
-            </a>
-          )}
-          {links.telegram && (
-            <a className="ms-4 cursor-pointer" href={links.telegram} target="_blank" rel="noopener noreferrer">
-              <img src={telegramIcon} alt="Telegram" />
-            </a>
-          )}        
-          </div>
-      </div>
-      <div className="row p-0 m-0 mt-3">
-        <div className="col-12 col-lg-6">
-          <div className="copyright">© Copyright {currentYear} DataSirpi | All Rights Reserved</div>
-        </div>
-        <div className="mt-4 mt-lg-0 col-12 col-lg-6 d-flex flex-row justify-content-end">
-          <div>
-            <Link className="text-white footer-link" to={routesPath.privacy}>Privacy Policy</Link>
-          </div>
-          <div className="ms-5">
-            <Link className="text-white footer-link" to={routesPath.terms}>Terms & Conditions</Link>
-          </div>
-        </div>
-      </div>
-    </div>
+    </footer>
   );
 };
 

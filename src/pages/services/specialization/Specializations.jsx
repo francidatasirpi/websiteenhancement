@@ -10,16 +10,11 @@ import CyberSecuritySubContentCard from "./CyberSecuritySubContentCard";
 import PlatformEngSubContentCard from "./PlatformEngSubContentCard";
 import specializationsContent from "../../../common/content/specializations.json";
 
-// Service card component
 const ServiceCard = ({ image, service }) => (
   <div className="specialization-card">
     <img src={image} className="card-image" alt={service.alt} />
     <div className="card-overlay"></div>
     <div className="card-content">
-      <span className="card-enterprise-badge">
-        <span className="badge-icon">⚡</span>
-        Enterprise-Ready
-      </span>
       <h3 className="card-title">{service.title}</h3>
       <p className="card-text">{service.description}</p>
       {service.features && (

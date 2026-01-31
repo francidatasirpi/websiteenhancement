@@ -1,23 +1,9 @@
 @import "../../../assets/scss/variables.scss";
 
-// ============================================
-// ABOUT SECTION
-// ============================================
 .about-section {
   padding: $space-12 0;
   background: $white;
   position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1px;
-    height: 80px;
-    background: linear-gradient(to bottom, $brand-purple, transparent);
-  }
 }
 
 .about-content {
@@ -30,48 +16,26 @@
   margin-bottom: $space-10;
 }
 
-.about-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, rgba(0, 255, 251, 0.08) 0%, rgba(126, 70, 225, 0.08) 100%);
-  border: 1px solid rgba(126, 70, 225, 0.2);
-  border-radius: $radius-full;
-  font-size: $text-sm;
-  font-weight: $font-medium;
-  color: $brand-purple;
-  margin-bottom: $space-5;
-
-  svg {
-    color: $brand-cyan;
-  }
-}
-
 .about-heading {
-  font-size: $text-4xl;
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
   font-weight: $font-bold;
   color: $gray-900;
   margin-bottom: $space-5;
-  line-height: $leading-tight;
+  line-height: 1.2;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: $space-3;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $text-3xl;
-  }
 }
 
 .about-logo {
   height: auto;
   width: 100%;
-  max-width: 200px;
+  max-width: 180px;
 
   @media (max-width: $breakpoint-md) {
-    max-width: 150px;
+    max-width: 140px;
   }
 }
 
@@ -82,33 +46,25 @@
 }
 
 .about-description {
-  font-size: $text-lg;
-  line-height: $leading-relaxed;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.7;
   color: $gray-600;
-  max-width: 700px;
+  max-width: 680px;
   margin: 0 auto $space-6;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $text-base;
-  }
 }
 
 .about-cta {
   margin-top: $space-6;
 }
 
-// ============================================
-// STATS BAR
-// ============================================
 .stats-bar {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: $space-8;
-  padding: $space-8;
+  padding: $space-7;
   background: $surface-dark;
-  border-radius: $radius-2xl;
-  box-shadow: $shadow-xl;
+  border-radius: $radius-xl;
 
   @media (max-width: $breakpoint-lg) {
     gap: $space-6;
@@ -128,7 +84,7 @@
   text-align: center;
 
   .stat-number {
-    font-size: $text-4xl;
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
     font-weight: $font-bold;
     background: $gradient-text;
     -webkit-background-clip: text;
@@ -136,10 +92,6 @@
     color: transparent;
     line-height: 1;
     margin-bottom: $space-2;
-
-    @media (max-width: $breakpoint-lg) {
-      font-size: $text-3xl;
-    }
   }
 
   .stat-label {
@@ -153,40 +105,34 @@
 
 .stat-divider {
   width: 1px;
-  height: 50px;
+  height: 48px;
   background: $gray-700;
 
   @media (max-width: $breakpoint-md) {
-    width: 80px;
+    width: 60px;
     height: 1px;
   }
 }
 
-// ============================================
-// WHAT WE DO SECTION
-// ============================================
 .whatwedo-section {
   padding: $space-10 0 $space-12;
   background: $background-subtle;
 }
 
-// ============================================
-// CONSULTANT CARDS
-// ============================================
 .consultant-card {
   position: relative;
-  border: none !important;
+  border: none;
   overflow: hidden;
   border-radius: $radius-xl;
   box-shadow: $shadow-lg;
-  transition: all $transition-base;
+  transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     box-shadow: $shadow-2xl;
 
     .hover-img {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     .consultant-content {
@@ -203,7 +149,7 @@
 .hover-img {
   width: 100%;
   height: auto;
-  transition: transform $transition-slower $ease-smooth;
+  transition: transform 0.5s ease;
 }
 
 .consultant-content {
@@ -215,7 +161,7 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
   color: $white;
   transform: translateY(100%);
-  transition: all $transition-slow $ease-smooth;
+  transition: all 0.35s ease;
   opacity: 0;
 }
 
@@ -229,7 +175,7 @@
   font-size: $text-sm;
   font-weight: $font-normal;
   color: $gray-300;
-  line-height: $leading-relaxed;
+  line-height: 1.6;
 }
 
 .hover-icon {
@@ -239,8 +185,8 @@
   font-size: $text-xl;
   color: $white;
   padding: $space-2;
-  background: $glass-bg-light;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: $radius-full;
-  transition: opacity $transition-base;
+  transition: opacity 0.25s ease;
   opacity: 0.5;
 }

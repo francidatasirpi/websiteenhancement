@@ -13,14 +13,14 @@ function Services() {
         <div className="section-header">
           <span className="section-badge">
             <span className="badge-dot"></span>
-            Our Expertise
+            What We Do
           </span>
           <h2 className="section-title">
-            Enterprise <span className="gradient-text">Solutions</span>
+            Our <span className="gradient-text">Services</span>
           </h2>
           <p className="section-description">
-            Leverage our comprehensive suite of technology services designed to accelerate
-            your digital transformation and drive measurable business outcomes.
+            We build and maintain software systems that help businesses operate more
+            efficiently and serve their customers better.
           </p>
         </div>
 

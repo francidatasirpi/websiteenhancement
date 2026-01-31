@@ -119,28 +119,18 @@ function Header() {
       {/* Navigation */}
       <NavBar isSeparatePage={isSeparatePage} />
 
-      {/* Hero Content */}
       {!isSeparatePage && (
         <div className="hero-content">
           <div className="container">
-            {/* Enterprise Badge */}
-            <div className="hero-badge animate-fade-in-up">
-              <span className="badge-icon">🚀</span>
-              <span>Enterprise-Grade Solutions</span>
-            </div>
-
-            {/* Main Heading */}
-            <h1 className="hero-heading animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+            <h1 className="hero-heading animate-fade-in-up">
               <span className="gradient-text-animated">{mainHeading}</span>
             </h1>
 
-            {/* Subheading */}
-            <p className="hero-subheading animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <p className="hero-subheading animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
               {subHeading}
             </p>
 
-            {/* Service Tags */}
-            <div className="hero-tags animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            <div className="hero-tags animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               {subHeadings.map((service, index) => (
                 <span key={index} className="service-tag">
                   {service}
@@ -148,8 +138,7 @@ function Header() {
               ))}
             </div>
 
-            {/* CTAs */}
-            <div className="hero-ctas animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <div className="hero-ctas animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
               <Link to={routesPath.about} className="ds-btn primary-cta">
                 <span>{ctaText} <BsArrowUpRight strokeWidth={1} size={16} /></span>
               </Link>
@@ -159,8 +148,7 @@ function Header() {
               </button>
             </div>
 
-            {/* Stats Preview */}
-            <div className="hero-stats animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
+            <div className="hero-stats animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
               <div className="stat-preview">
                 <span className="stat-value">50+</span>
                 <span className="stat-label">Projects</span>
@@ -178,7 +166,6 @@ function Header() {
             </div>
           </div>
 
-          {/* Scroll Indicator */}
           <div className="scroll-indicator">
             <div className="scroll-line"></div>
             <span>Scroll to explore</span>

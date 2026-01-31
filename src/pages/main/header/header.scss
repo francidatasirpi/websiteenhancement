@@ -1,8 +1,5 @@
 @import "../../../assets/scss/variables.scss";
 
-// ============================================
-// HEADER - HOME (HERO)
-// ============================================
 .header-home {
   position: relative;
   min-height: 100vh;
@@ -13,18 +10,16 @@
   flex-direction: column;
 }
 
-// Gradient background layer
 .header-gradient-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(126, 70, 225, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 255, 251, 0.15) 0%, transparent 40%),
-    radial-gradient(ellipse 50% 30% at 20% 80%, rgba(234, 23, 129, 0.15) 0%, transparent 40%);
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0, 198, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(0, 255, 251, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 10% 60%, rgba(0, 163, 255, 0.06) 0%, transparent 50%);
   z-index: 0;
 }
 
-// Particle canvas
 .header-particles {
   position: absolute;
   inset: 0;
@@ -32,21 +27,17 @@
   pointer-events: none;
 }
 
-// Mesh overlay for depth
 .header-mesh-overlay {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 80px 80px;
   z-index: 2;
   pointer-events: none;
 }
 
-// ============================================
-// HERO CONTENT
-// ============================================
 .hero-content {
   position: relative;
   z-index: 10;
@@ -57,69 +48,30 @@
   align-items: center;
   text-align: center;
   padding: $space-8 $space-4;
-  padding-top: 120px;
+  padding-top: 140px;
 
   .container {
-    max-width: 900px;
+    max-width: 880px;
   }
 }
 
-// Enterprise badge
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: $radius-full;
-  font-size: $text-sm;
-  font-weight: $font-medium;
-  color: $gray-300;
-  margin-bottom: $space-6;
-  backdrop-filter: blur(10px);
-
-  .badge-icon {
-    font-size: 16px;
-  }
-}
-
-// Main heading
 .hero-heading {
-  font-size: $text-6xl;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: $font-bold;
-  line-height: $leading-tight;
-  letter-spacing: -0.03em;
-  margin-bottom: $space-5;
-
-  @media (max-width: $breakpoint-lg) {
-    font-size: $text-5xl;
-  }
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $text-4xl;
-  }
-
-  @media (max-width: $breakpoint-sm) {
-    font-size: $text-3xl;
-  }
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: $space-6;
 }
 
-// Subheading
 .hero-subheading {
-  font-size: $text-xl;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: $font-normal;
   color: $gray-400;
-  max-width: 600px;
-  margin: 0 auto $space-6;
-  line-height: $leading-relaxed;
-
-  @media (max-width: $breakpoint-md) {
-    font-size: $text-lg;
-  }
+  max-width: 580px;
+  margin: 0 auto $space-7;
+  line-height: 1.7;
 }
 
-// Service tags
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
@@ -129,24 +81,22 @@
 }
 
 .service-tag {
-  padding: 8px 16px;
-  background: $glass-bg-light;
-  border: 1px solid $glass-border;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: $radius-full;
   font-size: $text-sm;
   font-weight: $font-medium;
   color: $gray-300;
-  transition: all $transition-base;
+  transition: all 0.25s ease;
 
   &:hover {
-    background: $glass-bg-medium;
-    border-color: $brand-cyan;
+    background: rgba(0, 255, 251, 0.08);
+    border-color: rgba(0, 255, 251, 0.3);
     color: $brand-cyan;
-    transform: translateY(-2px);
   }
 }
 
-// CTAs
 .hero-ctas {
   display: flex;
   flex-wrap: wrap;
@@ -166,35 +116,44 @@
   gap: 10px;
   padding: 14px 28px;
   background: transparent;
-  border: 1px solid $glass-border-medium;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: $radius-full;
   color: $white;
   font-size: $text-base;
   font-weight: $font-medium;
   cursor: pointer;
-  transition: all $transition-base;
+  transition: all 0.25s ease;
 
   &:hover {
-    background: $glass-bg-light;
-    border-color: $white;
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.25);
   }
 
   svg {
     color: $brand-cyan;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover svg {
+    transform: scale(1.1);
   }
 }
 
-// Stats preview
 .hero-stats {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: $space-6;
+  gap: $space-8;
+  padding: $space-6 $space-8;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: $radius-xl;
+  backdrop-filter: blur(10px);
 
   @media (max-width: $breakpoint-sm) {
     flex-direction: column;
-    gap: $space-4;
+    gap: $space-5;
+    padding: $space-5;
   }
 }
 
@@ -204,36 +163,37 @@
   align-items: center;
 
   .stat-value {
-    font-size: $text-2xl;
+    font-size: $text-3xl;
     font-weight: $font-bold;
     background: $gradient-text;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    line-height: 1;
   }
 
   .stat-label {
-    font-size: $text-sm;
+    font-size: $text-xs;
     color: $gray-500;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    margin-top: $space-1;
   }
 }
 
 .stat-divider {
   width: 1px;
-  height: 40px;
-  background: $glass-border-medium;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
 
   @media (max-width: $breakpoint-sm) {
     display: none;
   }
 }
 
-// Scroll indicator
 .scroll-indicator {
   position: absolute;
-  bottom: $space-8;
+  bottom: $space-6;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -241,91 +201,75 @@
   align-items: center;
   gap: $space-2;
   color: $gray-500;
-  font-size: $text-xs;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 
   .scroll-line {
     width: 1px;
-    height: 40px;
+    height: 32px;
     background: linear-gradient(to bottom, $brand-cyan, transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
+    animation: scrollPulse 2.5s ease-in-out infinite;
   }
 }
 
 @keyframes scrollPulse {
-
-  0%,
-  100% {
-    opacity: 0.3;
-    height: 40px;
+  0%, 100% {
+    opacity: 0.2;
+    height: 32px;
   }
-
   50% {
-    opacity: 1;
-    height: 50px;
+    opacity: 0.8;
+    height: 44px;
   }
 }
 
-// ============================================
-// ANIMATION CLASSES
-// ============================================
 .animate-fade-in-up {
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.7s ease-out forwards;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-// Gradient text animation
 .gradient-text-animated {
-  background: linear-gradient(90deg, $brand-cyan, $brand-purple, $brand-coral, $brand-purple, $brand-cyan);
+  background: linear-gradient(90deg, $brand-cyan, $brand-blue-mid, $brand-cyan);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: gradientFlow 4s ease infinite;
+  animation: gradientFlow 6s ease infinite;
 }
 
 @keyframes gradientFlow {
   0% {
     background-position: 0% center;
   }
-
   50% {
     background-position: 100% center;
   }
-
   100% {
     background-position: 0% center;
   }
 }
 
-// ============================================
-// HEADER - SEPARATE PAGE
-// ============================================
 .header-separate {
   background: $surface-dark;
   position: sticky;
   top: 0;
   z-index: $z-sticky;
   backdrop-filter: blur($blur-md);
-  border-bottom: 1px solid $glass-border;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-// ============================================
-// LEGACY SUPPORT
-// ============================================
 .main-heading {
   font-size: $text-4xl;
 
