@@ -1,21 +1,19 @@
 @import "../../../assets/scss/variables.scss";
 
-// ============================================
-// NAVBAR CONTAINER
-// ============================================
+.navbar-wrapper {
+  position: relative;
+  z-index: $z-sticky;
+}
+
 .navbar-container {
   padding: $space-5 $space-8;
   position: relative;
-  z-index: $z-sticky;
 
   @media (max-width: $breakpoint-md) {
     padding: $space-4;
   }
 }
 
-// ============================================
-// NAVBAR
-// ============================================
 .navbar {
   background-color: transparent !important;
   box-shadow: none;
@@ -42,7 +40,6 @@
     }
   }
 
-  // NAV LINK
   .nav-link {
     color: $white;
     font-size: $text-lg;
@@ -68,11 +65,10 @@
     background-clip: text;
 
     svg {
-      color: $brand-purple;
+      color: $brand-cyan;
     }
   }
 
-  // ACTIVE STATE
   .navbar-nav .nav-link.active,
   .navbar-nav .nav-link.show {
     background: $navbar-active-gradient;
@@ -82,7 +78,7 @@
     font-weight: $font-semibold;
 
     svg {
-      color: $brand-purple;
+      color: $brand-cyan;
     }
 
     &::after {
@@ -110,9 +106,16 @@
     }
   }
 
-  // SEPARATE PAGE NAV (Light theme)
+  .chevron-icon {
+    transition: transform 0.2s ease;
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+
   &.separate-nav {
-    background: rgba(255, 255, 255, 0.9) !important;
+    background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur($blur-lg);
     -webkit-backdrop-filter: blur($blur-lg);
     border-bottom: 1px solid $gray-200;
@@ -132,96 +135,119 @@
 
       &:hover {
         svg {
-          color: $brand-purple;
+          color: $brand-cyan;
         }
       }
     }
 
     .navbar-nav .nav-link.active {
       svg {
-        color: $brand-purple;
+        color: $brand-cyan;
       }
     }
   }
 }
 
-// ============================================
-// MOBILE MENU
-// ============================================
-.mobile-menu-toggle {
-  display: none;
+.service-nav-item {
+  position: relative;
+}
 
-  @media (max-width: $breakpoint-lg) {
+.service-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: $z-dropdown;
+  animation: fadeInDown 0.2s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.mobile-menu-btn {
+  padding: 8px 12px !important;
+
+  span {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: $glass-bg-light;
-    border: 1px solid $glass-border;
+  }
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: $space-4;
+  right: $space-4;
+  border-radius: $radius-lg;
+  padding: $space-4;
+  animation: fadeInDown 0.2s ease;
+  z-index: $z-dropdown;
+
+  &.dark {
+    background: rgba(18, 18, 26, 0.98);
+    backdrop-filter: blur($blur-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &.light {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur($blur-lg);
+    border: 1px solid $gray-200;
+    box-shadow: $shadow-xl;
+  }
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: $space-3 $space-4;
     border-radius: $radius-md;
-    color: $white;
     cursor: pointer;
-    transition: all $transition-base;
+    transition: all 0.2s ease;
+    font-size: $text-base;
+    font-weight: $font-medium;
 
-    &:hover {
-      background: $glass-bg-medium;
-      border-color: $brand-cyan;
+    .dark & {
+      color: $white;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: $brand-cyan;
+      }
+    }
+
+    .light & {
+      color: $gray-700;
+
+      &:hover {
+        background: $gray-100;
+        color: $brand-cyan;
+      }
+    }
+
+    &.contact-item {
+      margin-top: $space-3;
+      padding-top: $space-4;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      .light & {
+        border-top-color: $gray-200;
+      }
     }
   }
 }
 
-// ============================================
-// DROPDOWN MENU
-// ============================================
-.dropdown-menu {
-  border-radius: $radius-lg !important;
-  border: 1px solid $glass-border !important;
-  box-shadow: $shadow-xl !important;
-  padding: $space-4 !important;
-
-  &.bg-dark {
-    background: rgba(18, 18, 26, 0.95) !important;
-    backdrop-filter: blur($blur-lg);
-    -webkit-backdrop-filter: blur($blur-lg);
-  }
-
-  &.bg-light {
-    background: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur($blur-lg);
-    -webkit-backdrop-filter: blur($blur-lg);
-  }
-
-  .nav-item {
-    margin-bottom: $space-2;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-// ============================================
-// OFFCANVAS (SERVICE MEGA MENU)
-// ============================================
-.custom-offcanvas {
-  height: auto !important;
-  min-height: unset !important;
-  max-height: 90vh !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-
-  .offcanvas-body {
-    padding: $space-4 $space-8;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-// ============================================
-// DS BUTTON IN NAVBAR
-// ============================================
 .navbar .ds-btn {
   padding: 10px 20px;
   font-size: $text-sm;
@@ -232,9 +258,6 @@
   }
 }
 
-// ============================================
-// SCROLL STATE (Applied via JS)
-// ============================================
 .navbar-scrolled {
   .navbar-container {
     padding: $space-3 $space-8;

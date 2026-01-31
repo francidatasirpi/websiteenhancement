@@ -1,44 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./navbar.scss";
 import logo from "../../../assets/images/Logo/dsweb_logo.png";
 import { BsChevronDown, BsArrowUpRight } from "react-icons/bs";
 import { useLocation, useNavigate } from "react-router-dom";
 import { elementIds, routesPath } from "../../../constants";
-import { Offcanvas } from "react-bootstrap";
 import ServiceOptions from "./service-options/ServiceOptions";
-import { BsList } from "react-icons/bs";
+import { BsList, BsX } from "react-icons/bs";
 import links from "../../../common/content/links.json";
-
 
 function NavBar({ isSeparatePage = false }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [hash, setHash] = useState('');
   const [path, setPath] = useState('/');
-
-  const [showOffCanvas, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [showServiceMenu, setShowServiceMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const serviceMenuRef = useRef(null);
 
   useEffect(() => {
     if (!location.hash && !isSeparatePage) {
       setHash(`#${elementIds.home}`);
-      return
+      return;
     }
     setHash(location.hash);
     setPath(location.pathname);
-    handleClose()
+    setShowServiceMenu(false);
+    setShowMobileMenu(false);
   }, [location, isSeparatePage]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (serviceMenuRef.current && !serviceMenuRef.current.contains(event.target)) {
+        setShowServiceMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const { platformEngineering, applicationEngineering, salesforceCrm, cyberSecurity } = routesPath;
-  const servicePaths = [platformEngineering, applicationEngineering, salesforceCrm, cyberSecurity]
+  const servicePaths = [platformEngineering, applicationEngineering, salesforceCrm, cyberSecurity];
 
   const navigateToId = (id) => {
     if (!isSeparatePage && !([elementIds.career, elementIds.blogs]?.includes(id))) {
+      if (id === elementIds.services) {
+        setShowServiceMenu(!showServiceMenu);
+        return;
+      }
       window.location.href = `#${id}`;
       return;
     }
-    handleClose();
+    setShowMobileMenu(false);
 
     switch (id) {
       case elementIds.home:
@@ -48,11 +60,7 @@ function NavBar({ isSeparatePage = false }) {
         navigate(routesPath.about);
         break;
       case elementIds.services:
-        if (showOffCanvas) {
-          handleClose()
-        } else {
-          handleShow()
-        }
+        setShowServiceMenu(!showServiceMenu);
         break;
       case elementIds.career:
         navigate(routesPath.career);
@@ -67,120 +75,118 @@ function NavBar({ isSeparatePage = false }) {
 
   const isActive = (id) => {
     if (isSeparatePage) {
-      // For separate pages, match the pathname
       switch (id) {
         case elementIds.home:
-          return !showOffCanvas && path === routesPath.home;
+          return path === routesPath.home;
         case elementIds.about:
-          return !showOffCanvas && path === routesPath.about;
+          return path === routesPath.about;
         case elementIds.services:
-          return servicePaths.includes(path) || showOffCanvas;
+          return servicePaths.includes(path) || showServiceMenu;
         case elementIds.career:
-          return !showOffCanvas && path === routesPath.career;
+          return path === routesPath.career;
         case elementIds.blogs:
-          return !showOffCanvas && path === routesPath.blogs;
+          return path === routesPath.blogs;
         default:
           return false;
       }
     } else {
-      // For single-page navigation, match the hash
       return hash === `#${id}`;
     }
   };
 
   const onClickContactUs = () => {
-    handleClose();
+    setShowMobileMenu(false);
+    setShowServiceMenu(false);
     window.location.href = `#${elementIds.contact}`;
-  }
-
-  const NavItems = () => (<ul className="navbar-nav gap-3 gap-lg-5">
-    <li className="nav-item">
-      <div className={`${isActive(elementIds.home) && "active"} nav-link`} onClick={() => navigateToId(elementIds.home)}>
-        Home
-      </div>
-    </li>
-    <li className="nav-item">
-      <div className={`${isActive(elementIds.about) && "active"} nav-link`} onClick={() => navigateToId(elementIds.about)}>
-        About
-      </div>
-    </li>
-    <li className="nav-item">
-      <div
-        className={`${isActive(elementIds.services) && "active"} nav-link d-flex align-items-center`}
-        onClick={() => navigateToId(elementIds.services)}
-      >
-        <div>Service</div>
-        {isSeparatePage && <BsChevronDown className="ms-2" size={18} />}
-      </div>
-    </li>
-    <li className="nav-item">
-      <div className={`${isActive(elementIds.career) && "active"} nav-link`} onClick={() => navigateToId(elementIds.career)}>
-        Career
-      </div>
-    </li>
-    <li className="nav-item">
-      <div className={`${isActive(elementIds.blogs) && "active"} nav-link`} onClick={() => navigateToId(elementIds.blogs)}>
-        Blogs
-      </div>
-    </li>
-    {/* Contact Us Button */}
-    <li className="nav-item d-block d-lg-none">
-      <ContactUs />
-    </li>
-  </ul>)
-
-  const ContactUs = () => (<div className="ds-btn" href={`#${elementIds.contact}`} onClick={onClickContactUs}>
-    <span>Contact Us <BsArrowUpRight strokeWidth={1} size={16} /></span>
-  </div>)
-
-  const NavBarComponent = () => (
-    <div className="row navbar-container">
-      <div className="col-12">
-        <nav className={`navbar navbar-expand-lg ${isSeparatePage && "separate-nav"}`}>
-          <div className="w-100 d-flex flex-row justify-content-between">
-            {/* Responsive Logo */}
-            <div>
-              <a className="navbar-brand m-0" href={links.datasirpi}>
-                <img src={logo} alt="Logo" className="responsive-logo" />
-              </a>
-            </div>
-            {/* Navbar Items */}
-            <div className="d-none d-lg-block">
-              <NavItems />
-            </div>
-
-            {/* Contact Us Button */}
-            <div className="d-none d-lg-block">
-              <ContactUs />
-            </div>
-
-            <div className="btn-group dropstart d-block d-lg-none text-nowrap">
-              <button type="button" className="btn ds-btn rounded-5" data-bs-toggle="dropdown">
-                <BsList size={26} />
-              </button>
-              <ul className={`me-3 dropdown-menu shadow p-4 ${isSeparatePage ? "bg-light" : "bg-dark"}`}>
-                <NavItems />
-              </ul>
-            </div>
-
-
-          </div>
-        </nav>
-      </div>
-    </div>
-  )
-
+  };
 
   return (
-    <>
-      <NavBarComponent />
-      <Offcanvas show={showOffCanvas} onHide={handleClose} placement="top" className="custom-offcanvas">
-        <Offcanvas.Body>
-          <NavBarComponent />
-          <ServiceOptions />
-        </Offcanvas.Body>
-      </Offcanvas>
-    </>
+    <div className="navbar-wrapper">
+      <div className="row navbar-container">
+        <div className="col-12">
+          <nav className={`navbar navbar-expand-lg ${isSeparatePage && "separate-nav"}`}>
+            <div className="w-100 d-flex flex-row justify-content-between align-items-center">
+              <div>
+                <a className="navbar-brand m-0" href={links.datasirpi}>
+                  <img src={logo} alt="Logo" className="responsive-logo" />
+                </a>
+              </div>
+
+              <div className="d-none d-lg-block">
+                <ul className="navbar-nav gap-3 gap-lg-5">
+                  <li className="nav-item">
+                    <div className={`${isActive(elementIds.home) ? "active" : ""} nav-link`} onClick={() => navigateToId(elementIds.home)}>
+                      Home
+                    </div>
+                  </li>
+                  <li className="nav-item">
+                    <div className={`${isActive(elementIds.about) ? "active" : ""} nav-link`} onClick={() => navigateToId(elementIds.about)}>
+                      About
+                    </div>
+                  </li>
+                  <li className="nav-item service-nav-item" ref={serviceMenuRef}>
+                    <div
+                      className={`${isActive(elementIds.services) ? "active" : ""} nav-link d-flex align-items-center`}
+                      onClick={() => navigateToId(elementIds.services)}
+                    >
+                      <div>Service</div>
+                      <BsChevronDown className={`ms-2 chevron-icon ${showServiceMenu ? "rotated" : ""}`} size={14} />
+                    </div>
+                    {showServiceMenu && (
+                      <div className="service-menu-dropdown">
+                        <ServiceOptions />
+                      </div>
+                    )}
+                  </li>
+                  <li className="nav-item">
+                    <div className={`${isActive(elementIds.career) ? "active" : ""} nav-link`} onClick={() => navigateToId(elementIds.career)}>
+                      Career
+                    </div>
+                  </li>
+                  <li className="nav-item">
+                    <div className={`${isActive(elementIds.blogs) ? "active" : ""} nav-link`} onClick={() => navigateToId(elementIds.blogs)}>
+                      Blogs
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="d-none d-lg-block">
+                <div className="ds-btn" onClick={onClickContactUs}>
+                  <span>Contact Us <BsArrowUpRight strokeWidth={1} size={16} /></span>
+                </div>
+              </div>
+
+              <div className="d-block d-lg-none">
+                <button
+                  type="button"
+                  className="btn ds-btn mobile-menu-btn"
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  {showMobileMenu ? <BsX size={26} /> : <BsList size={26} />}
+                </button>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      {showMobileMenu && (
+        <div className={`mobile-menu ${isSeparatePage ? "light" : "dark"}`}>
+          <ul className="mobile-nav-list">
+            <li onClick={() => { navigateToId(elementIds.home); setShowMobileMenu(false); }}>Home</li>
+            <li onClick={() => { navigateToId(elementIds.about); setShowMobileMenu(false); }}>About</li>
+            <li onClick={() => { navigate(routesPath.platformEngineering); setShowMobileMenu(false); }}>Platform Engineering</li>
+            <li onClick={() => { navigate(routesPath.applicationEngineering); setShowMobileMenu(false); }}>Application Engineering</li>
+            <li onClick={() => { navigate(routesPath.salesforceCrm); setShowMobileMenu(false); }}>Salesforce CRM</li>
+            <li onClick={() => { navigate(routesPath.cyberSecurity); setShowMobileMenu(false); }}>Cyber Security</li>
+            <li onClick={() => { navigateToId(elementIds.career); setShowMobileMenu(false); }}>Career</li>
+            <li onClick={() => { navigateToId(elementIds.blogs); setShowMobileMenu(false); }}>Blogs</li>
+            <li className="contact-item" onClick={onClickContactUs}>Contact Us</li>
+          </ul>
+        </div>
+      )}
+    </div>
   );
 }
 
