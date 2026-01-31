@@ -205,12 +205,17 @@
 // OFFCANVAS (SERVICE MEGA MENU)
 // ============================================
 .custom-offcanvas {
-  min-height: 400px !important;
-  background: $surface-dark !important;
-  border-bottom: 1px solid $glass-border !important;
+  height: auto !important;
+  min-height: unset !important;
+  max-height: 90vh !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 
   .offcanvas-body {
-    padding: 0;
+    padding: $space-4 $space-8;
+    display: flex;
+    justify-content: center;
   }
 }
 

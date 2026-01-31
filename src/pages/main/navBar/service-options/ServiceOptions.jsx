@@ -8,62 +8,45 @@ import { Link } from "react-router-dom";
 import { routesPath } from "../../../../constants";
 import { BsArrowUpRight } from "react-icons/bs";
 
+const services = [
+  {
+    name: "Platform Engineering",
+    image: Platform,
+    path: routesPath.platformEngineering,
+  },
+  {
+    name: "Application Engineering",
+    image: Application,
+    path: routesPath.applicationEngineering,
+  },
+  {
+    name: "Salesforce CRM",
+    image: SalesForce,
+    path: routesPath.salesforceCrm,
+  },
+  {
+    name: "Cyber Security",
+    image: Cyber,
+    path: routesPath.cyberSecurity,
+  },
+];
 
 export default function ServiceOptions() {
-    return (
-        <div className="container d-flex justify-content-center bg-white service-options">
-            <div className="row w-75">
-                <Link to={routesPath.platformEngineering} className="col-12 col-md-6 col-lg-3 p-2 service-item">
-                    <div className="service-img-wrapper">
-                        <img
-                            src={Platform}
-                            className="service-img"
-                            alt="service"
-                        />
-                    </div>
-                    <div className="mt-1 service-label">
-                        Platforms Engineering <BsArrowUpRight strokeWidth={1} size={12} />
-                    </div>
-                </Link>
-                <Link to={routesPath.applicationEngineering} className="col-12 col-md-6 col-lg-3 p-2 service-item">
-                    <div className="service-img-wrapper">
-                        <img
-                            src={Application}
-                            className="service-img"
-                            alt="service"
-                        />
-                    </div>
-                    <div className="mt-1 service-label">
-                        Application Engineering <BsArrowUpRight strokeWidth={1} size={12} />
-                    </div>
-                </Link>
-                <Link to={routesPath.salesforceCrm} className="col-12 col-md-6 col-lg-3 p-2 service-item">
-                    <div className="service-img-wrapper">
-
-                        <img
-                            src={SalesForce}
-                            className="service-img"
-                            alt="service"
-                        />
-                    </div>
-                    <div className="mt-1 service-label">
-                        Salesforce CRM <BsArrowUpRight strokeWidth={1} size={12} />
-                    </div>
-                </Link>
-                <Link to={routesPath.cyberSecurity} className="col-12 col-md-6 col-lg-3 p-2 service-item">
-                    <div className="service-img-wrapper">
-
-                        <img
-                            src={Cyber}
-                            className="service-img"
-                            alt="service"
-                        />
-                    </div>
-                    <div className="mt-1 service-label">
-                        Cyber Security <BsArrowUpRight strokeWidth={1} size={12} />
-                    </div>
-                </Link>
+  return (
+    <div className="service-dropdown">
+      <div className="service-dropdown-inner">
+        {services.map((service, index) => (
+          <Link key={index} to={service.path} className="service-item">
+            <div className="service-image-container">
+              <img src={service.image} alt={service.name} />
             </div>
-        </div>
-    );
+            <div className="service-name">
+              {service.name}
+              <BsArrowUpRight className="arrow-icon" size={12} />
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 }
