@@ -115,22 +115,18 @@
   }
 
   &.separate-nav {
-    background: rgba(255, 255, 255, 0.98) !important;
-    backdrop-filter: blur($blur-lg);
-    -webkit-backdrop-filter: blur($blur-lg);
-    border-bottom: 1px solid $gray-200;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    background: transparent !important;
 
     .navbar-container {
       padding: $space-4 $space-8;
     }
 
     .nav-link {
-      color: $gray-700;
+      color: $white;
       font-size: $text-base;
 
       svg {
-        color: $gray-500;
+        color: $gray-400;
       }
 
       &:hover {
@@ -190,18 +186,15 @@
   padding: $space-4;
   animation: fadeInDown 0.2s ease;
   z-index: $z-dropdown;
+  background: rgba(18, 18, 26, 0.98);
+  backdrop-filter: blur($blur-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
-  &.dark {
+  &.dark,
+  &.light {
     background: rgba(18, 18, 26, 0.98);
     backdrop-filter: blur($blur-lg);
     border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  &.light {
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur($blur-lg);
-    border: 1px solid $gray-200;
-    box-shadow: $shadow-xl;
   }
 }
 
@@ -217,33 +210,17 @@
     transition: all 0.2s ease;
     font-size: $text-base;
     font-weight: $font-medium;
+    color: $white;
 
-    .dark & {
-      color: $white;
-
-      &:hover {
-        background: rgba(255, 255, 255, 0.05);
-        color: $brand-cyan;
-      }
-    }
-
-    .light & {
-      color: $gray-700;
-
-      &:hover {
-        background: $gray-100;
-        color: $brand-cyan;
-      }
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: $brand-cyan;
     }
 
     &.contact-item {
       margin-top: $space-3;
       padding-top: $space-4;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-      .light & {
-        border-top-color: $gray-200;
-      }
     }
   }
 }
