@@ -1,42 +1,67 @@
+import { lazy, Suspense } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import LandingPageBody from "./LandingPageBody";
-import Career from "../career/Career";
 import { routesPath } from '../../constants';
-import About from '../about/About';
-import ApplicationEngineering from '../specializations/application-engineering/ApplicationEngineering';
-import PlatformEngineering from '../specializations/platform-engineering/PlatformEngineering';
-import SalesforceCrm from '../specializations/salesforce-crm/SalesforceCrm';
-import CyberSecurity from '../specializations/cyber-security/CyberSecurity';
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import '../../assets/scss/route-animation.scss';
-import Blogs from '../blogs/blogs';
-import Privacy from '../legal/privacy/Privacy';
-import Terms from '../legal/terms/Terms';
+
+const Career = lazy(() => import('../career/Career'));
+const About = lazy(() => import('../about/About'));
+const ApplicationEngineering = lazy(() => import('../specializations/application-engineering/ApplicationEngineering'));
+const PlatformEngineering = lazy(() => import('../specializations/platform-engineering/PlatformEngineering'));
+const SalesforceCrm = lazy(() => import('../specializations/salesforce-crm/SalesforceCrm'));
+const CyberSecurity = lazy(() => import('../specializations/cyber-security/CyberSecurity'));
+const Blogs = lazy(() => import('../blogs/blogs'));
+const Privacy = lazy(() => import('../legal/privacy/Privacy'));
+const Terms = lazy(() => import('../legal/terms/Terms'));
+
+function PageLoader() {
+    return (
+        <div style={{
+            minHeight: '60vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            <div style={{
+                width: '40px',
+                height: '40px',
+                border: '3px solid #f3f3f3',
+                borderTop: '3px solid #00c6ff',
+                borderRadius: '50%',
+                animation: 'spin 0.8s linear infinite'
+            }} />
+            <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+        </div>
+    );
+}
 
 export default function LandingPage() {
     const location = useLocation();
     return (
         <>
             <Header />
-            <TransitionGroup>
-                <CSSTransition key={location.key} classNames="slide" timeout={800}>
-                    <Routes>
-                        <Route path={routesPath.home} element={<LandingPageBody />} />
-                        <Route path={routesPath.career} element={<Career />} />
-                        <Route path={routesPath.about} element={<About />} />
-                        <Route path={routesPath.applicationEngineering} element={<ApplicationEngineering />} />
-                        <Route path={routesPath.platformEngineering} element={<PlatformEngineering />} />
-                        <Route path={routesPath.salesforceCrm} element={<SalesforceCrm />} />
-                        <Route path={routesPath.cyberSecurity} element={<CyberSecurity />} />
-                        <Route path={routesPath.blogs} element={<Blogs />} />
-                        <Route path={routesPath.blogById} element={<Blogs />} />
-                        <Route path={routesPath.privacy} element={<Privacy />} />
-                        <Route path={routesPath.terms} element={<Terms />} />
-                    </Routes>
-                </CSSTransition>
-            </TransitionGroup>
+            <Suspense fallback={<PageLoader />}>
+                <TransitionGroup>
+                    <CSSTransition key={location.key} classNames="slide" timeout={250}>
+                        <Routes>
+                            <Route path={routesPath.home} element={<LandingPageBody />} />
+                            <Route path={routesPath.career} element={<Career />} />
+                            <Route path={routesPath.about} element={<About />} />
+                            <Route path={routesPath.applicationEngineering} element={<ApplicationEngineering />} />
+                            <Route path={routesPath.platformEngineering} element={<PlatformEngineering />} />
+                            <Route path={routesPath.salesforceCrm} element={<SalesforceCrm />} />
+                            <Route path={routesPath.cyberSecurity} element={<CyberSecurity />} />
+                            <Route path={routesPath.blogs} element={<Blogs />} />
+                            <Route path={routesPath.blogById} element={<Blogs />} />
+                            <Route path={routesPath.privacy} element={<Privacy />} />
+                            <Route path={routesPath.terms} element={<Terms />} />
+                        </Routes>
+                    </CSSTransition>
+                </TransitionGroup>
+            </Suspense>
             <Footer />
         </>
     );
