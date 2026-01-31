@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./application-eng.scss";
 import platformBanner from "../../../assets/images/Specialization/Application_Eng.jpg";
@@ -9,184 +10,157 @@ import application_icon_5 from "../../../assets/images/icons/application_icon_5.
 import application_icon_6 from "../../../assets/images/icons/application_icon_6.svg";
 import application_icon_7 from "../../../assets/images/icons/application_icon_7.svg";
 import application_icon_8 from "../../../assets/images/icons/application_icon_8.svg";
-import logo from "../../../assets/images/Logo/dsweb_logo.png";
 import application_process from "../../../assets/images/application/application_process.png";
 
-import "../../services/services.scss"
+const highlights = [
+  {
+    icon: application_icon_6,
+    text: "We specialize in creating cutting-edge web and mobile applications with strong engineering expertise."
+  },
+  {
+    icon: application_icon_7,
+    text: "Our apps are responsive and cater to diverse needs, ensuring seamless integration across different platforms."
+  },
+  {
+    icon: application_icon_8,
+    text: "We focus on delivering innovative solutions that keep our clients ahead in the digital landscape."
+  }
+];
+
+const services = [
+  {
+    icon: application_icon_1,
+    title: "App Development & Design",
+    features: [
+      { label: "High-Quality Mobile Apps", desc: "User-friendly apps using hybrid, native, and cross-platform technologies." },
+      { label: "Mobile First & Responsive", desc: "Optimized apps for all devices with a mobile-first approach." },
+      { label: "User-Centric Design", desc: "Clear, crisp, and concise designs focused on user experience." }
+    ]
+  },
+  {
+    icon: application_icon_2,
+    title: "Performance & Efficiency",
+    features: [
+      { label: "Performance Optimization", desc: "Best practices for speed, including lazy-loading and optimized images." },
+      { label: "Single Page Applications", desc: "Native-like experiences with advanced JS frameworks for efficiency." },
+      { label: "Microservice Architecture", desc: "Scalable, maintainable, and easily deployable services." }
+    ]
+  },
+  {
+    icon: application_icon_3,
+    title: "Security & Data Management",
+    features: [
+      { label: "Comprehensive Security", desc: "Robust authentication, adherence to OWASP guidelines, and regular testing." },
+      { label: "Data Storage Solutions", desc: "Efficient data management with SQL and NoSQL, encryption, and caching." },
+      { label: "API Frameworks", desc: "Fast client-server communication with REST, GraphQL, and WebSocket." }
+    ]
+  },
+  {
+    icon: application_icon_4,
+    title: "Native & Cross-Platform",
+    features: [
+      { label: "Native Development", desc: "Extensive experience with native platforms for smartphones and tablets." },
+      { label: "Cross-Platform Development", desc: "Cost-effective, high-performance apps using cross-platform SDKs." },
+      { label: "Intuitive Design", desc: "Self-explanatory interfaces adhering to iOS and Android design principles." }
+    ]
+  },
+  {
+    icon: application_icon_5,
+    title: "Testing & Quality Assurance",
+    features: [
+      { label: "Rigorous Testing", desc: "Continuous testing with modern tools to ensure error-free applications." },
+      { label: "Meeting Requirements", desc: "Ensuring all project standards and requirements are met." },
+      { label: "Continuous Integration", desc: "Automated testing as part of the development pipeline." }
+    ]
+  }
+];
 
 export default function ApplicationEngineering() {
-    return (
-        <div className="w-100 application-container">
-            <div className="container d-flex flex-column align-items-center">
-                <div className="text-center">
-                    <div className="h2 fw-bold">Application Engineering</div>
-                </div>
+  useEffect(() => {
+    document.title = "Application Engineering | Datasirpi - Web & Mobile App Development";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Expert web and mobile application development services. Datasirpi delivers high-performance, secure, and scalable apps using modern technologies and best practices.");
+    }
+  }, []);
 
-                <div className="card border-0 text-white about-banner mt-5">
-                    <img
-                        src={platformBanner}
-                        className="card-img img-fluid"
-                        alt="application banner"
-                    />
-                </div>
-
-                <div className="my-5 w-100 row">
-                    <div className="col-6 col-md-4 d-flex flex-column align-items-center text-center">
-                        <img
-                            src={application_icon_6}
-                            className="img-fluid"
-                            alt="application banner"
-                        />
-                        <div className="mt-4">
-                            We specialize in creating cutting-edge web and mobile applications with strong engineering expertise.
-                        </div>
-                    </div>
-                    <div className="col-6 col-md-4 d-flex flex-column align-items-center text-center">
-                        <img
-                            src={application_icon_7}
-                            className="img-fluid"
-                            alt="application banner"
-                        />
-                        <div className="mt-4">
-                            Our apps are responsive and cater to diverse needs, ensuring seamless integration across different platforms.                    </div>
-                    </div>
-                    <div className="col-6 col-md-4 d-flex flex-column align-items-center text-center">
-                        <img
-                            src={application_icon_8}
-                            className="img-fluid"
-                            alt="application banner"
-                        />
-                        <div className="mt-4">
-                            We focus on delivering innovative solutions that keep our clients ahead in the digital landscape.                    </div>
-                    </div>
-                </div>
-
-                <div className="row w-100 gradient-card-3 mt-5 rounded rounded-2 p-4">
-                    <div className="d-flex align-items-center justify-content-center">
-                        <div className="fs-4 fw-bold">How Does
-                            <img
-                                src={logo}
-                                alt="Salesforce Consulting Partners"
-                                className="img-fluid mx-2"
-                                style={{ maxWidth: "100px" }}
-                            />
-                            Secure Your Web Applications?</div>
-                    </div>
-                </div>
-
-                <div className="mt-5 row">
-                    <div className="col-12 col-md-6">
-                        <div className="card feature-card-dark w-100 d-flex align-items-start p-4 shadow-sm">
-                            <div className="feature-icon mb-3">
-                                <img src={application_icon_1} alt="Service icon" />
-                            </div>
-                            <div>
-                                <h5 className="feature-title mb-2">App Development and Design</h5>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">High-Quality Mobile Apps:</span> User-friendly apps using hybrid, native, and cross-platform technologies.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Mobile First & Responsive Design:</span> Optimized apps for all devices with a mobile-first approach.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">User-Centric Design:</span> Clear, crisp, and concise designs focused on user experience.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-4 mt-md-0 col-12 col-md-6">
-                        <div className="card feature-card-dark w-100 d-flex align-items-start p-4 shadow-sm">
-                            <div className="feature-icon mb-3">
-                                <img src={application_icon_2} alt="Service icon" />
-                            </div>
-                            <div>
-                                <h5 className="feature-title mb-2">Performance and Efficiency</h5>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Performance Optimization:</span> Best practices for speed, including lazy-loading and optimized images.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Single Page Applications:</span> Native-like experiences with advanced JS frameworks for efficiency.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Microservice Architecture:</span> Scalable, maintainable, and easily deployable services.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 mt-4">
-                        <div className="card feature-card-dark w-100 d-flex align-items-start p-4 shadow-sm">
-                            <div className="feature-icon mb-3">
-                                <img src={application_icon_3} alt="Service icon" />
-                            </div>
-                            <div>
-                                <h5 className="feature-title mb-2">Accessibility and Inclusivity</h5>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Comprehensive Security:</span> Robust authentication, adherence to OWASP guidelines, and regular penetration testing.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Data Storage Solutions:</span> Efficient data management with SQL and NoSQL, encryption, and caching.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">API Frameworks:</span> Fast client-server communication with REST, GraphQL, and Web Socket.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-6 mt-4">
-                        <div className="card feature-card-dark w-100 d-flex align-items-start p-4 shadow-sm">
-                            <div className="feature-icon mb-3">
-                                <img src={application_icon_4} alt="Service icon" />
-                            </div>
-                            <div>
-                                <h5 className="feature-title mb-2">Native and Cross-Platform Expertise</h5>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Native App Development:</span> Extensive experience with native platforms for smartphones, tablets, and wearables.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Hybrid/Cross-Platform Development:</span> Cost-effective, high-performance apps using cross-platform SDKs.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Intuitive Design:</span> Self-explanatory interfaces adhering to iOS and Android design principles.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-12 mt-4">
-                        <div className="card feature-card-dark w-100 d-flex align-items-start p-4 shadow-sm">
-                            <div className="feature-icon mb-3">
-                                <img src={application_icon_5} alt="Service icon" />
-                            </div>
-                            <div>
-                                <h5 className="feature-title mb-2">Testing and Quality Assurance</h5>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Rigorous Testing:</span> Continuous testing with modern tools to ensure error-free applications.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Meeting Requirements:</span> Ensuring all project standards and requirements are met.
-                                </p>
-                                <p className="feature-description mb-0 d-none d-md-block">
-                                    <span className="text-white">Continuous Integration:</span> Automated testing as part of the development pipeline.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="w-100 my-5 pt-4 d-flex flex-column align-items-center">
-                <div className="text-center h2 fw-bold my-5">
-                    Process flow
-                </div>
-                    <img
-                        src={application_process}
-                        className="w-75 mt-5"
-                        alt="application_process"
-                    />
-                </div>
-
-            <div className="mt-5">
-                <BussinessForm />
-            </div>
+  return (
+    <div className="application-page">
+      <section className="hero-section">
+        <div className="hero-gradient-overlay" />
+        <div className="container">
+          <div className="hero-content">
+            <span className="hero-badge">Full-Stack Development</span>
+            <h1 className="hero-title">Application Engineering</h1>
+            <p className="hero-subtitle">
+              Build cutting-edge web and mobile applications with our expert engineering team.
+              Delivering innovative, secure, and scalable solutions for your digital needs.
+            </p>
+          </div>
+          <div className="hero-image-wrapper">
+            <img src={platformBanner} alt="Application Development Process" className="hero-image" />
+          </div>
         </div>
-    );
+      </section>
+
+      <section className="highlights-section">
+        <div className="container">
+          <div className="highlights-grid">
+            {highlights.map((item, index) => (
+              <div key={index} className="highlight-item">
+                <div className="highlight-icon">
+                  <img src={item.icon} alt="" aria-hidden="true" />
+                </div>
+                <p className="highlight-text">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="services-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Our Application Services</h2>
+            <p className="section-subtitle">
+              Comprehensive development solutions designed to deliver exceptional digital experiences
+            </p>
+          </div>
+          <div className="services-grid">
+            {services.map((service, index) => (
+              <article key={index} className="service-card dark">
+                <div className="service-icon">
+                  <img src={service.icon} alt="" aria-hidden="true" />
+                </div>
+                <h3 className="service-title">{service.title}</h3>
+                <ul className="feature-list">
+                  {service.features.map((feature, fIndex) => (
+                    <li key={fIndex}>
+                      <strong>{feature.label}:</strong> {feature.desc}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="process-section">
+        <div className="container">
+          <h2 className="section-title text-center">Development Process</h2>
+          <p className="section-subtitle text-center">
+            Our structured approach ensures quality delivery at every stage
+          </p>
+          <div className="process-image-wrapper">
+            <img src={application_process} alt="Application Development Process Flow" className="process-image" />
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-section">
+        <BussinessForm />
+      </section>
+    </div>
+  );
 }

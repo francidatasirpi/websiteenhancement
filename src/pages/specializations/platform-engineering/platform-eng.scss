@@ -1,14 +1,255 @@
-.platform-container {
-    .sub-text {
-        color: #636363; 
-        font-family: Roboto;  
-        font-weight: 400; 
-        line-height: 42px;
+@import "../../../assets/scss/variables.scss";
+
+.platform-page {
+  background: $white;
+}
+
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, $surface-dark 0%, #1a1a2e 50%, $surface-elevated 100%);
+  padding: $space-12 0 $space-10;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-9 0 $space-8;
+  }
+
+  .hero-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba($brand-cyan, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba($brand-blue, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $space-5;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto $space-8;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    padding: $space-2 $space-4;
+    background: rgba($brand-cyan, 0.1);
+    border: 1px solid rgba($brand-cyan, 0.3);
+    border-radius: $radius-full;
+    color: $brand-cyan;
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $space-5;
+  }
+
+  .hero-title {
+    font-size: $text-5xl;
+    font-weight: $font-bold;
+    color: $white;
+    margin-bottom: $space-5;
+    line-height: $leading-tight;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: $text-4xl;
     }
 
-    .about-banner {
-        position: relative; /* Ensures the overlay stays on top of the image */
-        border-radius: 8px; /* Add rounded corners */
-        overflow: hidden; /* Ensure content doesn't spill out of the card */
+    @media (max-width: $breakpoint-sm) {
+      font-size: $text-3xl;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: $text-lg;
+    color: $gray-400;
+    line-height: $leading-relaxed;
+    max-width: 600px;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: $text-base;
+    }
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: $radius-xl;
+    overflow: hidden;
+    box-shadow:
+      0 25px 50px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba($surface-dark, 0.8) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.intro-section {
+  padding: $space-10 0;
+  background: $background-off-white;
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 $space-5;
+  }
+
+  .intro-content {
+    text-align: center;
+
+    p {
+      font-size: $text-lg;
+      color: $gray-600;
+      line-height: $leading-relaxed;
+      margin-bottom: $space-5;
+
+      &:last-child {
+        margin-bottom: 0;
       }
+    }
+  }
+}
+
+.services-section {
+  padding: $space-11 0;
+  background: $white;
+
+  &.alt-bg {
+    background: $background-off-white;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $space-5;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: $space-9;
+  }
+
+  .section-badge {
+    display: inline-block;
+    padding: $space-2 $space-4;
+    background: linear-gradient(135deg, rgba($brand-cyan, 0.15), rgba($brand-blue, 0.15));
+    border-radius: $radius-full;
+    color: $brand-blue-dark;
+    font-size: $text-sm;
+    font-weight: $font-semibold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $space-4;
+
+    &.cloud {
+      background: linear-gradient(135deg, rgba($brand-coral, 0.15), rgba($brand-pink, 0.15));
+      color: $brand-coral;
+    }
+  }
+
+  .section-title {
+    font-size: $text-4xl;
+    font-weight: $font-bold;
+    color: $gray-900;
+    margin-bottom: $space-4;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: $text-3xl;
+    }
+  }
+
+  .section-subtitle {
+    font-size: $text-lg;
+    color: $gray-500;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-6;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .service-card {
+    background: $white;
+    border: 1px solid $gray-200;
+    border-radius: $radius-xl;
+    padding: $space-6;
+    transition: all $transition-base;
+
+    .alt-bg & {
+      background: $white;
+    }
+
+    &:hover {
+      border-color: transparent;
+      box-shadow: $shadow-xl;
+      transform: translateY(-4px);
+    }
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba($brand-cyan, 0.1), rgba($brand-blue, 0.1));
+    border-radius: $radius-lg;
+    margin-bottom: $space-4;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .service-title {
+    font-size: $text-xl;
+    font-weight: $font-semibold;
+    color: $gray-900;
+    margin-bottom: $space-3;
+  }
+
+  .service-description {
+    font-size: $text-base;
+    color: $gray-600;
+    line-height: $leading-relaxed;
+    margin: 0;
+  }
+}
+
+.contact-section {
+  background: $white;
 }
