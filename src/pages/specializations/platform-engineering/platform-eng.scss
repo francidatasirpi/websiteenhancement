@@ -312,28 +312,28 @@
   }
 
   .category-tagline {
-    font-size: 10px;
+    font-size: $text-xs;
     font-weight: $font-semibold;
     color: #0d9488;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 2px $space-2;
+    padding: $space-1 $space-2;
     background: rgba(#0d9488, 0.12);
     border-radius: $radius-full;
   }
 
   .category-title {
-    font-size: $text-lg;
+    font-size: $text-xl;
     font-weight: $font-bold;
     color: $gray-900;
     margin-bottom: $space-2;
   }
 
   .category-description {
-    font-size: $text-sm;
+    font-size: $text-base;
     color: $gray-600;
     line-height: $leading-relaxed;
-    margin-bottom: $space-3;
+    margin-bottom: $space-4;
   }
 
   .category-capabilities {
@@ -351,16 +351,16 @@
     li {
       display: flex;
       align-items: flex-start;
-      gap: $space-1;
-      font-size: $text-xs;
+      gap: $space-2;
+      font-size: $text-sm;
       color: $gray-600;
 
       svg {
         color: $brand-cyan;
         flex-shrink: 0;
-        margin-top: 1px;
-        width: 12px;
-        height: 12px;
+        margin-top: 3px;
+        width: 14px;
+        height: 14px;
       }
     }
   }
