@@ -170,9 +170,7 @@ export default function ApplicationEngineering() {
         </div>
       </section>
 
-      <section className="contact-section">
-        <BussinessForm />
-      </section>
+      <BussinessForm />
     </div>
   );
 }

@@ -164,9 +164,7 @@ export default function PlatformEngineering() {
         </div>
       </section>
 
-      <section className="contact-section">
-        <BussinessForm />
-      </section>
+      <BussinessForm />
     </div>
   );
 }

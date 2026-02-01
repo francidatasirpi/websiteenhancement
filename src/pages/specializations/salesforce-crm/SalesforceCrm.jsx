@@ -168,9 +168,7 @@ export default function SalesforceCrm() {
         </div>
       </section>
 
-      <section className="contact-section">
-        <BussinessForm />
-      </section>
+      <BussinessForm />
     </div>
   );
 }

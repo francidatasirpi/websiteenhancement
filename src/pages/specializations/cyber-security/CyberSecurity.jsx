@@ -178,9 +178,7 @@ export default function CyberSecurity() {
         </div>
       </section>
 
-      <section className="contact-section">
-        <BussinessForm />
-      </section>
+      <BussinessForm />
     </div>
   );
 }

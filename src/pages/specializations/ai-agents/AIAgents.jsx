@@ -175,9 +175,7 @@ export default function AIAgents() {
         </div>
       </section>
 
-      <section className="contact-section">
-        <BussinessForm />
-      </section>
+      <BussinessForm />
     </div>
   );
 }
