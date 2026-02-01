@@ -1,36 +1,37 @@
-import Platform from "../../../../assets/images/Specialization/Platform_Eng.jpg";
-import Application from "../../../../assets/images/Specialization/Application_Eng.jpg";
-import SalesForce from "../../../../assets/images/Specialization/SalesForce.png";
-import Cyber from "../../../../assets/images/Specialization/Cyber.png";
-
 import "./service-options.scss";
 import { Link } from "react-router-dom";
 import { routesPath } from "../../../../constants";
-import { BsArrowUpRight, BsRobot } from "react-icons/bs";
+import { HiOutlineServerStack, HiOutlineCodeBracket, HiOutlineCloud, HiOutlineShieldCheck } from "react-icons/hi2";
+import { BsRobot } from "react-icons/bs";
 
 const services = [
   {
     name: "Platform Engineering",
-    image: Platform,
+    description: "AWS, Azure, GCP, Oracle, On-Prem",
+    icon: HiOutlineServerStack,
     path: routesPath.platformEngineering,
   },
   {
     name: "Application Engineering",
-    image: Application,
+    description: "Web + backend systems",
+    icon: HiOutlineCodeBracket,
     path: routesPath.applicationEngineering,
   },
   {
     name: "Salesforce CRM",
-    image: SalesForce,
+    description: "Architecture, integrations, delivery",
+    icon: HiOutlineCloud,
     path: routesPath.salesforceCrm,
   },
   {
     name: "Cyber Security",
-    image: Cyber,
+    description: "Assessments, SOC toolkit, hardening",
+    icon: HiOutlineShieldCheck,
     path: routesPath.cyberSecurity,
   },
   {
     name: "AI Agents",
+    description: "Intelligent automation & orchestration",
     icon: BsRobot,
     path: routesPath.aiAgents,
   },
@@ -42,16 +43,12 @@ export default function ServiceOptions() {
       <div className="service-dropdown-inner">
         {services.map((service, index) => (
           <Link key={index} to={service.path} className="service-item">
-            <div className={`service-image-container ${service.icon ? 'icon-container' : ''}`}>
-              {service.image ? (
-                <img src={service.image} alt={service.name} />
-              ) : service.icon ? (
-                <service.icon size={32} />
-              ) : null}
+            <div className="service-icon">
+              <service.icon size={20} />
             </div>
-            <div className="service-name">
-              {service.name}
-              <BsArrowUpRight className="arrow-icon" size={12} />
+            <div className="service-info">
+              <span className="service-name">{service.name}</span>
+              <span className="service-desc">{service.description}</span>
             </div>
           </Link>
         ))}
