@@ -10,6 +10,7 @@ import sf_icon_6 from "../../../assets/images/icons/sf_icon_6.svg";
 import sf_icon_7 from "../../../assets/images/icons/sf_icon_7.svg";
 import sf_icon_8 from "../../../assets/images/icons/sf_icon_8.svg";
 import sf_certificates from "../../../assets/images/sales-force/sf_certificates.png";
+import sf_process_flow from "../../../assets/images/sales-force/sf_process_flow.png";
 
 const stats = [
   { value: "200+", label: "CRM Implementations" },
@@ -61,14 +62,6 @@ const highlights = [
   }
 ];
 
-const processSteps = [
-  { number: "01", title: "Discovery", desc: "Understanding your business needs and CRM requirements" },
-  { number: "02", title: "Strategy", desc: "Creating a customized implementation roadmap" },
-  { number: "03", title: "Configuration", desc: "Setting up Salesforce to match your workflows" },
-  { number: "04", title: "Migration", desc: "Secure data transfer from existing systems" },
-  { number: "05", title: "Training", desc: "Empowering your team with hands-on training" },
-  { number: "06", title: "Support", desc: "Ongoing optimization and technical support" }
-];
 
 
 export default function SalesforceCrm() {
@@ -157,14 +150,8 @@ export default function SalesforceCrm() {
           <p className="section-subtitle text-center">
             Our proven methodology ensures successful Salesforce deployments
           </p>
-          <div className="process-grid">
-            {processSteps.map((step, index) => (
-              <div key={index} className="process-step">
-                <span className="step-number">{step.number}</span>
-                <h3 className="step-title">{step.title}</h3>
-                <p className="step-desc">{step.desc}</p>
-              </div>
-            ))}
+          <div className="process-wrapper">
+            <img src={sf_process_flow} alt="Salesforce Implementation Process" className="process-image" />
           </div>
         </div>
       </section>
