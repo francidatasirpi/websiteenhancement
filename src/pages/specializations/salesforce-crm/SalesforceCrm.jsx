@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./salesforce-crm.scss";
-import platformBanner from "../../../assets/images/Specialization/SalesForce.png";
 import sf_icon_1 from "../../../assets/images/icons/sf_icon_1.svg";
 import sf_icon_2 from "../../../assets/images/icons/sf_icon_2.svg";
 import sf_icon_3 from "../../../assets/images/icons/sf_icon_3.svg";
@@ -10,8 +9,13 @@ import sf_icon_5 from "../../../assets/images/icons/sf_icon_5.svg";
 import sf_icon_6 from "../../../assets/images/icons/sf_icon_6.svg";
 import sf_icon_7 from "../../../assets/images/icons/sf_icon_7.svg";
 import sf_icon_8 from "../../../assets/images/icons/sf_icon_8.svg";
-import sf_process_flow from "../../../assets/images/sales-force/sf_process_flow.png";
-import sf_certificates from "../../../assets/images/sales-force/sf_certificates.png";
+
+const stats = [
+  { value: "200+", label: "CRM Implementations" },
+  { value: "15+", label: "Certified Experts" },
+  { value: "98%", label: "Client Retention" },
+  { value: "5x", label: "ROI Average" }
+];
 
 const features = [
   {
@@ -56,6 +60,24 @@ const highlights = [
   }
 ];
 
+const processSteps = [
+  { number: "01", title: "Discovery", desc: "Understanding your business needs and CRM requirements" },
+  { number: "02", title: "Strategy", desc: "Creating a customized implementation roadmap" },
+  { number: "03", title: "Configuration", desc: "Setting up Salesforce to match your workflows" },
+  { number: "04", title: "Migration", desc: "Secure data transfer from existing systems" },
+  { number: "05", title: "Training", desc: "Empowering your team with hands-on training" },
+  { number: "06", title: "Support", desc: "Ongoing optimization and technical support" }
+];
+
+const certifications = [
+  "Salesforce Administrator",
+  "Platform Developer I",
+  "Platform Developer II",
+  "Sales Cloud Consultant",
+  "Service Cloud Consultant",
+  "Marketing Cloud Specialist"
+];
+
 export default function SalesforceCrm() {
   useEffect(() => {
     document.title = "Salesforce CRM Solutions | Datasirpi - Enterprise CRM Implementation";
@@ -78,8 +100,13 @@ export default function SalesforceCrm() {
               customization, and support services tailored to your business needs.
             </p>
           </div>
-          <div className="hero-image-wrapper">
-            <img src={platformBanner} alt="Salesforce CRM Dashboard Analytics" className="hero-image" />
+          <div className="hero-stats">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat-card">
+                <span className="stat-value">{stat.value}</span>
+                <span className="stat-label">{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -134,8 +161,17 @@ export default function SalesforceCrm() {
       <section className="process-section">
         <div className="container">
           <h2 className="section-title text-center">Implementation Process</h2>
-          <div className="process-image-wrapper">
-            <img src={sf_process_flow} alt="Salesforce Implementation Process Flow" className="process-image" />
+          <p className="section-subtitle text-center">
+            Our proven methodology ensures successful Salesforce deployments
+          </p>
+          <div className="process-grid">
+            {processSteps.map((step, index) => (
+              <div key={index} className="process-step">
+                <span className="step-number">{step.number}</span>
+                <h3 className="step-title">{step.title}</h3>
+                <p className="step-desc">{step.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -146,8 +182,13 @@ export default function SalesforceCrm() {
           <p className="section-subtitle text-center">
             Our team holds industry-recognized Salesforce certifications ensuring quality delivery
           </p>
-          <div className="certificates-wrapper">
-            <img src={sf_certificates} alt="Salesforce Certifications" className="certificates-image" />
+          <div className="certifications-grid">
+            {certifications.map((cert, index) => (
+              <div key={index} className="certification-badge">
+                <span className="cert-icon">SF</span>
+                <span className="cert-name">{cert}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

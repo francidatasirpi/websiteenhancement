@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./cyber.scss";
-import platformBanner from "../../../assets/images/Specialization/Cyber.png";
 import cyber_icon_1 from "../../../assets/images/icons/cyber_icon_1.svg";
 import cyber_icon_2 from "../../../assets/images/icons/cyber_icon_2.svg";
 import cyber_icon_3 from "../../../assets/images/icons/cyber_icon_3.svg";
@@ -10,6 +9,13 @@ import cyber_icon_5 from "../../../assets/images/icons/cyber_icon_5.svg";
 import cyber_icon_6 from "../../../assets/images/icons/cyber_icon_6.svg";
 import cyber_icon_7 from "../../../assets/images/icons/cyber_icon_7.svg";
 import cyber_icon_8 from "../../../assets/images/icons/cyber_icon_8.svg";
+
+const stats = [
+  { value: "24/7", label: "Security Monitoring" },
+  { value: "1000+", label: "Threats Blocked Daily" },
+  { value: "99.9%", label: "Threat Detection Rate" },
+  { value: "< 15min", label: "Response Time" }
+];
 
 const coreServices = [
   {
@@ -87,8 +93,13 @@ export default function CyberSecurity() {
               cyber defense strategies that safeguard your business against evolving threats.
             </p>
           </div>
-          <div className="hero-image-wrapper">
-            <img src={platformBanner} alt="Cyber Security Operations" className="hero-image" />
+          <div className="hero-stats">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat-card">
+                <span className="stat-value">{stat.value}</span>
+                <span className="stat-label">{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

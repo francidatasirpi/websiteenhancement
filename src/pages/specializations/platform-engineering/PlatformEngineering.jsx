@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./platform-eng.scss";
-import platformBanner from "../../../assets/images/Specialization/Platform_Eng.jpg";
 import platform_icon_1 from "../../../assets/images/icons/platform_icon_1.svg";
 import platform_icon_2 from "../../../assets/images/icons/platform_icon_2.svg";
 import platform_icon_3 from "../../../assets/images/icons/platform_icon_3.svg";
@@ -11,6 +10,13 @@ import platform_icon_6 from "../../../assets/images/icons/platform_icon_6.svg";
 import platform_icon_7 from "../../../assets/images/icons/platform_icon_7.svg";
 import platform_icon_8 from "../../../assets/images/icons/platform_icon_8.svg";
 import platform_icon_9 from "../../../assets/images/icons/platform_icon_9.svg";
+
+const stats = [
+  { value: "99.9%", label: "Uptime Guarantee" },
+  { value: "60%", label: "Cost Reduction" },
+  { value: "10x", label: "Faster Deployments" },
+  { value: "24/7", label: "Expert Support" }
+];
 
 const devopsServices = [
   {
@@ -85,8 +91,13 @@ export default function PlatformEngineering() {
               with our expert DevOps and cloud engineering services.
             </p>
           </div>
-          <div className="hero-image-wrapper">
-            <img src={platformBanner} alt="Platform Engineering Infrastructure" className="hero-image" />
+          <div className="hero-stats">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat-card">
+                <span className="stat-value">{stat.value}</span>
+                <span className="stat-label">{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
