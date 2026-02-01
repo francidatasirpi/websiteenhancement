@@ -3,9 +3,10 @@
 .how-we-work-section {
   padding: $space-10 0;
   background: $background-off-white;
-  margin: 0 -1.5rem;
-  padding-left: $space-5;
-  padding-right: $space-5;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
 
   .section-header {
     text-align: center;
