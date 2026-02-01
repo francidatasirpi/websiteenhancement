@@ -1,6 +1,7 @@
 {
-  "short_name": "dataSirpi",
-  "name": "Create App",
+  "short_name": "Datasirpi",
+  "name": "Datasirpi - Platform Engineering & IT Solutions",
+  "description": "Enterprise-grade Platform Engineering, Cybersecurity, Application Development, and Salesforce CRM solutions.",
   "icons": [
     {
       "src": "favicon.png",
