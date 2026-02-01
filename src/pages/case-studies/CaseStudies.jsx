@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./case-studies.scss";
-import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu, BsRobot, BsBox, BsArrowRepeat, BsHddNetwork, BsSpeedometer } from "react-icons/bs";
+import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu, BsRobot, BsBox, BsArrowRepeat, BsHddNetwork, BsSpeedometer, BsPhone, BsServer } from "react-icons/bs";
 import BussinessForm from "../services/bussinessform/BussinessForm";
 
 const caseStudies = [
@@ -321,6 +321,105 @@ const caseStudies = [
       "Terraform", "GitOps", "Python",
       "Schema Registry", "ksqlDB", "Kafka Connect"
     ]
+  },
+  {
+    id: "money-app-multicloud-uae",
+    client: "Leading Financial Services Provider",
+    region: "United Arab Emirates",
+    industry: "Financial Services",
+    title: "Cloud-Native Money Transfer & Payment Application",
+    subtitle: "Multi-cloud fintech platform with Flutter mobile app, Java microservices, and active-passive disaster recovery across AWS and Azure",
+    challenge: "A UAE-based financial services company needed to launch a modern money transfer and payment application to compete in the rapidly evolving fintech market. They required a mobile-first solution with robust backend services capable of handling millions of transactions while meeting Central Bank of UAE regulatory requirements. The platform needed enterprise-grade disaster recovery with data residency compliance and seamless failover capabilities between cloud providers.",
+    solution: "We architected and delivered a complete fintech ecosystem featuring a Flutter-based cross-platform mobile application, Java microservices backend deployed on AWS EKS in UAE region as the primary environment, and Azure AKS as the disaster recovery site. The admin application built with Angular provides comprehensive operational control. The entire stack follows cloud-native principles with active-passive database replication ensuring RPO near zero and RTO under 15 minutes.",
+    outcomes: [
+      { metric: "99.95%", label: "Platform Uptime" },
+      { metric: "<15min", label: "DR Failover RTO" },
+      { metric: "2M+", label: "Monthly Transactions" },
+      { metric: "4.8", label: "App Store Rating" }
+    ],
+    architecture: {
+      mobile: {
+        title: "Flutter Mobile Application",
+        items: [
+          "Cross-platform Flutter app for iOS and Android",
+          "Biometric authentication and secure enclave",
+          "Offline-first architecture with sync capabilities",
+          "Push notifications for transaction alerts"
+        ]
+      },
+      backend: {
+        title: "Java Microservices",
+        items: [
+          "Spring Boot microservices with domain-driven design",
+          "API Gateway with rate limiting and authentication",
+          "Event-driven architecture using Apache Kafka",
+          "Redis caching for high-performance lookups"
+        ]
+      },
+      admin: {
+        title: "Angular Admin Dashboard",
+        items: [
+          "Angular 17+ enterprise admin application",
+          "Real-time transaction monitoring and analytics",
+          "User management and KYC verification workflows",
+          "Compliance reporting and audit trails"
+        ]
+      },
+      primary: {
+        title: "AWS UAE - Primary Region",
+        items: [
+          "Amazon EKS with managed node groups",
+          "Amazon RDS PostgreSQL - Primary database",
+          "Amazon ElastiCache for Redis clustering",
+          "AWS WAF and Shield for DDoS protection"
+        ]
+      },
+      dr: {
+        title: "Azure AKS - Disaster Recovery",
+        items: [
+          "Azure Kubernetes Service as DR environment",
+          "Azure Database for PostgreSQL - Passive replica",
+          "Cross-cloud VPN connectivity via ExpressRoute",
+          "Automated failover orchestration scripts"
+        ]
+      },
+      database: {
+        title: "Active-Passive Database Replication",
+        items: [
+          "PostgreSQL logical replication to Azure",
+          "Near-zero RPO with streaming replication",
+          "Automated backup with cross-region storage",
+          "Point-in-time recovery capabilities"
+        ]
+      },
+      security: {
+        title: "Security & Compliance",
+        items: [
+          "PCI-DSS compliant infrastructure",
+          "End-to-end encryption with HSM key management",
+          "Central Bank of UAE regulatory compliance",
+          "SOC 2 Type II certified operations"
+        ]
+      },
+      observability: {
+        title: "Monitoring & Operations",
+        items: [
+          "Prometheus and Grafana for metrics",
+          "ELK Stack for centralized logging",
+          "PagerDuty integration for incident management",
+          "Synthetic monitoring for API health checks"
+        ]
+      }
+    },
+    technologies: [
+      "Flutter", "Dart", "iOS", "Android",
+      "Java", "Spring Boot", "Spring Cloud",
+      "Angular", "TypeScript", "RxJS",
+      "AWS EKS", "Azure AKS", "Kubernetes",
+      "PostgreSQL", "Redis", "Apache Kafka",
+      "Terraform", "ArgoCD", "Helm",
+      "Prometheus", "Grafana", "ELK Stack"
+    ]
   }
 ];
 
@@ -430,6 +529,10 @@ function CaseStudyDetail({ study, onBack }) {
                   {key === 'target' && <BsCloud size={20} />}
                   {key === 'migration' && <BsArrowRepeat size={20} />}
                   {key === 'infrastructure' && <BsHddNetwork size={20} />}
+                  {key === 'mobile' && <BsPhone size={20} />}
+                  {key === 'admin' && <BsDisplay size={20} />}
+                  {key === 'primary' && <BsCloud size={20} />}
+                  {key === 'dr' && <BsServer size={20} />}
                 </div>
                 <h3>{section.title}</h3>
                 <ul>
