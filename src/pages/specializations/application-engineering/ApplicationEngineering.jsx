@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./application-eng.scss";
 import application_icon_1 from "../../../assets/images/icons/application_icon_1.svg";
@@ -10,6 +9,7 @@ import application_icon_6 from "../../../assets/images/icons/application_icon_6.
 import application_icon_7 from "../../../assets/images/icons/application_icon_7.svg";
 import application_icon_8 from "../../../assets/images/icons/application_icon_8.svg";
 import application_process from "../../../assets/images/application/application_process.png";
+import SEO from "../../../common/components/SEO";
 
 const stats = [
   { value: "500+", label: "Projects Delivered" },
@@ -83,16 +83,14 @@ const services = [
 
 
 export default function ApplicationEngineering() {
-  useEffect(() => {
-    document.title = "Application Engineering | Datasirpi - Web & Mobile App Development";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Expert web and mobile application development services. Datasirpi delivers high-performance, secure, and scalable apps using modern technologies and best practices.");
-    }
-  }, []);
-
   return (
     <div className="application-page">
+      <SEO
+        title="Application Engineering"
+        description="Expert web and mobile application development services. Datasirpi delivers high-performance, secure, and scalable apps using modern technologies and best practices."
+        canonical="/application-engineering"
+        keywords="web development, mobile app development, React, cross-platform, API development, responsive design"
+      />
       <section className="hero-section">
         <div className="hero-gradient-overlay" />
         <div className="container">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./case-studies.scss";
 import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu, BsRobot, BsBox, BsArrowRepeat, BsHddNetwork, BsSpeedometer, BsPhone, BsServer, BsFileEarmarkPdf, BsFolder, BsTools } from "react-icons/bs";
 import BussinessForm from "../services/bussinessform/BussinessForm";
+import SEO from "../../common/components/SEO";
 
 const caseStudies = [
   {
@@ -665,14 +666,6 @@ export default function CaseStudies() {
   const [selectedStudy, setSelectedStudy] = useState(null);
 
   useEffect(() => {
-    document.title = "Case Studies | Datasirpi - Real-World Engineering Success Stories";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Explore how Datasirpi delivers enterprise-grade platform engineering, multi-cloud infrastructure, and mission-critical systems for global clients.");
-    }
-  }, []);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
   }, [selectedStudy]);
 
@@ -687,6 +680,12 @@ export default function CaseStudies() {
 
   return (
     <div className="case-studies-page">
+      <SEO
+        title={selectedStudy ? selectedStudy.title : "Case Studies"}
+        description={selectedStudy ? selectedStudy.subtitle : "Explore how Datasirpi delivers enterprise-grade platform engineering, multi-cloud infrastructure, and mission-critical systems for global clients."}
+        canonical={selectedStudy ? `/case-studies/${selectedStudy.id}` : "/case-studies"}
+        keywords="case studies, platform engineering, multi-cloud, kubernetes, fintech, cybersecurity, enterprise solutions"
+      />
       {!selectedStudy ? (
         <>
           <section className="hero-section">

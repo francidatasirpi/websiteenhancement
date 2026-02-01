@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./platform-eng.scss";
 import { BsRocketTakeoff, BsGear, BsTools, BsHeadset, BsCheckCircle, BsArrowLeftRight, BsSpeedometer2, BsPiggyBank, BsCodeSlash } from "react-icons/bs";
+import SEO from "../../../common/components/SEO";
 
 const stats = [
   { value: "99.9%", label: "Uptime Guarantee" },
@@ -135,16 +135,14 @@ const cloudPlatforms = [
 ];
 
 export default function PlatformEngineering() {
-  useEffect(() => {
-    document.title = "Platform Engineering Services | Datasirpi - Multi-Cloud & DevOps Solutions";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Enterprise platform engineering services across AWS, Azure, GCP, Oracle and on-premise. From day zero deployment to 24/7 managed services.");
-    }
-  }, []);
-
   return (
     <div className="platform-page">
+      <SEO
+        title="Platform Engineering Services"
+        description="Enterprise platform engineering services across AWS, Azure, GCP, Oracle and on-premise. From day zero deployment to 24/7 managed services."
+        canonical="/platform-engineering"
+        keywords="platform engineering, DevOps, AWS, Azure, GCP, Kubernetes, cloud migration, infrastructure, CI/CD"
+      />
       <section className="hero-section">
         <div className="hero-gradient-overlay" />
         <div className="container">

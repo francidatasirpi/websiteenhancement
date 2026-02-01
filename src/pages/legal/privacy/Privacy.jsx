@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { routesPath } from '../../../constants';
 import './privacy.scss';
+import SEO from '../../../common/components/SEO';
 
 const Privacy = () => {
   const scrollToSection = (id) => {
@@ -13,6 +14,12 @@ const Privacy = () => {
 
   return (
     <div className="privacy-container">
+      <SEO
+        title="Privacy Policy"
+        description="Datasirpi Privacy Policy - Learn how we collect, use, and protect your personal information. ISO 27001 certified data security practices."
+        canonical="/privacy"
+        keywords="privacy policy, data protection, GDPR, data security, ISO 27001"
+      />
       <div className="container py-5">
         {/* Breadcrumb */}
         <nav aria-label="breadcrumb" className="mb-4">
@@ -86,7 +93,7 @@ const Privacy = () => {
               <section id="scope" className="content-section">
                 <h2 className="section-title">1. Scope</h2>
                 <p>
-                  This Privacy Policy applies to all information collected by Datasirpi through our website (datasirpi.com), 
+                  This Privacy Policy applies to all information collected by Datasirpi through our website (datasirpi.com),
                   mobile applications, services, and any other digital platforms we operate. This policy covers:
                 </p>
                 <ul>
@@ -99,7 +106,7 @@ const Privacy = () => {
 
               <section id="information-collect" className="content-section">
                 <h2 className="section-title">2. Information We Collect</h2>
-                
+
                 <h4>2.1 Personal Information</h4>
                 <p>We may collect the following types of personal information:</p>
                 <ul>
@@ -135,10 +142,10 @@ const Privacy = () => {
 
               <section id="data-storage" className="content-section">
                 <h2 className="section-title">4. Data Storage, Retention, and Deletion</h2>
-                
+
                 <h4>4.1 Data Storage</h4>
                 <p>
-                  Your data is stored on secure servers located in data centers that comply with industry standards. 
+                  Your data is stored on secure servers located in data centers that comply with industry standards.
                   We use cloud infrastructure providers that maintain appropriate security certifications.
                 </p>
 
@@ -152,7 +159,7 @@ const Privacy = () => {
 
                 <h4>4.3 Data Deletion</h4>
                 <p>
-                  You may request deletion of your personal information at any time. We will delete your data 
+                  You may request deletion of your personal information at any time. We will delete your data
                   within 30 days of your request, unless retention is required by law.
                 </p>
               </section>
@@ -198,8 +205,8 @@ const Privacy = () => {
               <section id="international-transfers" className="content-section">
                 <h2 className="section-title">8. International Data Transfers</h2>
                 <p>
-                  Your information may be transferred to and processed in countries other than your country of residence. 
-                  We ensure that such transfers comply with applicable data protection laws and implement appropriate 
+                  Your information may be transferred to and processed in countries other than your country of residence.
+                  We ensure that such transfers comply with applicable data protection laws and implement appropriate
                   safeguards to protect your information.
                 </p>
               </section>
@@ -207,8 +214,8 @@ const Privacy = () => {
               <section id="children-privacy" className="content-section">
                 <h2 className="section-title">9. Children's Privacy</h2>
                 <p>
-                  Our services are not intended for children under the age of 13. We do not knowingly collect 
-                  personal information from children under 13. If we become aware that we have collected such 
+                  Our services are not intended for children under the age of 13. We do not knowingly collect
+                  personal information from children under 13. If we become aware that we have collected such
                   information, we will take steps to delete it promptly.
                 </p>
               </section>
@@ -216,8 +223,8 @@ const Privacy = () => {
               <section id="policy-updates" className="content-section">
                 <h2 className="section-title">10. Updates to This Policy</h2>
                 <p>
-                  We may update this Privacy Policy from time to time to reflect changes in our practices or 
-                  applicable laws. We will notify you of any material changes by posting the updated policy on 
+                  We may update this Privacy Policy from time to time to reflect changes in our practices or
+                  applicable laws. We will notify you of any material changes by posting the updated policy on
                   our website and updating the "Last Updated" date.
                 </p>
               </section>

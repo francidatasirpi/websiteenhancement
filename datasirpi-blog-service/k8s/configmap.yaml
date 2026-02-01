@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: blog-config
-  namespace: blog-service
-data:
-  S3_BUCKET: "datasirpi-blog-images"
-  S3_REGION: "ap-south-1"
-  ALLOWED_ORIGINS: "https://datasirpi.com,https://admin.datasirpi.com,https://www.datasirpi.com"

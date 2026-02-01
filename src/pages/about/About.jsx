@@ -4,6 +4,7 @@ import aboutBanner from "../../assets/images/About/about_banner.png";
 import aboutBanner2 from "../../assets/images/About/about_banner_2.png";
 import worldMap from "../../assets/images/About/world_map.png";
 import { FiTarget, FiEye, FiHeart, FiAward, FiUsers, FiGlobe, FiCheckCircle, FiTrendingUp } from "react-icons/fi";
+import SEO from "../../common/components/SEO";
 
 export default function About() {
     const stats = [
@@ -33,6 +34,12 @@ export default function About() {
 
     return (
         <div className="w-100 about-container">
+            <SEO
+                title="About Us"
+                description="Learn about Datasirpi - a passionate team of engineers dedicated to making the world a better place through cutting-edge technology and innovation. ISO 27001 certified."
+                canonical="/about"
+                keywords="about datasirpi, technology company, IT consulting, digital transformation, ISO 27001"
+            />
             <div className="container d-flex flex-column align-items-center">
                 <div className="hero-section text-center">
                     <span className="hero-badge">About DataSirpi</span>
@@ -128,7 +135,7 @@ export default function About() {
                         Let’s solve problems, create opportunities, and build something amazing—together.
                     </div>
                     <div className="small small-text">
-                    we’re committed to building a brighter, more connected future for businesses and communities worldwide.
+                        we’re committed to building a brighter, more connected future for businesses and communities worldwide.
                     </div>
                 </div>
 

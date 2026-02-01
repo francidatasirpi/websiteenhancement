@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./ai-agents.scss";
 import { BsRobot, BsCpu, BsGear, BsShield, BsGraphUp, BsCheckCircle, BsLightbulb, BsArrowRight, BsPerson, BsBook, BsBank, BsBuilding, BsShieldCheck } from "react-icons/bs";
+import SEO from "../../../common/components/SEO";
 
 const stats = [
   { value: "10x", label: "Faster Operations" },
@@ -95,16 +95,14 @@ const technicalCapabilities = [
 ];
 
 export default function AIAgents() {
-  useEffect(() => {
-    document.title = "AI Agents | Datasirpi - Production-Grade AI & Agentic Automation";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "AI-enabled engineers building agentic products that ship. We design and deliver AI features, LLM apps, and agent workflows—securely and production-ready.");
-    }
-  }, []);
-
   return (
     <div className="ai-agents-page">
+      <SEO
+        title="AI Agents"
+        description="AI-enabled engineers building agentic products that ship. We design and deliver AI features, LLM apps, and agent workflows—securely and production-ready."
+        canonical="/ai-agents"
+        keywords="AI agents, LLM, agentic automation, RAG, AI copilots, LLMOps, production AI"
+      />
       <section className="hero-section">
         <div className="hero-gradient-overlay" />
         <div className="container">

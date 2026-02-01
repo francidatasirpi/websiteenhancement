@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./salesforce-crm.scss";
 import sf_icon_1 from "../../../assets/images/icons/sf_icon_1.svg";
@@ -11,6 +10,7 @@ import sf_icon_7 from "../../../assets/images/icons/sf_icon_7.svg";
 import sf_icon_8 from "../../../assets/images/icons/sf_icon_8.svg";
 import sf_certificates from "../../../assets/images/sales-force/sf_certificates.png";
 import sf_process_flow from "../../../assets/images/sales-force/sf_process_flow.png";
+import SEO from "../../../common/components/SEO";
 
 const stats = [
   { value: "200+", label: "CRM Implementations" },
@@ -65,16 +65,14 @@ const highlights = [
 
 
 export default function SalesforceCrm() {
-  useEffect(() => {
-    document.title = "Salesforce CRM Solutions | Datasirpi - Enterprise CRM Implementation";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Expert Salesforce CRM implementation, customization, and integration services. Datasirpi helps enterprises optimize customer relationships with certified Salesforce solutions.");
-    }
-  }, []);
-
   return (
     <div className="salesforce-page">
+      <SEO
+        title="Salesforce CRM Solutions"
+        description="Expert Salesforce CRM implementation, customization, and integration services. Datasirpi helps enterprises optimize customer relationships with certified Salesforce solutions."
+        canonical="/salesforce-crm"
+        keywords="Salesforce CRM, Salesforce implementation, CRM customization, Salesforce integration, CRM consulting"
+      />
       <section className="hero-section">
         <div className="hero-gradient-overlay" />
         <div className="container">

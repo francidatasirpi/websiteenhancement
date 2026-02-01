@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { routesPath } from '../../../constants';
 import './terms.scss';
+import SEO from '../../../common/components/SEO';
 
 const Terms = () => {
   const scrollToSection = (id) => {
@@ -13,6 +14,12 @@ const Terms = () => {
 
   return (
     <div className="terms-container">
+      <SEO
+        title="Terms of Use"
+        description="Datasirpi Terms of Use - Read our terms and conditions for using our platform engineering, cybersecurity, and Salesforce CRM services."
+        canonical="/terms"
+        keywords="terms of use, terms and conditions, service agreement, legal terms"
+      />
       <div className="container py-5">
         {/* Breadcrumb */}
         <nav aria-label="breadcrumb" className="mb-4">
@@ -85,8 +92,8 @@ const Terms = () => {
             <div className="terms-content">
               <div className="intro-section mb-5">
                 <p className="lead">
-                  Welcome to the services provided by Datasirpi Pvt. Ltd. ("Datasirpi", "we", "us", or "our"). 
-                  These Terms of Use ("Terms") govern your access to and use of our website, applications, and services. 
+                  Welcome to the services provided by Datasirpi Pvt. Ltd. ("Datasirpi", "we", "us", or "our").
+                  These Terms of Use ("Terms") govern your access to and use of our website, applications, and services.
                   By accessing or using our services, you agree to be bound by these Terms.
                 </p>
               </div>
@@ -122,10 +129,10 @@ const Terms = () => {
 
               <section id="acceptance-use" className="content-section">
                 <h2 className="section-title">3. Acceptance and Use of the App</h2>
-                
+
                 <h4>3.1 Acceptance</h4>
                 <p>
-                  By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms. 
+                  By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms.
                   If you do not agree to these Terms, you must not use our services.
                 </p>
 
@@ -151,24 +158,24 @@ const Terms = () => {
 
               <section id="intellectual-property" className="content-section">
                 <h2 className="section-title">4. Intellectual Property</h2>
-                
+
                 <h4>4.1 Datasirpi's Rights</h4>
                 <p>
-                  All content, features, and functionality of our services, including but not limited to text, graphics, 
-                  logos, software, and design, are owned by Datasirpi and are protected by copyright, trademark, and other 
+                  All content, features, and functionality of our services, including but not limited to text, graphics,
+                  logos, software, and design, are owned by Datasirpi and are protected by copyright, trademark, and other
                   intellectual property laws.
                 </p>
 
                 <h4>4.2 User Content</h4>
                 <p>
-                  You retain ownership of any content you provide to us. By submitting content, you grant Datasirpi a 
-                  non-exclusive, worldwide, royalty-free license to use, modify, and distribute such content solely for 
+                  You retain ownership of any content you provide to us. By submitting content, you grant Datasirpi a
+                  non-exclusive, worldwide, royalty-free license to use, modify, and distribute such content solely for
                   the purpose of providing our services.
                 </p>
 
                 <h4>4.3 Third-Party Rights</h4>
                 <p>
-                  Our services may include third-party content or links to third-party websites. We respect the intellectual 
+                  Our services may include third-party content or links to third-party websites. We respect the intellectual
                   property rights of others and expect our users to do the same.
                 </p>
               </section>
@@ -176,8 +183,8 @@ const Terms = () => {
               <section id="data-privacy" className="content-section">
                 <h2 className="section-title">5. Data and Privacy</h2>
                 <p>
-                  Your privacy is important to us. Our collection, use, and protection of your personal information is 
-                  governed by our Privacy Policy, which is incorporated into these Terms by reference. By using our services, 
+                  Your privacy is important to us. Our collection, use, and protection of your personal information is
+                  governed by our Privacy Policy, which is incorporated into these Terms by reference. By using our services,
                   you consent to the collection and use of your information as described in our Privacy Policy.
                 </p>
                 <p>
@@ -200,7 +207,7 @@ const Terms = () => {
                   <li>24/7 monitoring and incident response capabilities</li>
                 </ul>
                 <p>
-                  However, no method of transmission over the internet or electronic storage is 100% secure. 
+                  However, no method of transmission over the internet or electronic storage is 100% secure.
                   While we strive to protect your information, we cannot guarantee absolute security.
                 </p>
               </section>
@@ -217,7 +224,7 @@ const Terms = () => {
                   <li>Payment processing services</li>
                 </ul>
                 <p>
-                  Your use of third-party services is subject to their respective terms and conditions. 
+                  Your use of third-party services is subject to their respective terms and conditions.
                   We are not responsible for the practices or content of third-party services.
                 </p>
               </section>
@@ -225,7 +232,7 @@ const Terms = () => {
               <section id="disclaimer" className="content-section">
                 <h2 className="section-title">8. Disclaimer of Warranties</h2>
                 <p>
-                  OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. 
+                  OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
                   TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:
                 </p>
                 <ul>
@@ -239,7 +246,7 @@ const Terms = () => {
               <section id="limitation-liability" className="content-section">
                 <h2 className="section-title">9. Limitation of Liability</h2>
                 <p>
-                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, DATASIRPI SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, 
+                  TO THE MAXIMUM EXTENT PERMITTED BY LAW, DATASIRPI SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL,
                   SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:
                 </p>
                 <ul>
@@ -249,29 +256,29 @@ const Terms = () => {
                   <li>Any other commercial damages or losses</li>
                 </ul>
                 <p>
-                  Our total liability for any claims arising from or related to these Terms or our services shall not 
+                  Our total liability for any claims arising from or related to these Terms or our services shall not
                   exceed the amount paid by you to Datasirpi in the twelve (12) months preceding the claim.
                 </p>
               </section>
 
               <section id="termination" className="content-section">
                 <h2 className="section-title">10. Termination</h2>
-                
+
                 <h4>10.1 Termination by You</h4>
                 <p>
-                  You may terminate your use of our services at any time by discontinuing use and, if applicable, 
+                  You may terminate your use of our services at any time by discontinuing use and, if applicable,
                   closing your account.
                 </p>
 
                 <h4>10.2 Termination by Us</h4>
                 <p>
-                  We may terminate or suspend your access to our services immediately, without prior notice, if you 
+                  We may terminate or suspend your access to our services immediately, without prior notice, if you
                   breach these Terms or engage in conduct that we determine to be harmful to our business or other users.
                 </p>
 
                 <h4>10.3 Effect of Termination</h4>
                 <p>
-                  Upon termination, your right to use our services will cease immediately. Provisions that by their 
+                  Upon termination, your right to use our services will cease immediately. Provisions that by their
                   nature should survive termination will remain in effect.
                 </p>
               </section>
@@ -294,8 +301,8 @@ const Terms = () => {
               <section id="governing-law" className="content-section">
                 <h2 className="section-title">12. Governing Law</h2>
                 <p>
-                  These Terms shall be governed by and construed in accordance with the laws of India, without regard to 
-                  conflict of law principles. Any disputes arising from these Terms or our services shall be subject to 
+                  These Terms shall be governed by and construed in accordance with the laws of India, without regard to
+                  conflict of law principles. Any disputes arising from these Terms or our services shall be subject to
                   the exclusive jurisdiction of the courts in [Your City], India.
                 </p>
               </section>

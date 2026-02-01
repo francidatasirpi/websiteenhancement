@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { routesPath, blogApiConfig } from '../../constants';
 import './blogs.scss';
+import SEO from '../../common/components/SEO';
 
 const BlogList = ({ blogs, onSelectBlog }) => {
   const navigate = useNavigate();
@@ -217,6 +218,13 @@ const Blogs = () => {
 
   return (
     <div className="blog-container">
+      <SEO
+        title={selectedBlog ? selectedBlog.title : "Blog"}
+        description={selectedBlog ? selectedBlog.excerpt : "Insights, updates and technical articles from Datasirpi on platform engineering, cybersecurity, Salesforce, and AI."}
+        canonical={selectedBlog ? `/blogs/${selectedBlog.slug}` : "/blogs"}
+        keywords="blog, technology, platform engineering, cybersecurity, Salesforce, AI, cloud computing"
+        type={selectedBlog ? "article" : "website"}
+      />
       {selectedBlog ? (
         <BlogDetail blog={selectedBlog} />
       ) : (

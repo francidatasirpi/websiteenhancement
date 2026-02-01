@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./cyber.scss";
 import cyber_icon_1 from "../../../assets/images/icons/cyber_icon_1.svg";
@@ -9,6 +8,7 @@ import cyber_icon_5 from "../../../assets/images/icons/cyber_icon_5.svg";
 import cyber_icon_6 from "../../../assets/images/icons/cyber_icon_6.svg";
 import cyber_icon_7 from "../../../assets/images/icons/cyber_icon_7.svg";
 import cyber_icon_8 from "../../../assets/images/icons/cyber_icon_8.svg";
+import SEO from "../../../common/components/SEO";
 
 const stats = [
   { value: "24/7", label: "Security Monitoring" },
@@ -72,16 +72,14 @@ const securityServices = [
 ];
 
 export default function CyberSecurity() {
-  useEffect(() => {
-    document.title = "Cyber Security Services | Datasirpi - Enterprise Security Solutions";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Comprehensive cyber security services including SOC, penetration testing, vulnerability assessment, and compliance. Datasirpi protects your digital assets with enterprise-grade security.");
-    }
-  }, []);
-
   return (
     <div className="cyber-page">
+      <SEO
+        title="Cyber Security Services"
+        description="Comprehensive cyber security services including SOC, penetration testing, vulnerability assessment, and compliance. Datasirpi protects your digital assets with enterprise-grade security."
+        canonical="/cyber-security"
+        keywords="cyber security, SOC, penetration testing, vulnerability assessment, security monitoring, compliance"
+      />
       <section className="hero-section">
         <div className="hero-gradient-overlay" />
         <div className="container">
