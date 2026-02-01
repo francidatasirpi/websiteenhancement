@@ -147,23 +147,6 @@ function Header() {
                 <span>Get in Touch</span>
               </button>
             </div>
-
-            <div className="hero-stats animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-              <div className="stat-preview">
-                <span className="stat-value">50+</span>
-                <span className="stat-label">Projects</span>
-              </div>
-              <div className="stat-divider"></div>
-              <div className="stat-preview">
-                <span className="stat-value">25+</span>
-                <span className="stat-label">Clients</span>
-              </div>
-              <div className="stat-divider"></div>
-              <div className="stat-preview">
-                <span className="stat-value">6+</span>
-                <span className="stat-label">Years</span>
-              </div>
-            </div>
           </div>
 
           <div className="scroll-indicator">
