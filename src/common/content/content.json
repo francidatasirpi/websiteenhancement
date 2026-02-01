@@ -8,7 +8,7 @@
   "services": [
     {
       "title": "Platform Engineering",
-      "description": "EKS, IaC, GitOps, Observability",
+      "description": "AWS, Azure, GCP, Oracle, On-Prem",
       "outcome": "Faster releases, fewer incidents",
       "path": "/platform-engineering"
     },
@@ -29,6 +29,12 @@
       "description": "Assessments, SOC toolkit, hardening",
       "outcome": "Reduce risk & audit pain",
       "path": "/cyber-security"
+    },
+    {
+      "title": "AI Agents",
+      "description": "Intelligent automation & orchestration",
+      "outcome": "Smarter operations, reduced manual work",
+      "path": "/ai-agents"
     }
   ],
   "about": {

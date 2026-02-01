@@ -9,11 +9,16 @@
 
 .service-dropdown-inner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: $space-4;
-  min-width: 700px;
+  min-width: 850px;
 
   @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 500px;
+  }
+
+  @media (max-width: $breakpoint-md) {
     grid-template-columns: repeat(2, 1fr);
     min-width: 400px;
   }
@@ -82,6 +87,20 @@
     height: 100%;
     object-fit: cover;
     border-radius: $radius-md;
+  }
+
+  &.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    color: #0072ff;
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+      color: #fff;
+    }
   }
 }
 

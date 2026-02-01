@@ -68,5 +68,19 @@
       "Data Visualization",
       "Reporting Dashboards"
     ]
+  },
+  "aiAgents": {
+    "title": "AI Agents",
+    "shortTitle": "AI Agents",
+    "description": "Deploy intelligent AI agents that automate complex workflows, integrate with your platforms, applications, and security systems for autonomous operations.",
+    "alt": "AI Agents",
+    "isAI": true,
+    "icon": "🤖",
+    "features": [
+      "Intelligent Automation",
+      "Multi-Agent Orchestration",
+      "Platform Integration",
+      "Security-First Design"
+    ]
   }
 }

@@ -6,6 +6,7 @@ export const routesPath = {
   applicationEngineering: '/application-engineering',
   salesforceCrm: '/salesforce-crm',
   cyberSecurity: '/cyber-security',
+  aiAgents: '/ai-agents',
   blogs: '/blogs',
   blogById: '/blogs/:id',
   privacy: '/privacy',

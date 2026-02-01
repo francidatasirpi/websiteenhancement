@@ -6,7 +6,7 @@ import Cyber from "../../../../assets/images/Specialization/Cyber.png";
 import "./service-options.scss";
 import { Link } from "react-router-dom";
 import { routesPath } from "../../../../constants";
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUpRight, BsRobot } from "react-icons/bs";
 
 const services = [
   {
@@ -29,6 +29,11 @@ const services = [
     image: Cyber,
     path: routesPath.cyberSecurity,
   },
+  {
+    name: "AI Agents",
+    icon: BsRobot,
+    path: routesPath.aiAgents,
+  },
 ];
 
 export default function ServiceOptions() {
@@ -37,8 +42,12 @@ export default function ServiceOptions() {
       <div className="service-dropdown-inner">
         {services.map((service, index) => (
           <Link key={index} to={service.path} className="service-item">
-            <div className="service-image-container">
-              <img src={service.image} alt={service.name} />
+            <div className={`service-image-container ${service.icon ? 'icon-container' : ''}`}>
+              {service.image ? (
+                <img src={service.image} alt={service.name} />
+              ) : service.icon ? (
+                <service.icon size={32} />
+              ) : null}
             </div>
             <div className="service-name">
               {service.name}

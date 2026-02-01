@@ -13,6 +13,7 @@ const ApplicationEngineering = lazy(() => import('../specializations/application
 const PlatformEngineering = lazy(() => import('../specializations/platform-engineering/PlatformEngineering'));
 const SalesforceCrm = lazy(() => import('../specializations/salesforce-crm/SalesforceCrm'));
 const CyberSecurity = lazy(() => import('../specializations/cyber-security/CyberSecurity'));
+const AIAgents = lazy(() => import('../specializations/ai-agents/AIAgents'));
 const Blogs = lazy(() => import('../blogs/blogs'));
 const Privacy = lazy(() => import('../legal/privacy/Privacy'));
 const Terms = lazy(() => import('../legal/terms/Terms'));
@@ -54,6 +55,7 @@ export default function LandingPage() {
                             <Route path={routesPath.platformEngineering} element={<PlatformEngineering />} />
                             <Route path={routesPath.salesforceCrm} element={<SalesforceCrm />} />
                             <Route path={routesPath.cyberSecurity} element={<CyberSecurity />} />
+                            <Route path={routesPath.aiAgents} element={<AIAgents />} />
                             <Route path={routesPath.blogs} element={<Blogs />} />
                             <Route path={routesPath.blogById} element={<Blogs />} />
                             <Route path={routesPath.privacy} element={<Privacy />} />

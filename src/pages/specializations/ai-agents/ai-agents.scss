@@ -1,0 +1,284 @@
+@import "../../../assets/scss/variables.scss";
+
+.ai-agents-page {
+  .hero-section {
+    position: relative;
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f3460 100%);
+    overflow: hidden;
+
+    .hero-gradient-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 30% 20%, rgba(0, 198, 255, 0.15) 0%, transparent 50%),
+                  radial-gradient(ellipse at 70% 80%, rgba(0, 114, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      text-align: center;
+      margin-bottom: $space-8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: $space-2 $space-4;
+      background: linear-gradient(135deg, rgba(0, 198, 255, 0.2) 0%, rgba(0, 114, 255, 0.2) 100%);
+      border: 1px solid rgba(0, 198, 255, 0.3);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #00c6ff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: $space-4;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: $space-4;
+      letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $space-4;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: $space-4;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+
+      .stat-value {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: $space-1;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .intro-section {
+    padding: $space-10 0;
+    background: #fff;
+
+    .intro-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: $space-4;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .services-section {
+    padding: $space-10 0;
+    background: #fff;
+
+    &.alt-bg {
+      background: #f8f9fa;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: $space-8;
+    }
+
+    .section-badge {
+      display: inline-block;
+      padding: $space-1 $space-3;
+      background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: $space-3;
+
+      &.integration {
+        background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+      }
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: $space-3;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: $space-5;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: $space-6;
+      border: 1px solid #eee;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        border-color: rgba(0, 198, 255, 0.3);
+      }
+
+      .service-icon {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, rgba(0, 198, 255, 0.1) 0%, rgba(0, 114, 255, 0.1) 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: $space-4;
+        color: #0072ff;
+      }
+
+      .service-title {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #1a1a2e;
+        margin-bottom: $space-3;
+      }
+
+      .service-description {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+
+  .use-cases-section {
+    padding: $space-10 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+
+    .section-header {
+      text-align: center;
+      margin-bottom: $space-8;
+
+      .section-badge {
+        display: inline-block;
+        padding: $space-1 $space-3;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #00c6ff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: $space-3;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #fff;
+      }
+    }
+
+    .use-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: $space-5;
+    }
+
+    .use-case-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: $space-6;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(0, 198, 255, 0.3);
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: $space-3;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+
+  .contact-section {
+    .contact-section {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

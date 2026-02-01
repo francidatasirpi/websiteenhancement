@@ -38,8 +38,8 @@ function NavBar({ isSeparatePage = false }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const { platformEngineering, applicationEngineering, salesforceCrm, cyberSecurity } = routesPath;
-  const servicePaths = [platformEngineering, applicationEngineering, salesforceCrm, cyberSecurity];
+  const { platformEngineering, applicationEngineering, salesforceCrm, cyberSecurity, aiAgents } = routesPath;
+  const servicePaths = [platformEngineering, applicationEngineering, salesforceCrm, cyberSecurity, aiAgents];
 
   const navigateToId = (id) => {
     if (!isSeparatePage && !([elementIds.career, elementIds.blogs]?.includes(id))) {
@@ -97,7 +97,11 @@ function NavBar({ isSeparatePage = false }) {
   const onClickContactUs = () => {
     setShowMobileMenu(false);
     setShowServiceMenu(false);
-    window.location.href = `#${elementIds.contact}`;
+    if (isSeparatePage) {
+      navigate(`/#${elementIds.contact}`);
+    } else {
+      window.location.href = `#${elementIds.contact}`;
+    }
   };
 
   return (
@@ -180,6 +184,7 @@ function NavBar({ isSeparatePage = false }) {
             <li onClick={() => { navigate(routesPath.applicationEngineering); setShowMobileMenu(false); }}>Application Engineering</li>
             <li onClick={() => { navigate(routesPath.salesforceCrm); setShowMobileMenu(false); }}>Salesforce CRM</li>
             <li onClick={() => { navigate(routesPath.cyberSecurity); setShowMobileMenu(false); }}>Cyber Security</li>
+            <li onClick={() => { navigate(routesPath.aiAgents); setShowMobileMenu(false); }}>AI Agents</li>
             <li onClick={() => { navigateToId(elementIds.career); setShowMobileMenu(false); }}>Career</li>
             <li onClick={() => { navigateToId(elementIds.blogs); setShowMobileMenu(false); }}>Blogs</li>
             <li className="contact-item" onClick={onClickContactUs}>Book a Free Consultation</li>
