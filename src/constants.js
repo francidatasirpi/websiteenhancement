@@ -1,7 +1,7 @@
 export const routesPath = {
   home: '/',
   about: '/about',
-  career: '/career',
+  caseStudies: '/case-studies',
   platformEngineering: '/platform-engineering',
   applicationEngineering: '/application-engineering',
   salesforceCrm: '/salesforce-crm',
@@ -18,7 +18,7 @@ export const elementIds = {
   about: "ds-about",
   services: "ds-services",
   contact: "ds-contact",
-  career: "ds-career",
+  caseStudies: "ds-case-studies",
   blogs: "ds-blogs",
 }
 

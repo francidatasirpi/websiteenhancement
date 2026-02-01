@@ -42,7 +42,7 @@ function NavBar({ isSeparatePage = false }) {
   const servicePaths = [platformEngineering, applicationEngineering, salesforceCrm, cyberSecurity, aiAgents];
 
   const navigateToId = (id) => {
-    if (!isSeparatePage && !([elementIds.career, elementIds.blogs]?.includes(id))) {
+    if (!isSeparatePage && !([elementIds.caseStudies, elementIds.blogs]?.includes(id))) {
       if (id === elementIds.services) {
         setShowServiceMenu(!showServiceMenu);
         return;
@@ -62,8 +62,8 @@ function NavBar({ isSeparatePage = false }) {
       case elementIds.services:
         setShowServiceMenu(!showServiceMenu);
         break;
-      case elementIds.career:
-        navigate(routesPath.career);
+      case elementIds.caseStudies:
+        navigate(routesPath.caseStudies);
         break;
       case elementIds.blogs:
         navigate(routesPath.blogs);
@@ -82,8 +82,8 @@ function NavBar({ isSeparatePage = false }) {
           return path === routesPath.about;
         case elementIds.services:
           return servicePaths.includes(path) || showServiceMenu;
-        case elementIds.career:
-          return path === routesPath.career;
+        case elementIds.caseStudies:
+          return path === routesPath.caseStudies;
         case elementIds.blogs:
           return path === routesPath.blogs;
         default:
@@ -143,8 +143,8 @@ function NavBar({ isSeparatePage = false }) {
                     )}
                   </li>
                   <li className="nav-item">
-                    <div className={`${isActive(elementIds.career) ? "active" : ""} nav-link`} onClick={() => navigateToId(elementIds.career)}>
-                      Career
+                    <div className={`${isActive(elementIds.caseStudies) ? "active" : ""} nav-link`} onClick={() => navigateToId(elementIds.caseStudies)}>
+                      Case Studies
                     </div>
                   </li>
                   <li className="nav-item">
@@ -185,7 +185,7 @@ function NavBar({ isSeparatePage = false }) {
             <li onClick={() => { navigate(routesPath.salesforceCrm); setShowMobileMenu(false); }}>Salesforce CRM</li>
             <li onClick={() => { navigate(routesPath.cyberSecurity); setShowMobileMenu(false); }}>Cyber Security</li>
             <li onClick={() => { navigate(routesPath.aiAgents); setShowMobileMenu(false); }}>AI Agents</li>
-            <li onClick={() => { navigateToId(elementIds.career); setShowMobileMenu(false); }}>Career</li>
+            <li onClick={() => { navigateToId(elementIds.caseStudies); setShowMobileMenu(false); }}>Case Studies</li>
             <li onClick={() => { navigateToId(elementIds.blogs); setShowMobileMenu(false); }}>Blogs</li>
             <li className="contact-item" onClick={onClickContactUs}>Book a Free Consultation</li>
           </ul>

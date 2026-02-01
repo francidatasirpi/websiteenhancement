@@ -7,7 +7,7 @@ import { routesPath } from '../../constants';
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import '../../assets/scss/route-animation.scss';
 
-const Career = lazy(() => import('../career/Career'));
+const CaseStudies = lazy(() => import('../case-studies/CaseStudies'));
 const About = lazy(() => import('../about/About'));
 const ApplicationEngineering = lazy(() => import('../specializations/application-engineering/ApplicationEngineering'));
 const PlatformEngineering = lazy(() => import('../specializations/platform-engineering/PlatformEngineering'));
@@ -49,7 +49,7 @@ export default function LandingPage() {
                     <CSSTransition key={location.key} classNames="slide" timeout={250}>
                         <Routes>
                             <Route path={routesPath.home} element={<LandingPageBody />} />
-                            <Route path={routesPath.career} element={<Career />} />
+                            <Route path={routesPath.caseStudies} element={<CaseStudies />} />
                             <Route path={routesPath.about} element={<About />} />
                             <Route path={routesPath.applicationEngineering} element={<ApplicationEngineering />} />
                             <Route path={routesPath.platformEngineering} element={<PlatformEngineering />} />
