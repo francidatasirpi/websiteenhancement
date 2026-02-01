@@ -3,16 +3,61 @@ import "./about.scss";
 import aboutBanner from "../../assets/images/About/about_banner.png";
 import aboutBanner2 from "../../assets/images/About/about_banner_2.png";
 import worldMap from "../../assets/images/About/world_map.png";
+import { FiTarget, FiEye, FiHeart, FiAward, FiUsers, FiGlobe, FiCheckCircle, FiTrendingUp } from "react-icons/fi";
 
 export default function About() {
+    const stats = [
+        { value: "10+", label: "Years of Excellence", icon: <FiAward /> },
+        { value: "500+", label: "Projects Delivered", icon: <FiCheckCircle /> },
+        { value: "150+", label: "Global Clients", icon: <FiUsers /> },
+        { value: "98%", label: "Client Satisfaction", icon: <FiTrendingUp /> }
+    ];
+
+    const values = [
+        {
+            icon: <FiTarget />,
+            title: "Our Mission",
+            description: "To empower businesses worldwide with innovative technology solutions that drive growth, efficiency, and digital transformation."
+        },
+        {
+            icon: <FiEye />,
+            title: "Our Vision",
+            description: "To be the global leader in delivering cutting-edge technology solutions that shape the future of digital innovation."
+        },
+        {
+            icon: <FiHeart />,
+            title: "Our Values",
+            description: "Integrity, innovation, and excellence guide every project we undertake. We believe in building lasting partnerships through trust and transparency."
+        }
+    ];
+
     return (
         <div className="w-100 about-container">
             <div className="container d-flex flex-column align-items-center">
-                <div className="text-center">
-                    <div className="h2 fw-bold">"Welcome to DataSirpi"</div>
-                    <div className="sub-title mt-2">
-                        Innovating for a brighter, connected future.
+                <div className="hero-section text-center">
+                    <span className="hero-badge">About DataSirpi</span>
+                    <h1 className="hero-title">
+                        Where <span className="gradient-text">Innovation</span> Meets Excellence
+                    </h1>
+                    <p className="hero-description">
+                        We're a passionate team of engineers dedicated to making the world a better place
+                        through cutting-edge technology. From startups to enterprises, we transform ideas
+                        into powerful digital solutions that drive real business results.
+                    </p>
+                    <div className="hero-cta">
+                        <a href="#contact" className="btn-primary-custom">Start Your Journey</a>
+                        <a href="#mission" className="btn-secondary-custom">Learn More</a>
                     </div>
+                </div>
+
+                <div className="stats-section">
+                    {stats.map((stat, index) => (
+                        <div key={index} className="stat-card">
+                            <div className="stat-icon">{stat.icon}</div>
+                            <div className="stat-value">{stat.value}</div>
+                            <div className="stat-label">{stat.label}</div>
+                        </div>
+                    ))}
                 </div>
 
                 <div className="card border-0 text-white about-banner mt-5">
@@ -26,8 +71,22 @@ export default function About() {
                             "DataSirpi - Where Precision Meets  Excellence"
                         </h5>
                         <p className="card-text d-none d-md-block fw-semibold">
-                            <span className="gray-text">At Datasirpi, we’re a passionate team of engineers dedicated to making the world a better place through cutting-edge technology and innovation.</span> We don’t just build applications; we create tailored solutions to solve your unique challenges.
+                            <span className="gray-text">At Datasirpi, we're a passionate team of engineers dedicated to making the world a better place through cutting-edge technology and innovation.</span> We don't just build applications; we create tailored solutions to solve your unique challenges.
                         </p>
+                    </div>
+                </div>
+
+                <div id="mission" className="values-section">
+                    <h2 className="section-title text-center">What Drives Us</h2>
+                    <p className="section-subtitle text-center">Our commitment to excellence is reflected in everything we do</p>
+                    <div className="values-grid">
+                        {values.map((value, index) => (
+                            <div key={index} className="value-card">
+                                <div className="value-icon-wrapper">{value.icon}</div>
+                                <h3 className="value-title">{value.title}</h3>
+                                <p className="value-description">{value.description}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
 

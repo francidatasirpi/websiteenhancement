@@ -1,4 +1,234 @@
 .about-container {
+    .hero-section {
+        padding: 60px 0 40px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero-badge {
+        display: inline-block;
+        padding: 8px 20px;
+        background: linear-gradient(135deg, rgba(0, 114, 255, 0.1), rgba(0, 198, 255, 0.1));
+        border: 1px solid rgba(0, 114, 255, 0.2);
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #0072ff;
+        margin-bottom: 24px;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+        margin-bottom: 24px;
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+        }
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, #0072ff, #00c6ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero-description {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #5a5a5a;
+        margin-bottom: 32px;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
+    }
+
+    .hero-cta {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary-custom {
+        display: inline-flex;
+        align-items: center;
+        padding: 14px 32px;
+        background: linear-gradient(135deg, #0072ff, #00c6ff);
+        color: white;
+        font-weight: 600;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 114, 255, 0.4);
+            color: white;
+        }
+    }
+
+    .btn-secondary-custom {
+        display: inline-flex;
+        align-items: center;
+        padding: 14px 32px;
+        background: transparent;
+        color: #1a1a1a;
+        font-weight: 600;
+        border-radius: 50px;
+        border: 2px solid #e0e0e0;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: #0072ff;
+            color: #0072ff;
+        }
+    }
+
+    .stats-section {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        width: 100%;
+        margin: 40px 0;
+        padding: 40px;
+        background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+        border-radius: 20px;
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+            padding: 24px;
+        }
+    }
+
+    .stat-card {
+        text-align: center;
+        padding: 24px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    .stat-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(0, 114, 255, 0.1), rgba(0, 198, 255, 0.1));
+        border-radius: 12px;
+        color: #0072ff;
+        font-size: 22px;
+    }
+
+    .stat-value {
+        font-size: 36px;
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+        color: #6b7280;
+        font-weight: 500;
+    }
+
+    .values-section {
+        width: 100%;
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+
+        @media (max-width: 768px) {
+            font-size: 28px;
+        }
+    }
+
+    .section-subtitle {
+        font-size: 18px;
+        color: #6b7280;
+        margin-bottom: 48px;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .value-card {
+        padding: 32px;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: #0072ff;
+            box-shadow: 0 8px 24px rgba(0, 114, 255, 0.1);
+        }
+    }
+
+    .value-icon-wrapper {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(0, 114, 255, 0.1), rgba(0, 198, 255, 0.1));
+        border-radius: 14px;
+        color: #0072ff;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .value-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+    }
+
+    .value-description {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #6b7280;
+        margin: 0;
+    }
+
     .sub-title {
         color: #717171;
     }
@@ -16,22 +246,22 @@
     }
 
     .about-banner {
-        position: relative; /* Ensures the overlay stays on top of the image */
-        border-radius: 8px; /* Add rounded corners */
-        overflow: hidden; /* Ensure content doesn't spill out of the card */
-      }
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+    }
 
-      .gray-text {
+    .gray-text {
         color: #909090
-      }
+    }
 
-      .world-map-text {
-        color: #727272; 
-        font-family: Roboto; 
-        font-style: italic; 
-        font-weight: 700; 
-        text-transform: capitalize; 
-        line-height: 60px; 
+    .world-map-text {
+        color: #727272;
+        font-family: Roboto;
+        font-style: italic;
+        font-weight: 700;
+        text-transform: capitalize;
+        line-height: 60px;
         word-wrap: break-word
-      }
+    }
 }
