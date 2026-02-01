@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./case-studies.scss";
-import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu } from "react-icons/bs";
+import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu, BsRobot, BsBox, BsArrowRepeat } from "react-icons/bs";
 import BussinessForm from "../services/bussinessform/BussinessForm";
 
 const caseStudies = [
@@ -161,6 +161,86 @@ const caseStudies = [
       "MCP", "OpenAI", "LangChain",
       "Prometheus", "Grafana", "ELK Stack"
     ]
+  },
+  {
+    id: "equipment-management-uae",
+    client: "Major Construction & Manufacturing Enterprise",
+    region: "United Arab Emirates",
+    industry: "Construction & Manufacturing",
+    title: "AI-Driven Equipment & Workshop Management Platform",
+    subtitle: "Intelligent asset management system for 600M AED equipment fleet with automated workflows and AI-powered material decisions",
+    challenge: "A leading construction and manufacturing conglomerate in the UAE needed to modernize their equipment management operations spanning a fleet worth over 600 million AED. Their legacy systems couldn't handle real-time tracking, predictive maintenance, or intelligent material procurement. Workshop operations were manual, leading to equipment downtime, delayed repairs, and inefficient inventory management. They required an intelligent platform that could automate workflows and provide AI-driven recommendations for materials and maintenance scheduling.",
+    solution: "We developed a comprehensive Equipment and Workshop Management Platform powered by AI agents and the Model Context Protocol (MCP) for intelligent decision-making. The system uses RAG (Retrieval-Augmented Generation) with pgvector for semantic search across equipment manuals, maintenance history, and supplier catalogs. LangGraph orchestrates complex multi-step workflows for maintenance scheduling, parts ordering, and resource allocation. The entire workflow from equipment inspection to repair completion is fully automated with human-in-the-loop approvals for critical decisions.",
+    outcomes: [
+      { metric: "600M", label: "AED Assets Managed" },
+      { metric: "45%", label: "Downtime Reduction" },
+      { metric: "30%", label: "Cost Savings" },
+      { metric: "100%", label: "Workflow Automation" }
+    ],
+    architecture: {
+      frontend: {
+        title: "Angular Enterprise Dashboard",
+        items: [
+          "Angular 17+ with standalone components",
+          "Real-time equipment tracking with WebSocket updates",
+          "Interactive workshop scheduling interface",
+          "Mobile-responsive design for field technicians"
+        ]
+      },
+      backend: {
+        title: "Java Microservices",
+        items: [
+          "Spring Boot microservices architecture",
+          "Event-driven processing with Apache Kafka",
+          "RESTful APIs with OpenAPI documentation",
+          "Distributed caching with Redis"
+        ]
+      },
+      ai: {
+        title: "AI & RAG Pipeline",
+        items: [
+          "LangGraph for multi-agent workflow orchestration",
+          "RAG with pgvector for semantic document search",
+          "MCP integration for tool and API orchestration",
+          "Custom-trained models for equipment classification"
+        ]
+      },
+      database: {
+        title: "PostgreSQL with Vector Search",
+        items: [
+          "Amazon RDS PostgreSQL as primary database",
+          "pgvector extension for embedding storage",
+          "Partitioned tables for equipment telemetry data",
+          "Automated backups with point-in-time recovery"
+        ]
+      },
+      workflow: {
+        title: "Automated Workflow Engine",
+        items: [
+          "End-to-end maintenance workflow automation",
+          "AI-driven material procurement decisions",
+          "Approval routing with escalation policies",
+          "Integration with ERP and procurement systems"
+        ]
+      },
+      cloud: {
+        title: "AWS Infrastructure",
+        items: [
+          "Amazon EKS for container orchestration",
+          "Amazon S3 for document and image storage",
+          "Amazon SQS for message queuing",
+          "CloudWatch for monitoring and alerting"
+        ]
+      }
+    },
+    technologies: [
+      "Angular", "TypeScript", "RxJS", "NgRx",
+      "Java", "Spring Boot", "Spring Cloud",
+      "PostgreSQL", "pgvector", "Redis",
+      "LangGraph", "LangChain", "RAG", "MCP",
+      "AWS EKS", "Amazon RDS", "S3", "SQS",
+      "Apache Kafka", "Docker", "Terraform"
+    ]
   }
 ];
 
@@ -263,6 +343,9 @@ function CaseStudyDetail({ study, onBack }) {
                   {key === 'integration' && <BsPlug size={20} />}
                   {key === 'frontend' && <BsDisplay size={20} />}
                   {key === 'backend' && <BsCpu size={20} />}
+                  {key === 'ai' && <BsRobot size={20} />}
+                  {key === 'workflow' && <BsArrowRepeat size={20} />}
+                  {key === 'cloud' && <BsCloud size={20} />}
                 </div>
                 <h3>{section.title}</h3>
                 <ul>
