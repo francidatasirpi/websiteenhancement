@@ -102,6 +102,54 @@ a {
 }
 
 // ============================================
+// SECONDARY BUTTON (DS-BTN-SECONDARY)
+// ============================================
+.ds-btn-secondary {
+    cursor: pointer;
+    padding: 12px 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: $borderRadius;
+    transition: all $transition-base;
+    font-size: $text-sm;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: $white;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+    }
+
+    svg {
+        color: $brand-cyan;
+        transition: transform $transition-base;
+    }
+
+    &:hover svg {
+        transform: scale(1.1);
+    }
+
+    &.light {
+        border-color: $gray-300;
+        color: $gray-700;
+
+        &:hover {
+            background: $gray-100;
+            border-color: $gray-400;
+        }
+
+        svg {
+            color: $brand-blue;
+        }
+    }
+}
+
+// ============================================
 // GLASSMORPHIC CARDS
 // ============================================
 .glass-card {

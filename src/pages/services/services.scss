@@ -74,6 +74,34 @@
   gap: $space-6;
   margin-bottom: $space-10;
 
+  &.four-col {
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: $breakpoint-xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+    }
+
+    .specialization-card {
+      min-height: 340px;
+    }
+
+    .card-title {
+      font-size: $text-xl;
+    }
+
+    .card-text {
+      font-size: $text-sm;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
   @media (max-width: $breakpoint-lg) {
     grid-template-columns: 1fr;
   }
@@ -157,6 +185,29 @@
   display: flex;
   flex-wrap: wrap;
   gap: $space-2;
+}
+
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: $text-sm;
+  font-weight: $font-medium;
+  color: $brand-cyan;
+  margin-top: $space-2;
+  transition: all $transition-base;
+
+  svg {
+    transition: transform $transition-base;
+  }
+
+  .specialization-card:hover & {
+    gap: $space-3;
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
 }
 
 .feature-chip {
