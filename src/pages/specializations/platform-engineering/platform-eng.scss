@@ -133,6 +133,65 @@
   }
 }
 
+.platforms-strip {
+  background: $gray-900;
+  padding: $space-5 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $space-5;
+  }
+
+  .platforms-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-6;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      gap: $space-4;
+    }
+  }
+
+  .platforms-label {
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    color: $gray-400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .platforms-list {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .platform-item {
+    font-size: $text-sm;
+    color: $gray-300;
+    padding: $space-2 $space-4;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: $radius-full;
+    white-space: nowrap;
+    transition: all $transition-base;
+
+    &:hover {
+      background: rgba($brand-cyan, 0.1);
+      border-color: rgba($brand-cyan, 0.3);
+      color: $brand-cyan;
+    }
+  }
+}
+
 .intro-section {
   padding: $space-10 0;
   background: $background-off-white;
@@ -159,13 +218,9 @@
   }
 }
 
-.services-section {
+.categories-section {
   padding: $space-11 0;
   background: $white;
-
-  &.alt-bg {
-    background: $background-off-white;
-  }
 
   .container {
     max-width: 1200px;
@@ -189,11 +244,6 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: $space-4;
-
-    &.cloud {
-      background: linear-gradient(135deg, rgba($brand-coral, 0.15), rgba($brand-pink, 0.15));
-      color: $brand-coral;
-    }
   }
 
   .section-title {
@@ -213,40 +263,39 @@
     max-width: 600px;
     margin: 0 auto;
   }
+}
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $space-6;
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-6;
 
-    @media (max-width: $breakpoint-lg) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr;
+  }
+}
 
-    @media (max-width: $breakpoint-sm) {
-      grid-template-columns: 1fr;
-    }
+.category-card {
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: $radius-xl;
+  padding: $space-7;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: transparent;
+    box-shadow: $shadow-xl;
+    transform: translateY(-4px);
   }
 
-  .service-card {
-    background: $white;
-    border: 1px solid $gray-200;
-    border-radius: $radius-xl;
-    padding: $space-6;
-    transition: all $transition-base;
-
-    .alt-bg & {
-      background: $white;
-    }
-
-    &:hover {
-      border-color: transparent;
-      box-shadow: $shadow-xl;
-      transform: translateY(-4px);
-    }
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+    margin-bottom: $space-4;
   }
 
-  .service-icon {
+  .category-icon {
     width: 56px;
     height: 56px;
     display: flex;
@@ -254,26 +303,58 @@
     justify-content: center;
     background: linear-gradient(135deg, rgba($brand-cyan, 0.1), rgba($brand-blue, 0.1));
     border-radius: $radius-lg;
-    margin-bottom: $space-4;
-
-    img {
-      width: 32px;
-      height: 32px;
-    }
+    color: $brand-blue-dark;
   }
 
-  .service-title {
-    font-size: $text-xl;
+  .category-tagline {
+    font-size: $text-xs;
     font-weight: $font-semibold;
+    color: $brand-cyan;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: $space-1 $space-3;
+    background: rgba($brand-cyan, 0.1);
+    border-radius: $radius-full;
+  }
+
+  .category-title {
+    font-size: $text-2xl;
+    font-weight: $font-bold;
     color: $gray-900;
     margin-bottom: $space-3;
   }
 
-  .service-description {
+  .category-description {
     font-size: $text-base;
     color: $gray-600;
     line-height: $leading-relaxed;
+    margin-bottom: $space-5;
+  }
+
+  .category-capabilities {
+    list-style: none;
+    padding: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-3;
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: $space-2;
+      font-size: $text-sm;
+      color: $gray-600;
+
+      svg {
+        color: $brand-cyan;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+    }
   }
 }
-
