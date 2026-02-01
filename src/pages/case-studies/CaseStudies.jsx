@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./case-studies.scss";
-import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu, BsRobot, BsBox, BsArrowRepeat } from "react-icons/bs";
+import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu, BsRobot, BsBox, BsArrowRepeat, BsHddNetwork, BsSpeedometer } from "react-icons/bs";
 import BussinessForm from "../services/bussinessform/BussinessForm";
 
 const caseStudies = [
@@ -241,6 +241,86 @@ const caseStudies = [
       "AWS EKS", "Amazon RDS", "S3", "SQS",
       "Apache Kafka", "Docker", "Terraform"
     ]
+  },
+  {
+    id: "kafka-migration-confluent-usa",
+    client: "Fortune 500 Retail Corporation",
+    region: "United States",
+    industry: "Retail",
+    title: "Enterprise Kafka Migration to Confluent Cloud",
+    subtitle: "Zero-downtime migration from AWS MSK to Confluent Cloud Freight cluster with Private Network Interface and comprehensive observability",
+    challenge: "A major US retail corporation operating thousands of stores nationwide was running critical real-time inventory, order processing, and supply chain systems on AWS MSK. The platform was hitting scalability limits during peak shopping seasons, and the team needed advanced features like exactly-once semantics, tiered storage, and enterprise-grade stream processing. They required a migration strategy that ensured zero data loss and minimal disruption to their 24/7 retail operations.",
+    solution: "We executed a seamless migration from AWS MSK to Confluent Cloud using a Freight-tier dedicated cluster with Private Network Interface (PNI) for secure, low-latency connectivity. The migration leveraged Cluster Linking for real-time topic synchronization and MirrorMaker 2.0 for consumer offset migration. We implemented comprehensive observability using Confluent Metrics API integrated with Prometheus and custom Grafana dashboards. The entire infrastructure was provisioned and managed through Terraform for reproducibility and GitOps workflows.",
+    outcomes: [
+      { metric: "0", label: "Downtime Minutes" },
+      { metric: "50TB+", label: "Data Migrated" },
+      { metric: "40%", label: "Cost Reduction" },
+      { metric: "3x", label: "Throughput Increase" }
+    ],
+    architecture: {
+      source: {
+        title: "AWS MSK Source Cluster",
+        items: [
+          "Production MSK cluster with 15+ brokers",
+          "VPC peering to Confluent Cloud PNI",
+          "Topic-level migration prioritization",
+          "Consumer group offset preservation"
+        ]
+      },
+      target: {
+        title: "Confluent Cloud Freight Cluster",
+        items: [
+          "Dedicated Freight-tier cluster for enterprise workloads",
+          "Private Network Interface (PNI) for secure connectivity",
+          "Multi-AZ deployment for high availability",
+          "Infinite storage with tiered architecture"
+        ]
+      },
+      migration: {
+        title: "Data Migration Strategy",
+        items: [
+          "Cluster Linking for real-time topic replication",
+          "MirrorMaker 2.0 for offset synchronization",
+          "Phased cutover with traffic shifting",
+          "Automated validation and rollback capabilities"
+        ]
+      },
+      observability: {
+        title: "Metrics & Monitoring",
+        items: [
+          "Confluent Metrics API for cluster telemetry",
+          "Prometheus for metrics collection and storage",
+          "Custom Grafana dashboards for operations",
+          "Alerting for lag, throughput, and errors"
+        ]
+      },
+      networking: {
+        title: "Network Architecture",
+        items: [
+          "AWS Transit Gateway for hybrid connectivity",
+          "Private Network Interface (PNI) endpoint",
+          "mTLS authentication for all connections",
+          "Network policies and security groups"
+        ]
+      },
+      infrastructure: {
+        title: "Infrastructure as Code",
+        items: [
+          "Terraform modules for Confluent Cloud resources",
+          "GitOps workflow with version-controlled configs",
+          "Automated environment provisioning",
+          "State management with remote backends"
+        ]
+      }
+    },
+    technologies: [
+      "Confluent Cloud", "Apache Kafka", "AWS MSK",
+      "Cluster Linking", "MirrorMaker 2.0",
+      "Private Network Interface", "AWS Transit Gateway",
+      "Prometheus", "Grafana", "Confluent Metrics API",
+      "Terraform", "GitOps", "Python",
+      "Schema Registry", "ksqlDB", "Kafka Connect"
+    ]
   }
 ];
 
@@ -337,7 +417,7 @@ function CaseStudyDetail({ study, onBack }) {
                   {key === 'database' && <BsDatabase size={20} />}
                   {key === 'messaging' && <BsGraphUp size={20} />}
                   {key === 'networking' && <BsGear size={20} />}
-                  {key === 'observability' && <BsGraphUp size={20} />}
+                  {key === 'observability' && <BsSpeedometer size={20} />}
                   {key === 'security' && <BsShield size={20} />}
                   {key === 'automation' && <BsLightning size={20} />}
                   {key === 'integration' && <BsPlug size={20} />}
@@ -346,6 +426,10 @@ function CaseStudyDetail({ study, onBack }) {
                   {key === 'ai' && <BsRobot size={20} />}
                   {key === 'workflow' && <BsArrowRepeat size={20} />}
                   {key === 'cloud' && <BsCloud size={20} />}
+                  {key === 'source' && <BsDatabase size={20} />}
+                  {key === 'target' && <BsCloud size={20} />}
+                  {key === 'migration' && <BsArrowRepeat size={20} />}
+                  {key === 'infrastructure' && <BsHddNetwork size={20} />}
                 </div>
                 <h3>{section.title}</h3>
                 <ul>
