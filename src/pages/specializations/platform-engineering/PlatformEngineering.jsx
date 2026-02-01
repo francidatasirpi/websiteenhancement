@@ -239,7 +239,7 @@ export default function PlatformEngineering() {
               <article key={index} className="category-card">
                 <div className="category-header">
                   <div className="category-icon">
-                    <category.icon size={28} />
+                    <category.icon size={22} />
                   </div>
                   <span className="category-tagline">{category.tagline}</span>
                 </div>
@@ -248,7 +248,7 @@ export default function PlatformEngineering() {
                 <ul className="category-capabilities">
                   {category.capabilities.map((capability, capIndex) => (
                     <li key={capIndex}>
-                      <BsCheckCircle size={14} />
+                      <BsCheckCircle size={12} />
                       <span>{capability}</span>
                     </li>
                   ))}
