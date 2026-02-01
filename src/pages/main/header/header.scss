@@ -51,7 +51,7 @@
   padding-top: 120px;
 
   .container {
-    max-width: 1100px;
+    max-width: 1280px;
   }
 }
 
@@ -119,13 +119,17 @@
 
 .hero-services {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: $space-4;
+  grid-template-columns: repeat(5, 1fr);
+  gap: $space-3;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 
-  @media (max-width: $breakpoint-lg) {
+  @media (max-width: $breakpoint-xl) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: $breakpoint-md) {
     grid-template-columns: repeat(2, 1fr);
   }
 
