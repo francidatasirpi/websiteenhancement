@@ -8,12 +8,12 @@
     .hero-badge {
         display: inline-block;
         padding: 8px 20px;
-        background: linear-gradient(135deg, rgba(0, 114, 255, 0.1), rgba(0, 198, 255, 0.1));
-        border: 1px solid rgba(0, 114, 255, 0.2);
+        background: linear-gradient(135deg, rgba(233, 30, 140, 0.1), rgba(0, 114, 255, 0.1));
+        border: 1px solid rgba(233, 30, 140, 0.2);
         border-radius: 50px;
         font-size: 14px;
         font-weight: 600;
-        color: #0072ff;
+        color: #e91e8c;
         margin-bottom: 24px;
         letter-spacing: 0.5px;
     }
@@ -31,7 +31,7 @@
     }
 
     .gradient-text {
-        background: linear-gradient(135deg, #0072ff, #00c6ff);
+        background: linear-gradient(135deg, #e91e8c, #0072ff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -59,17 +59,17 @@
         display: inline-flex;
         align-items: center;
         padding: 14px 32px;
-        background: linear-gradient(135deg, #0072ff, #00c6ff);
+        background: linear-gradient(135deg, #e91e8c, #0072ff);
         color: white;
         font-weight: 600;
         border-radius: 50px;
         text-decoration: none;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+        box-shadow: 0 4px 15px rgba(233, 30, 140, 0.3);
 
         &:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 114, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(233, 30, 140, 0.4);
             color: white;
         }
     }
@@ -87,8 +87,8 @@
         transition: all 0.3s ease;
 
         &:hover {
-            border-color: #0072ff;
-            color: #0072ff;
+            border-color: #e91e8c;
+            color: #e91e8c;
         }
     }
 
@@ -133,9 +133,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, rgba(0, 114, 255, 0.1), rgba(0, 198, 255, 0.1));
+        background: linear-gradient(135deg, rgba(233, 30, 140, 0.1), rgba(0, 114, 255, 0.1));
         border-radius: 12px;
-        color: #0072ff;
+        color: #e91e8c;
         font-size: 22px;
     }
 
@@ -197,8 +197,8 @@
         transition: all 0.3s ease;
 
         &:hover {
-            border-color: #0072ff;
-            box-shadow: 0 8px 24px rgba(0, 114, 255, 0.1);
+            border-color: #e91e8c;
+            box-shadow: 0 8px 24px rgba(233, 30, 140, 0.1);
         }
     }
 
@@ -208,9 +208,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, rgba(0, 114, 255, 0.1), rgba(0, 198, 255, 0.1));
+        background: linear-gradient(135deg, rgba(233, 30, 140, 0.1), rgba(0, 114, 255, 0.1));
         border-radius: 14px;
-        color: #0072ff;
+        color: #e91e8c;
         font-size: 24px;
         margin-bottom: 20px;
     }
