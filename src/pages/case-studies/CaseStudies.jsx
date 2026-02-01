@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./case-studies.scss";
-import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu, BsRobot, BsBox, BsArrowRepeat, BsHddNetwork, BsSpeedometer, BsPhone, BsServer } from "react-icons/bs";
+import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu, BsRobot, BsBox, BsArrowRepeat, BsHddNetwork, BsSpeedometer, BsPhone, BsServer, BsFileEarmarkPdf, BsFolder, BsTools } from "react-icons/bs";
 import BussinessForm from "../services/bussinessform/BussinessForm";
 
 const caseStudies = [
@@ -420,6 +420,103 @@ const caseStudies = [
       "Terraform", "ArgoCD", "Helm",
       "Prometheus", "Grafana", "ELK Stack"
     ]
+  },
+  {
+    id: "alfresco-medical-billing-usa",
+    client: "Healthcare Technology Provider",
+    region: "United States",
+    industry: "Healthcare",
+    title: "Enterprise Medical Billing Document Management Platform",
+    subtitle: "Custom PDF editor and Alfresco integration for streamlined medical billing workflows on AWS infrastructure",
+    challenge: "A healthcare technology company in the USA was struggling with inefficient document management processes for their medical billing operations. Their legacy system couldn't handle the volume of insurance claims, EOBs (Explanation of Benefits), and patient documentation. Manual PDF processing was error-prone and time-consuming, leading to billing delays and compliance risks. They needed a robust document management solution that could integrate seamlessly with their existing healthcare systems while meeting HIPAA requirements.",
+    solution: "We designed and implemented a comprehensive document management platform built on Alfresco Community Edition, enhanced with custom modules for medical billing workflows. The centerpiece is a custom-built PDF editor tool that enables real-time document annotation, form filling, and digital signatures directly within the Alfresco interface. The solution features automated document classification, OCR processing for claim extraction, and intelligent routing to billing specialists. The entire platform is deployed on AWS with PostgreSQL as the backend database, ensuring high availability and HIPAA-compliant data handling.",
+    outcomes: [
+      { metric: "70%", label: "Processing Time Reduced" },
+      { metric: "99.9%", label: "Document Accuracy" },
+      { metric: "50K+", label: "Monthly Documents" },
+      { metric: "100%", label: "HIPAA Compliant" }
+    ],
+    architecture: {
+      ecm: {
+        title: "Alfresco Content Services",
+        items: [
+          "Alfresco Community Edition 7.x deployment",
+          "Custom content models for medical billing documents",
+          "Advanced metadata extraction and tagging",
+          "Automated document lifecycle management"
+        ]
+      },
+      pdfEditor: {
+        title: "Custom PDF Editor Tool",
+        items: [
+          "Browser-based PDF annotation and editing",
+          "Digital signature integration for approvals",
+          "Form field auto-population from patient data",
+          "Redaction tools for PHI protection"
+        ]
+      },
+      frontend: {
+        title: "Angular Web Application",
+        items: [
+          "Angular 16+ with Material Design components",
+          "Real-time document preview and editing",
+          "Role-based dashboard for billing specialists",
+          "Mobile-responsive interface for remote access"
+        ]
+      },
+      backend: {
+        title: "Java Microservices",
+        items: [
+          "Spring Boot services for business logic",
+          "Custom Alfresco modules and extensions",
+          "RESTful APIs for system integration",
+          "Asynchronous processing with message queues"
+        ]
+      },
+      database: {
+        title: "PostgreSQL Database",
+        items: [
+          "Amazon RDS PostgreSQL for Alfresco repository",
+          "Optimized indexing for document search",
+          "Automated backups with encryption",
+          "Read replicas for reporting workloads"
+        ]
+      },
+      cloud: {
+        title: "AWS Infrastructure",
+        items: [
+          "Amazon EC2 for Alfresco application servers",
+          "Amazon S3 for content storage tier",
+          "Amazon OpenSearch for full-text search",
+          "AWS CloudWatch for monitoring and alerts"
+        ]
+      },
+      integration: {
+        title: "Healthcare Integrations",
+        items: [
+          "HL7 FHIR integration for patient data",
+          "Claims processing system connectivity",
+          "Insurance portal API integrations",
+          "Automated EOB document ingestion"
+        ]
+      },
+      maintenance: {
+        title: "Managed Services & Support",
+        items: [
+          "24/7 application monitoring and support",
+          "Regular security patches and updates",
+          "Performance optimization and tuning",
+          "Quarterly system health assessments"
+        ]
+      }
+    },
+    technologies: [
+      "Alfresco", "Java", "Spring Boot", "Angular",
+      "PostgreSQL", "Amazon RDS", "AWS EC2", "Amazon S3",
+      "Amazon OpenSearch", "Docker", "Nginx",
+      "PDF.js", "Apache POI", "Tesseract OCR",
+      "HL7 FHIR", "REST APIs", "ActiveMQ"
+    ]
   }
 ];
 
@@ -533,6 +630,9 @@ function CaseStudyDetail({ study, onBack }) {
                   {key === 'admin' && <BsDisplay size={20} />}
                   {key === 'primary' && <BsCloud size={20} />}
                   {key === 'dr' && <BsServer size={20} />}
+                  {key === 'ecm' && <BsFolder size={20} />}
+                  {key === 'pdfEditor' && <BsFileEarmarkPdf size={20} />}
+                  {key === 'maintenance' && <BsTools size={20} />}
                 </div>
                 <h3>{section.title}</h3>
                 <ul>
