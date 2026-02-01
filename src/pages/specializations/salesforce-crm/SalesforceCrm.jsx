@@ -9,6 +9,7 @@ import sf_icon_5 from "../../../assets/images/icons/sf_icon_5.svg";
 import sf_icon_6 from "../../../assets/images/icons/sf_icon_6.svg";
 import sf_icon_7 from "../../../assets/images/icons/sf_icon_7.svg";
 import sf_icon_8 from "../../../assets/images/icons/sf_icon_8.svg";
+import sf_certificates from "../../../assets/images/sales-force/sf_certificates.png";
 
 const stats = [
   { value: "200+", label: "CRM Implementations" },
@@ -69,14 +70,6 @@ const processSteps = [
   { number: "06", title: "Support", desc: "Ongoing optimization and technical support" }
 ];
 
-const certifications = [
-  "Salesforce Administrator",
-  "Platform Developer I",
-  "Platform Developer II",
-  "Sales Cloud Consultant",
-  "Service Cloud Consultant",
-  "Marketing Cloud Specialist"
-];
 
 export default function SalesforceCrm() {
   useEffect(() => {
@@ -182,13 +175,8 @@ export default function SalesforceCrm() {
           <p className="section-subtitle text-center">
             Our team holds industry-recognized Salesforce certifications ensuring quality delivery
           </p>
-          <div className="certifications-grid">
-            {certifications.map((cert, index) => (
-              <div key={index} className="certification-badge">
-                <span className="cert-icon">SF</span>
-                <span className="cert-name">{cert}</span>
-              </div>
-            ))}
+          <div className="certificates-wrapper">
+            <img src={sf_certificates} alt="Salesforce Certifications" className="certificates-image" />
           </div>
         </div>
       </section>

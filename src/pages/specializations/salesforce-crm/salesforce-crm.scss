@@ -428,55 +428,14 @@
     margin-bottom: $space-8;
   }
 
-  .certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $space-5;
-
-    @media (max-width: $breakpoint-md) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: $breakpoint-sm) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .certification-badge {
+  .certificates-wrapper {
     display: flex;
-    align-items: center;
-    gap: $space-4;
-    background: $white;
-    border: 1px solid $gray-200;
-    border-radius: $radius-lg;
-    padding: $space-4 $space-5;
-    transition: all $transition-base;
-
-    &:hover {
-      border-color: transparent;
-      box-shadow: $shadow-lg;
-      transform: translateY(-2px);
-    }
-  }
-
-  .cert-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, $brand-cyan, $brand-blue);
-    border-radius: $radius-md;
-    color: $white;
-    font-size: $text-sm;
-    font-weight: $font-bold;
-    flex-shrink: 0;
   }
 
-  .cert-name {
-    font-size: $text-base;
-    font-weight: $font-medium;
-    color: $gray-800;
+  .certificates-image {
+    max-width: 100%;
+    height: auto;
   }
 }
 
