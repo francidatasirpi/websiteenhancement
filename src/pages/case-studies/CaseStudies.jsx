@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./case-studies.scss";
-import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe } from "react-icons/bs";
+import { BsCloud, BsDatabase, BsGraphUp, BsShield, BsGear, BsArrowRight, BsCheckCircle, BsBuilding, BsGlobe, BsLightning, BsPlug, BsDisplay, BsCpu } from "react-icons/bs";
 import BussinessForm from "../services/bussinessform/BussinessForm";
 
 const caseStudies = [
@@ -80,6 +80,86 @@ const caseStudies = [
       "PostgreSQL", "pg_logical", "Confluent Kafka", "CFK",
       "Istio", "Kong", "Prometheus", "Grafana", "Grafana Alloy",
       "OpenTelemetry", "Tempo", "Jaeger", "Terraform", "ArgoCD"
+    ]
+  },
+  {
+    id: "cybersecurity-soc-automation-usa",
+    client: "Enterprise Cybersecurity Provider",
+    region: "United States",
+    industry: "Cybersecurity",
+    title: "AI-Powered SOC Automation Platform",
+    subtitle: "Transforming Security Operations with intelligent playbook automation, MCP integration, and on-premises Kubernetes deployment",
+    challenge: "A leading cybersecurity company in the USA was struggling with alert fatigue and manual incident response processes in their Security Operations Center. Their analysts were overwhelmed with thousands of daily alerts, leading to delayed responses and missed threats. They needed an intelligent automation platform that could triage alerts, execute response playbooks automatically, and integrate seamlessly with their existing security tooling while maintaining strict data residency requirements.",
+    solution: "We built a comprehensive SOC automation platform deployed on an on-premises Kubernetes cluster. The solution leverages AI-powered playbook automation to intelligently triage and respond to security alerts, integrated through Model Context Protocol (MCP) for seamless tool orchestration. The platform automatically clears vulnerabilities and alerts based on learned patterns while providing full visibility and control to security analysts.",
+    outcomes: [
+      { metric: "85%", label: "Alert Auto-Resolution" },
+      { metric: "60%", label: "MTTR Reduction" },
+      { metric: "500+", label: "Playbooks Deployed" },
+      { metric: "24/7", label: "Autonomous Operation" }
+    ],
+    architecture: {
+      compute: {
+        title: "On-Premises Kubernetes",
+        items: [
+          "Self-managed Kubernetes cluster with HA control plane",
+          "Bare-metal nodes for maximum performance",
+          "Air-gapped deployment for security compliance",
+          "GitOps-based deployment with ArgoCD"
+        ]
+      },
+      automation: {
+        title: "AI-Powered Playbook Engine",
+        items: [
+          "Python-based playbook execution framework",
+          "LLM integration for intelligent decision making",
+          "Dynamic playbook generation based on threat context",
+          "Automated vulnerability remediation workflows"
+        ]
+      },
+      integration: {
+        title: "MCP Integration Layer",
+        items: [
+          "Model Context Protocol for tool orchestration",
+          "Unified API for SIEM, EDR, and SOAR tools",
+          "Real-time bidirectional data sync",
+          "Custom connectors for legacy security tools"
+        ]
+      },
+      frontend: {
+        title: "Analyst Dashboard",
+        items: [
+          "Next.js-based responsive web application",
+          "Real-time alert visualization and management",
+          "Playbook builder with drag-and-drop interface",
+          "Role-based access control and audit logging"
+        ]
+      },
+      backend: {
+        title: "Core Services",
+        items: [
+          "Java microservices for high-throughput processing",
+          "Event-driven architecture with Kafka",
+          "PostgreSQL for persistent storage",
+          "Redis for caching and real-time state"
+        ]
+      },
+      security: {
+        title: "Security & Compliance",
+        items: [
+          "Zero-trust network architecture",
+          "End-to-end encryption for all data flows",
+          "SOC 2 Type II compliance ready",
+          "Comprehensive audit trail and RBAC"
+        ]
+      }
+    },
+    technologies: [
+      "Kubernetes", "Docker", "ArgoCD", "Helm",
+      "Next.js", "React", "TypeScript",
+      "Java", "Spring Boot", "Python",
+      "PostgreSQL", "Redis", "Apache Kafka",
+      "MCP", "OpenAI", "LangChain",
+      "Prometheus", "Grafana", "ELK Stack"
     ]
   }
 ];
@@ -179,6 +259,10 @@ function CaseStudyDetail({ study, onBack }) {
                   {key === 'networking' && <BsGear size={20} />}
                   {key === 'observability' && <BsGraphUp size={20} />}
                   {key === 'security' && <BsShield size={20} />}
+                  {key === 'automation' && <BsLightning size={20} />}
+                  {key === 'integration' && <BsPlug size={20} />}
+                  {key === 'frontend' && <BsDisplay size={20} />}
+                  {key === 'backend' && <BsCpu size={20} />}
                 </div>
                 <h3>{section.title}</h3>
                 <ul>
