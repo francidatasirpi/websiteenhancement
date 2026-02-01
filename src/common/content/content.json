@@ -41,7 +41,49 @@
     "title": "About ",
     "description": "We are a team of engineers, designers, and strategists who build software that solves real problems. From startups to established businesses, we partner with organizations that value quality, transparency, and long-term thinking.",
     "buttonText": "Learn more about us",
-    "buttonLink": "/about-us"
+    "buttonLink": "/about-us",
+    "mission": "To empower businesses with innovative technology solutions that drive growth, efficiency, and competitive advantage in an ever-evolving digital landscape.",
+    "vision": "To be the trusted technology partner for organizations worldwide, known for delivering excellence, fostering innovation, and creating lasting value.",
+    "values": [
+      {
+        "title": "Excellence",
+        "description": "We deliver quality in everything we do, from code to communication.",
+        "icon": "excellence"
+      },
+      {
+        "title": "Integrity",
+        "description": "We build trust through transparency, honesty, and ethical practices.",
+        "icon": "integrity"
+      },
+      {
+        "title": "Innovation",
+        "description": "We embrace new technologies and creative solutions to solve complex problems.",
+        "icon": "innovation"
+      },
+      {
+        "title": "Partnership",
+        "description": "We invest in long-term relationships, not just transactions.",
+        "icon": "partnership"
+      }
+    ],
+    "whyChooseUs": [
+      {
+        "title": "Deep Technical Expertise",
+        "description": "Our engineers bring years of hands-on experience across cloud platforms, enterprise systems, and modern development practices."
+      },
+      {
+        "title": "Business-First Approach",
+        "description": "We focus on outcomes that matter to your business, not just technical deliverables."
+      },
+      {
+        "title": "Agile & Transparent",
+        "description": "Regular updates, clear communication, and flexible processes keep you in control."
+      },
+      {
+        "title": "End-to-End Ownership",
+        "description": "From strategy to support, we take full responsibility for delivering results."
+      }
+    ]
   },
   "stats": {
     "projects": "50+",
