@@ -97,19 +97,22 @@
   },
   "caseStudies": [
     {
-      "title": "Reduced infra cost by 85%",
-      "description": "Serverless migration + CI/CD improvements",
-      "tech": "AWS, Terraform, Kubernetes"
+      "title": "Cloud Infrastructure Optimization",
+      "description": "Reduced infrastructure costs by 85% through serverless migration, container orchestration, and automated CI/CD pipelines across multi-cloud environments.",
+      "tech": "Multi-Cloud, Kubernetes, Terraform",
+      "link": "/platform-engineering"
     },
     {
-      "title": "Salesforce OMS modernization",
-      "description": "Stability + faster releases",
-      "tech": "Sales Cloud, OMS, Integrations"
+      "title": "Enterprise CRM Transformation",
+      "description": "Modernized Salesforce implementation with custom OMS integration, enabling faster releases and improved system stability for enterprise operations.",
+      "tech": "Salesforce, OMS, Integrations",
+      "link": "/salesforce-crm"
     },
     {
-      "title": "Security toolkit for SMBs",
-      "description": "Endpoint & compliance visibility",
-      "tech": "MDM, DLP, Monitoring"
+      "title": "Comprehensive Security Framework",
+      "description": "Deployed enterprise-grade security toolkit providing endpoint protection, compliance monitoring, and real-time threat visibility for growing businesses.",
+      "tech": "MDM, SIEM, Compliance",
+      "link": "/cyber-security"
     }
   ],
   "howWeWork": [

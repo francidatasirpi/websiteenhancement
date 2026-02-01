@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./case-studies.scss";
 import content from "../../../common/content/content.json";
 import { BsArrowRight } from "react-icons/bs";
@@ -24,13 +25,12 @@ function CaseStudies() {
       <div className="case-studies-grid">
         {caseStudies.map((study, index) => (
           <div key={index} className="case-study-card">
-            <div className="case-study-number">0{index + 1}</div>
             <h3 className="case-study-title">{study.title}</h3>
             <p className="case-study-desc">{study.description}</p>
             <div className="case-study-tech">{study.tech}</div>
-            <button className="case-study-link">
-              Read more <BsArrowRight size={14} />
-            </button>
+            <Link to={study.link} className="case-study-link">
+              Learn more <BsArrowRight size={14} />
+            </Link>
           </div>
         ))}
       </div>
