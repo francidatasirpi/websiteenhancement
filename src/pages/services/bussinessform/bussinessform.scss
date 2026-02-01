@@ -1,112 +1,209 @@
 @import "../../../assets/scss/variables.scss";
 
-// Define color and font variables
-$font-family: "Roboto";
-$font-weight-regular: 500;
-$font-weight-bold: 600;
-$font-weight-semi-bold: 700;
-$color-light-gray: #939393;
-$color-dark-gray: #9b9b9b;
-$btn-bg-color: $color-light-gray;
-$btn-hover-bg-color: $color-light-gray;
-$font-size-md: 1.3rem;
-$font-size-sm: 1rem;
-$font-size-lg: 48px;
-$line-height-lg: 88px;
-$transition-speed: 0.2s;
-
-// Bussiness Content Styling
-.bussiness_content {
-  font-family: $font-family;
-  font-style: normal;
-  font-weight: $font-weight-regular;
-  font-size: $font-size-lg;
-  line-height: $line-height-lg;
-  color: $black;
+.contact-section {
+  padding: $space-10 0;
+  background: $surface-dark;
+  margin: 0 -1.5rem;
+  margin-bottom: 0;
 }
 
-/* Form Container Styling */
-.form-container {
-  border-radius: 8px;
-  overflow: hidden;
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 $space-5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-10;
+  align-items: center;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr;
+    gap: $space-8;
+  }
 }
 
-/* Form Specific Styling */
-.business-form {
-  z-index: 1;
+.contact-content {
+  .contact-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    padding: 8px 16px;
+    background: rgba(0, 255, 251, 0.08);
+    border: 1px solid rgba(0, 255, 251, 0.15);
+    border-radius: $radius-full;
+    font-size: $text-xs;
+    font-weight: $font-medium;
+    color: $brand-cyan;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: $space-4;
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: $brand-cyan;
+      border-radius: 50%;
+    }
+  }
+
+  .contact-heading {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: $font-bold;
+    color: $white;
+    margin-bottom: $space-4;
+    line-height: 1.2;
+
+    .gradient-text {
+      background: $gradient-text;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .contact-description {
+    font-size: $text-lg;
+    color: $gray-400;
+    margin-bottom: $space-6;
+    line-height: 1.6;
+    max-width: 440px;
+  }
 }
 
-.business-form h4 {
-  font-weight: $font-weight-bold;
+.trust-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    font-size: $text-sm;
+    color: $gray-400;
+
+    svg {
+      color: $brand-cyan;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.contact-form-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-xl;
+  padding: $space-7;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: $space-5;
+  }
+}
+
+.success-message {
   text-align: center;
+  padding: $space-8 0;
+
+  svg {
+    color: $brand-cyan;
+    margin-bottom: $space-4;
+  }
+
+  h3 {
+    font-size: $text-2xl;
+    font-weight: $font-semibold;
+    color: $white;
+    margin-bottom: $space-2;
+  }
+
+  p {
+    font-size: $text-base;
+    color: $gray-400;
+  }
 }
 
-.business-form .btn-primary {
-  background-color: $btn-bg-color;
-  border-color: $btn-bg-color;
-}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
 
-.business-form .btn-primary:hover {
-  background-color: $btn-hover-bg-color;
-  border-color: $btn-hover-bg-color;
-}
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-4;
 
-.form__group {
-  position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
-  width: 100%;
-}
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
 
-.form__group .form__field {
-  font-family: inherit;
-  width: 100%;
-  border: 0;
-  border-bottom: 2px solid $color-dark-gray;
-  outline: 0;
-  font-size: $font-size-md;
-  color: $black;
-  padding: 16px 0;
-  background: transparent;
-  transition: border-color $transition-speed;
-}
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
 
-.form__group .form__field::placeholder {
-  color: transparent;
-}
+    &.full-width {
+      grid-column: 1 / -1;
+    }
 
-.form__group .form__field:placeholder-shown ~ .form__label {
-  font-size: $font-size-md;
-  cursor: text;
-  top: 20px;
-}
+    label {
+      font-size: $text-sm;
+      font-weight: $font-medium;
+      color: $gray-300;
+    }
 
-.form__group .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: $transition-speed;
-  font-size: $font-size-sm;
-  color: $color-dark-gray;
-}
+    input,
+    select,
+    textarea {
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: $radius-md;
+      font-size: $text-base;
+      color: $white;
+      transition: all 0.2s ease;
+      font-family: inherit;
 
-.form__group .form__field:focus ~ .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: $transition-speed;
-  font-size: $font-size-sm;
-  color: $color-dark-gray;
-  font-weight: $font-weight-semi-bold;
-}
+      &::placeholder {
+        color: $gray-500;
+      }
 
-.form__group .form__field:focus {
-  padding-bottom: 6px;
-  border-width: 3px;
-  border-image-slice: 1;
-}
+      &:focus {
+        outline: none;
+        border-color: $brand-cyan;
+        background: rgba(255, 255, 255, 0.08);
+      }
 
-.form__group .form__field:required,
-.form__group .form__field:invalid {
-  box-shadow: none;
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2371717a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+
+      option {
+        background: $surface-dark;
+        color: $white;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px 32px;
+    margin-top: $space-3;
+    font-size: $text-base;
+    justify-content: center;
+  }
 }

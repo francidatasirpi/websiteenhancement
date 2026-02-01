@@ -1,0 +1,147 @@
+@import "../../../assets/scss/variables.scss";
+
+.case-studies-section {
+  padding: $space-10 0;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: $space-9;
+  }
+
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    padding: 8px 16px;
+    background: rgba(0, 255, 251, 0.08);
+    border: 1px solid rgba(0, 255, 251, 0.15);
+    border-radius: $radius-full;
+    font-size: $text-xs;
+    font-weight: $font-medium;
+    color: $brand-cyan;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: $space-4;
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: $brand-cyan;
+      border-radius: 50%;
+    }
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: $font-bold;
+    color: $gray-900;
+    margin-bottom: $space-4;
+
+    .gradient-text {
+      background: $gradient-text;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .section-description {
+    font-size: $text-lg;
+    color: $gray-600;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-5;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-study-card {
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: $radius-xl;
+  padding: $space-6;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    border-color: $brand-cyan;
+    box-shadow: 0 8px 30px rgba(0, 198, 255, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .case-study-number {
+    font-size: $text-4xl;
+    font-weight: $font-bold;
+    background: $gradient-text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.3;
+    margin-bottom: $space-3;
+  }
+
+  .case-study-title {
+    font-size: $text-xl;
+    font-weight: $font-semibold;
+    color: $gray-900;
+    margin-bottom: $space-3;
+    line-height: 1.3;
+  }
+
+  .case-study-desc {
+    font-size: $text-base;
+    color: $gray-600;
+    margin-bottom: $space-4;
+    line-height: 1.6;
+  }
+
+  .case-study-tech {
+    display: inline-block;
+    font-size: $text-xs;
+    font-weight: $font-medium;
+    color: $gray-500;
+    background: $gray-100;
+    padding: 6px 12px;
+    border-radius: $radius-full;
+    margin-bottom: $space-5;
+  }
+
+  .case-study-link {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: $text-sm;
+    font-weight: $font-medium;
+    color: $brand-blue-dark;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $brand-cyan;
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+
+    svg {
+      transition: transform 0.2s ease;
+    }
+  }
+}

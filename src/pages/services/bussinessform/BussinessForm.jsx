@@ -1,16 +1,25 @@
 import React, { useState } from "react";
 import "./bussinessform.scss";
-import logo from "../../../assets/images/Logo/dsweb_logo.png";
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUpRight, BsCheckCircle, BsShieldCheck, BsClock } from "react-icons/bs";
 import { elementIds } from "../../../constants";
 import links from "../../../common/content/links.json";
+
+const serviceOptions = [
+  { value: "", label: "What do you need help with?" },
+  { value: "platform-engineering", label: "Platform Engineering" },
+  { value: "application-development", label: "Application Development" },
+  { value: "salesforce-crm", label: "Salesforce & CRM" },
+  { value: "cybersecurity", label: "Cybersecurity" },
+  { value: "other", label: "Other / Not sure" }
+];
 
 const BussinessForm = () => {
   const [formData, setFormData] = useState({
     last_name: "",
     email: "",
-    phone: "",
     company: "",
+    service: "",
+    message: ""
   });
 
   const [isSuccess, setIsSuccess] = useState(false);
@@ -27,7 +36,7 @@ const BussinessForm = () => {
     setIsSuccess(true);
     setTimeout(() => {
       setIsSuccess(false);
-    }, 2000);
+    }, 3000);
   };
 
   const handleSubmit = async (event) => {
@@ -38,8 +47,8 @@ const BussinessForm = () => {
       retURL: links.datasirpi + "/#ds-contact",
       last_name: formData.last_name,
       email: formData.email,
-      phone: formData.phone,
       company: formData.company,
+      description: `Service: ${formData.service}\n\n${formData.message}`,
       lead_source: "DS-WebSite",
     };
 
@@ -57,106 +66,131 @@ const BussinessForm = () => {
       setFormData({
         last_name: "",
         email: "",
-        phone: "",
         company: "",
+        service: "",
+        message: ""
       });
       formSubmitted();
     }
   };
 
   return (
-    <div id={elementIds.contact} className="container mt-4">
-      <div className="row">
-        {/* Left Content Section */}
-        <div className="col-12 col-md-6 bussiness_content mt-4">
-          <div className="d-flex align-items-center mb-3">
-            <div className="h3 me-md-3">Let's talk about what
-              <img
-                src={logo}
-                alt="Salesforce Consulting Partners"
-                className="img-fluid mx-2"
-                style={{ maxWidth: "100px" }}
-              />
-              can do for your business.</div>
+    <section id={elementIds.contact} className="contact-section">
+      <div className="contact-container">
+        <div className="contact-content">
+          <span className="contact-badge">
+            <span className="badge-dot"></span>
+            Get Started
+          </span>
+          <h2 className="contact-heading">
+            Book a Free <span className="gradient-text">Consultation</span>
+          </h2>
+          <p className="contact-description">
+            Tell us about your project and we'll get back to you within 24 hours with a plan.
+          </p>
+
+          <div className="trust-indicators">
+            <div className="trust-item">
+              <BsClock size={18} />
+              <span>We respond within 24 hours</span>
+            </div>
+            <div className="trust-item">
+              <BsShieldCheck size={18} />
+              <span>NDA available on request</span>
+            </div>
+            <div className="trust-item">
+              <BsCheckCircle size={18} />
+              <span>No obligation consultation</span>
+            </div>
           </div>
         </div>
-        <div className="col-12 col-md-6">
-          <form onSubmit={handleSubmit}>
-            <div className="form__group field mt-0">
-              <input
-                type="text"
-                className="form__field"
-                placeholder="Full Name"
-                name="last_name"
-                id="last_name"
-                maxLength="80"
-                required
-                value={formData.last_name}
-                onChange={handleChange}
-              />
-              <label htmlFor="last_name" className="form__label">
-                Name
-              </label>
+
+        <div className="contact-form-wrapper">
+          {isSuccess ? (
+            <div className="success-message">
+              <BsCheckCircle size={48} />
+              <h3>Thank you!</h3>
+              <p>We'll be in touch within 24 hours.</p>
             </div>
-            <div className="form__group field">
-              <input
-                type="email"
-                className="form__field"
-                placeholder="Email Address"
-                name="email"
-                id="email"
-                maxLength="80"
-                required
-                value={formData.email}
-                onChange={handleChange}
-              />
-              <label htmlFor="email" className="form__label">
-                Email
-              </label>
-            </div>
-            <div className="form__group field">
-              <input
-                type="tel"
-                className="form__field"
-                placeholder="Phone Number"
-                name="phone"
-                id="phone"
-                maxLength="40"
-                value={formData.phone}
-                onChange={handleChange}
-              />
-              <label htmlFor="phone" className="form__label">
-                Phone
-              </label>
-            </div>
-            <div className="form__group field">
-              <input
-                type="text"
-                className="form__field"
-                placeholder="Company"
-                name="company"
-                id="company"
-                maxLength="40"
-                value={formData.company}
-                onChange={handleChange}
-              />
-              <label htmlFor="company" className="form__label">
-                Company
-              </label>
-            </div>
-            <div className="my-5">
-              {isSuccess && (
-                <div className="alert alert-success mt-2">
-                  <span>✔️ Form submitted successfully!</span>
+          ) : (
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="last_name">Name *</label>
+                  <input
+                    type="text"
+                    id="last_name"
+                    name="last_name"
+                    placeholder="Your name"
+                    required
+                    value={formData.last_name}
+                    onChange={handleChange}
+                  />
                 </div>
-              ) || (<button type="submit" className="ds-btn">
-              <span>Send <BsArrowUpRight strokeWidth={1} size={16} /></span>
-            </button>)}
-            </div>
-          </form>
+                <div className="form-group">
+                  <label htmlFor="email">Email *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label htmlFor="company">Company</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Company name"
+                    value={formData.company}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="service">Service *</label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    value={formData.service}
+                    onChange={handleChange}
+                  >
+                    {serviceOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-group full-width">
+                <label htmlFor="message">Message (optional)</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about your project..."
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <button type="submit" className="ds-btn submit-btn">
+                <span>Book a Free Consultation <BsArrowUpRight strokeWidth={1} size={16} /></span>
+              </button>
+            </form>
+          )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

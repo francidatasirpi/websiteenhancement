@@ -1,0 +1,141 @@
+@import "../../../assets/scss/variables.scss";
+
+.how-we-work-section {
+  padding: $space-10 0;
+  background: $background-off-white;
+  margin: 0 -1.5rem;
+  padding-left: $space-5;
+  padding-right: $space-5;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: $space-9;
+  }
+
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    padding: 8px 16px;
+    background: rgba(0, 255, 251, 0.08);
+    border: 1px solid rgba(0, 255, 251, 0.15);
+    border-radius: $radius-full;
+    font-size: $text-xs;
+    font-weight: $font-medium;
+    color: $brand-blue-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: $space-4;
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: $brand-cyan;
+      border-radius: 50%;
+    }
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: $font-bold;
+    color: $gray-900;
+    margin-bottom: $space-4;
+
+    .gradient-text {
+      background: $gradient-text;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .section-description {
+    font-size: $text-lg;
+    color: $gray-600;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-5;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-6;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: $space-5;
+  }
+}
+
+.step-card {
+  background: $white;
+  border-radius: $radius-xl;
+  padding: $space-6;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: $gradient-brand;
+    border-radius: 50%;
+    font-size: $text-xl;
+    font-weight: $font-bold;
+    color: $white;
+    margin-bottom: $space-4;
+  }
+
+  .step-content {
+    .step-title {
+      font-size: $text-lg;
+      font-weight: $font-semibold;
+      color: $gray-900;
+      margin-bottom: $space-2;
+    }
+
+    .step-desc {
+      font-size: $text-sm;
+      color: $gray-600;
+      line-height: 1.6;
+    }
+  }
+
+  .step-connector {
+    display: none;
+
+    @media (min-width: $breakpoint-lg) {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: -$space-5;
+      width: $space-5;
+      height: 2px;
+      background: linear-gradient(90deg, $brand-cyan, $brand-blue-dark);
+      transform: translateY(-50%);
+    }
+  }
+
+  &:last-child .step-connector {
+    display: none;
+  }
+}

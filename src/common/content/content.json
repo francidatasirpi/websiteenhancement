@@ -1,16 +1,36 @@
 {
   "home": {
-    "mainHeading": "Building Digital Products That Matter",
-    "subHeading": "We help businesses turn complex challenges into elegant software solutions",
-    "subHeadings": [
-      "Platform Engineering",
-      "Application Development",
-      "Salesforce & CRM",
-      "Cybersecurity"
-    ],
-    "ctaText": "Our Work",
-    "ctaSecondary": "Contact Us"
+    "mainHeading": "Ship faster. Stay secure. Scale confidently.",
+    "subHeading": "We deliver Platform Engineering, Salesforce & CRM, and Cybersecurity with measurable outcomes.",
+    "ctaText": "Book a Free Consultation",
+    "ctaSecondary": "See Our Work"
   },
+  "services": [
+    {
+      "title": "Platform Engineering",
+      "description": "EKS, IaC, GitOps, Observability",
+      "outcome": "Faster releases, fewer incidents",
+      "path": "/platform-engineering"
+    },
+    {
+      "title": "Application Development",
+      "description": "Web + backend systems",
+      "outcome": "Stable, maintainable delivery",
+      "path": "/application-engineering"
+    },
+    {
+      "title": "Salesforce & CRM",
+      "description": "Architecture, integrations, delivery",
+      "outcome": "Clean orgs, faster rollout",
+      "path": "/salesforce-crm"
+    },
+    {
+      "title": "Cybersecurity",
+      "description": "Assessments, SOC toolkit, hardening",
+      "outcome": "Reduce risk & audit pain",
+      "path": "/cyber-security"
+    }
+  ],
   "about": {
     "title": "About ",
     "description": "We are a team of engineers, designers, and strategists who build software that solves real problems. From startups to established businesses, we partner with organizations that value quality, transparency, and long-term thinking.",
@@ -27,6 +47,45 @@
     "countries": "10+",
     "countriesLabel": "Countries Served"
   },
+  "caseStudies": [
+    {
+      "title": "Reduced infra cost by 85%",
+      "description": "Serverless migration + CI/CD improvements",
+      "tech": "AWS, Terraform, Kubernetes"
+    },
+    {
+      "title": "Salesforce OMS modernization",
+      "description": "Stability + faster releases",
+      "tech": "Sales Cloud, OMS, Integrations"
+    },
+    {
+      "title": "Security toolkit for SMBs",
+      "description": "Endpoint & compliance visibility",
+      "tech": "MDM, DLP, Monitoring"
+    }
+  ],
+  "howWeWork": [
+    {
+      "step": "01",
+      "title": "Discovery Call",
+      "description": "30-minute conversation to understand your challenges"
+    },
+    {
+      "step": "02",
+      "title": "Assessment & Proposal",
+      "description": "Technical review and tailored solution roadmap"
+    },
+    {
+      "step": "03",
+      "title": "Delivery Sprint",
+      "description": "Agile execution with regular check-ins"
+    },
+    {
+      "step": "04",
+      "title": "Launch & Support",
+      "description": "Go-live assistance and ongoing partnership"
+    }
+  ],
   "enterprise": {
     "tagline": "Trusted by Growing Businesses",
     "description": "We work with organizations who want reliable technology partners, not just vendors."

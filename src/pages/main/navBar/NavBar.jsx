@@ -129,7 +129,7 @@ function NavBar({ isSeparatePage = false }) {
                       className={`${isActive(elementIds.services) ? "active" : ""} nav-link d-flex align-items-center`}
                       onClick={() => navigateToId(elementIds.services)}
                     >
-                      <div>Service</div>
+                      <div>Services</div>
                       <BsChevronDown className={`ms-2 chevron-icon ${showServiceMenu ? "rotated" : ""}`} size={14} />
                     </div>
                     {showServiceMenu && (
@@ -153,7 +153,7 @@ function NavBar({ isSeparatePage = false }) {
 
               <div className="d-none d-lg-block">
                 <div className="ds-btn" onClick={onClickContactUs}>
-                  <span>Contact Us <BsArrowUpRight strokeWidth={1} size={16} /></span>
+                  <span>Book a Free Consultation <BsArrowUpRight strokeWidth={1} size={16} /></span>
                 </div>
               </div>
 
@@ -182,7 +182,7 @@ function NavBar({ isSeparatePage = false }) {
             <li onClick={() => { navigate(routesPath.cyberSecurity); setShowMobileMenu(false); }}>Cyber Security</li>
             <li onClick={() => { navigateToId(elementIds.career); setShowMobileMenu(false); }}>Career</li>
             <li onClick={() => { navigateToId(elementIds.blogs); setShowMobileMenu(false); }}>Blogs</li>
-            <li className="contact-item" onClick={onClickContactUs}>Contact Us</li>
+            <li className="contact-item" onClick={onClickContactUs}>Book a Free Consultation</li>
           </ul>
         </div>
       )}

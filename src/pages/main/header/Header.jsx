@@ -3,16 +3,16 @@ import NavBar from "../navBar/NavBar";
 import "./header.scss";
 import content from "../../../common/content/content.json";
 import { useLocation, Link } from "react-router-dom";
-import { elementIds, routesPath } from "../../../constants";
-import { BsArrowUpRight, BsPlayCircle } from "react-icons/bs";
+import { elementIds } from "../../../constants";
+import { BsArrowUpRight, BsArrowRight } from "react-icons/bs";
 
 function Header() {
   const canvasRef = useRef(null);
-  const { mainHeading, subHeading, subHeadings, ctaText } = content.home;
+  const { mainHeading, subHeading, ctaText, ctaSecondary } = content.home;
+  const services = content.services || [];
   const location = useLocation();
   const isSeparatePage = location.pathname && location.pathname !== "/";
 
-  // Animated background particles
   useEffect(() => {
     if (isSeparatePage) return;
 
@@ -40,7 +40,7 @@ function Header() {
           speedX: (Math.random() - 0.5) * 0.3,
           speedY: (Math.random() - 0.5) * 0.3,
           opacity: Math.random() * 0.5 + 0.1,
-          hue: Math.random() * 60 + 180, // Cyan to purple range
+          hue: Math.random() * 60 + 180,
         });
       }
     };
@@ -49,23 +49,19 @@ function Header() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((p, i) => {
-        // Update position
         p.x += p.speedX;
         p.y += p.speedY;
 
-        // Wrap around edges
         if (p.x < 0) p.x = canvas.width;
         if (p.x > canvas.width) p.x = 0;
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, ${p.opacity})`;
         ctx.fill();
 
-        // Draw connections
         particles.forEach((p2, j) => {
           if (i === j) return;
           const dx = p.x - p2.x;
@@ -107,7 +103,6 @@ function Header() {
 
   return (
     <div className={isSeparatePage ? "header-separate" : "header-home"} id={elementIds.home}>
-      {/* Animated Background */}
       {!isSeparatePage && (
         <>
           <div className="header-gradient-bg"></div>
@@ -116,7 +111,6 @@ function Header() {
         </>
       )}
 
-      {/* Navigation */}
       <NavBar isSeparatePage={isSeparatePage} />
 
       {!isSeparatePage && (
@@ -130,22 +124,27 @@ function Header() {
               {subHeading}
             </p>
 
-            <div className="hero-tags animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              {subHeadings.map((service, index) => (
-                <span key={index} className="service-tag">
-                  {service}
-                </span>
-              ))}
+            <div className="hero-ctas animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <button className="ds-btn primary-cta" onClick={scrollToContact}>
+                <span>{ctaText} <BsArrowUpRight strokeWidth={1} size={16} /></span>
+              </button>
+              <Link to="/about" className="secondary-cta">
+                <span>{ctaSecondary}</span>
+                <BsArrowRight size={18} />
+              </Link>
             </div>
 
-            <div className="hero-ctas animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-              <Link to={routesPath.about} className="ds-btn primary-cta">
-                <span>{ctaText} <BsArrowUpRight strokeWidth={1} size={16} /></span>
-              </Link>
-              <button className="secondary-cta" onClick={scrollToContact}>
-                <BsPlayCircle size={20} />
-                <span>Get in Touch</span>
-              </button>
+            <div className="hero-services animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+              {services.map((service, index) => (
+                <Link key={index} to={service.path} className="hero-service-card">
+                  <div className="service-card-content">
+                    <h3 className="service-card-title">{service.title}</h3>
+                    <p className="service-card-desc">{service.description}</p>
+                    <span className="service-card-outcome">{service.outcome}</span>
+                  </div>
+                  <BsArrowRight className="service-card-arrow" size={16} />
+                </Link>
+              ))}
             </div>
           </div>
 
