@@ -7,10 +7,10 @@ import { FiTarget, FiEye, FiHeart, FiAward, FiUsers, FiGlobe, FiCheckCircle, FiT
 
 export default function About() {
     const stats = [
-        { value: "10+", label: "Years of Excellence", icon: <FiAward /> },
-        { value: "500+", label: "Projects Delivered", icon: <FiCheckCircle /> },
-        { value: "150+", label: "Global Clients", icon: <FiUsers /> },
-        { value: "98%", label: "Client Satisfaction", icon: <FiTrendingUp /> }
+        { value: "6+", label: "Years of Excellence", icon: <FiAward /> },
+        { value: "50+", label: "Projects Delivered", icon: <FiCheckCircle /> },
+        { value: "25+", label: "Global Clients", icon: <FiUsers /> },
+        { value: "99%", label: "Client Satisfaction", icon: <FiTrendingUp /> }
     ];
 
     const values = [
