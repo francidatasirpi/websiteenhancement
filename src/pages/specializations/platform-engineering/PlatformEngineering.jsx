@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import BussinessForm from "../../services/bussinessform/BussinessForm";
 import "./platform-eng.scss";
-import { BsRocketTakeoff, BsGear, BsTools, BsHeadset, BsCheckCircle } from "react-icons/bs";
+import { BsRocketTakeoff, BsGear, BsTools, BsHeadset, BsCheckCircle, BsArrowLeftRight, BsSpeedometer2, BsPiggyBank, BsCodeSlash, BsPeople, BsShop } from "react-icons/bs";
 
 const stats = [
   { value: "99.9%", label: "Uptime Guarantee" },
@@ -65,6 +65,90 @@ const serviceCategories = [
       "Performance tuning & optimization",
       "Security patching & updates",
       "Capacity planning & scaling"
+    ]
+  },
+  {
+    icon: BsArrowLeftRight,
+    title: "Complex Migrations",
+    tagline: "Zero Downtime",
+    description: "Strategize zero-downtime, active-active data(base) and application migrations.",
+    capabilities: [
+      "Zero-downtime migration strategies",
+      "Active-active database migrations",
+      "Application replatforming",
+      "Data migration & validation",
+      "Cutover planning & execution",
+      "Rollback & recovery procedures"
+    ]
+  },
+  {
+    icon: BsSpeedometer2,
+    title: "Performance Engineering",
+    tagline: "Tail Optimization",
+    description: "Tail optimization for parallel-distributed and concurrent user facing systems.",
+    capabilities: [
+      "Latency optimization",
+      "Throughput engineering",
+      "Distributed systems tuning",
+      "Concurrency optimization",
+      "Load testing & benchmarking",
+      "Performance profiling & analysis"
+    ]
+  },
+  {
+    icon: BsPiggyBank,
+    title: "Cost Rationalization",
+    tagline: "FinOps Excellence",
+    description: "First-principles spend optimization and fin-ops: For cloud, on-prem and PaaS.",
+    capabilities: [
+      "Cloud cost optimization",
+      "Resource rightsizing",
+      "Reserved capacity planning",
+      "FinOps implementation",
+      "Cost allocation & showback",
+      "Spend forecasting & budgeting"
+    ]
+  },
+  {
+    icon: BsCodeSlash,
+    title: "API Management",
+    tagline: "Enterprise Scale",
+    description: "Solve for API design-time, runtime and day 2 operations at enterprise scale.",
+    capabilities: [
+      "API design & governance",
+      "Gateway implementation",
+      "Rate limiting & throttling",
+      "API versioning strategies",
+      "Security & authentication",
+      "Analytics & monitoring"
+    ]
+  },
+  {
+    icon: BsPeople,
+    title: "Developer Portals",
+    tagline: "Developer Experience",
+    description: "Internal, External and Third party developer programs.",
+    capabilities: [
+      "Internal developer portals",
+      "External API documentation",
+      "Third-party integrations",
+      "Self-service onboarding",
+      "SDK generation & distribution",
+      "Developer community tools"
+    ]
+  },
+  {
+    icon: BsShop,
+    title: "API Monetization & Marketplace",
+    tagline: "Revenue Streams",
+    description: "Data and APIs as first class revenue streams. Your company as a service.",
+    capabilities: [
+      "API productization",
+      "Usage-based billing",
+      "Marketplace development",
+      "Partner program management",
+      "Revenue analytics",
+      "Subscription management"
     ]
   }
 ];
