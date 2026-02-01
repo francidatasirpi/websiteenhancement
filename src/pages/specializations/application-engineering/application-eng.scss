@@ -306,7 +306,7 @@
   background: $background-off-white;
 
   .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 $space-5;
   }
@@ -318,7 +318,7 @@
     margin-bottom: $space-4;
 
     @media (max-width: $breakpoint-sm) {
-      font-size: $text-3xl;
+      font-size: $text-2xl;
     }
   }
 
@@ -328,81 +328,14 @@
     margin-bottom: $space-8;
   }
 
-  .process-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $space-6;
-
-    @media (max-width: $breakpoint-lg) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: $breakpoint-sm) {
-      grid-template-columns: 1fr;
-    }
+  .process-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
-  .process-step {
-    background: $white;
-    border-radius: $radius-xl;
-    padding: $space-6;
-    text-align: center;
-    border: 1px solid $gray-200;
-    transition: all $transition-base;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: $gradient-brand;
-      transform: scaleX(0);
-      transition: transform $transition-base;
-    }
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: $shadow-xl;
-      border-color: transparent;
-
-      &::before {
-        transform: scaleX(1);
-      }
-
-      .step-number {
-        background: $gradient-brand;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-    }
-  }
-
-  .step-number {
-    display: block;
-    font-size: $text-4xl;
-    font-weight: $font-bold;
-    color: $gray-200;
-    margin-bottom: $space-3;
-    transition: all $transition-base;
-  }
-
-  .step-title {
-    font-size: $text-xl;
-    font-weight: $font-semibold;
-    color: $gray-900;
-    margin-bottom: $space-3;
-  }
-
-  .step-desc {
-    font-size: $text-sm;
-    color: $gray-500;
-    line-height: $leading-relaxed;
-    margin: 0;
+  .process-image {
+    max-width: 100%;
+    height: auto;
   }
 }
 

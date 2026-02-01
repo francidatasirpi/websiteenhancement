@@ -9,6 +9,7 @@ import application_icon_5 from "../../../assets/images/icons/application_icon_5.
 import application_icon_6 from "../../../assets/images/icons/application_icon_6.svg";
 import application_icon_7 from "../../../assets/images/icons/application_icon_7.svg";
 import application_icon_8 from "../../../assets/images/icons/application_icon_8.svg";
+import application_process from "../../../assets/images/application/application_process.png";
 
 const stats = [
   { value: "500+", label: "Projects Delivered" },
@@ -80,14 +81,6 @@ const services = [
   }
 ];
 
-const processSteps = [
-  { number: "01", title: "Discovery", desc: "Understanding your requirements, goals, and target audience" },
-  { number: "02", title: "Planning", desc: "Creating detailed roadmaps and technical architecture" },
-  { number: "03", title: "Design", desc: "Crafting intuitive UI/UX with user-centered approach" },
-  { number: "04", title: "Development", desc: "Building robust solutions with clean, scalable code" },
-  { number: "05", title: "Testing", desc: "Rigorous QA to ensure flawless performance" },
-  { number: "06", title: "Deployment", desc: "Smooth launch with continuous monitoring and support" }
-];
 
 export default function ApplicationEngineering() {
   useEffect(() => {
@@ -171,14 +164,8 @@ export default function ApplicationEngineering() {
           <p className="section-subtitle text-center">
             Our structured approach ensures quality delivery at every stage
           </p>
-          <div className="process-grid">
-            {processSteps.map((step, index) => (
-              <div key={index} className="process-step">
-                <span className="step-number">{step.number}</span>
-                <h3 className="step-title">{step.title}</h3>
-                <p className="step-desc">{step.desc}</p>
-              </div>
-            ))}
+          <div className="process-wrapper">
+            <img src={application_process} alt="Application Development Process" className="process-image" />
           </div>
         </div>
       </section>
