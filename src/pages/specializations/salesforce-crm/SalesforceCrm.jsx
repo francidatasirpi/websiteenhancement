@@ -77,16 +77,16 @@ export default function SalesforceCrm() {
         <div className="hero-gradient-overlay" />
         <div className="container">
           <div className="hero-content">
-            <span className="hero-badge">Salesforce Partner</span>
-            <h1 className="hero-title">Salesforce CRM Solutions</h1>
-            <p className="hero-subtitle">
+            <span className="hero-badge" data-aos="fade-down">Salesforce Partner</span>
+            <h1 className="hero-title" data-aos="fade-up" data-aos-delay="100">Salesforce CRM Solutions</h1>
+            <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
               Transform your customer relationships with enterprise-grade Salesforce implementation,
               customization, and support services tailored to your business needs.
             </p>
           </div>
           <div className="hero-stats">
             {stats.map((stat, index) => (
-              <div key={index} className="stat-card">
+              <div key={index} className="stat-card" data-aos="zoom-in" data-aos-delay={300 + index * 100}>
                 <span className="stat-value">{stat.value}</span>
                 <span className="stat-label">{stat.label}</span>
               </div>

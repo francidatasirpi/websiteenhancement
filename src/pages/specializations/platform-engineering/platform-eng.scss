@@ -1,4 +1,5 @@
 @import "../../../assets/scss/variables.scss";
+@import "../../../assets/scss/animations.scss";
 
 .platform-page {
   background: $white;
@@ -6,20 +7,20 @@
 
 .hero-section {
   position: relative;
-  background: linear-gradient(135deg, $surface-dark 0%, #1a1a2e 50%, $surface-elevated 100%);
-  padding: $space-6 0 $space-7;
+  background: $white;
+  padding: $space-4 0 $space-5;
   overflow: hidden;
 
   @media (max-width: $breakpoint-md) {
-    padding: $space-5 0 $space-6;
+    padding: $space-3 0 $space-4;
   }
 
   .hero-gradient-overlay {
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse at 20% 20%, rgba($brand-cyan, 0.15) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 80%, rgba($brand-blue, 0.1) 0%, transparent 50%);
+      radial-gradient(ellipse at 20% 20%, rgba($brand-cyan, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba($brand-blue, 0.05) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -34,16 +35,16 @@
   .hero-content {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto $space-5;
+    margin: 0 auto $space-4;
   }
 
   .hero-badge {
     display: inline-block;
     padding: $space-1 $space-3;
-    background: rgba($brand-cyan, 0.1);
+    background: linear-gradient(135deg, rgba($brand-cyan, 0.15), rgba($brand-blue, 0.15));
     border: 1px solid rgba($brand-cyan, 0.3);
     border-radius: $radius-full;
-    color: $brand-cyan;
+    color: $brand-blue-dark;
     font-size: $text-xs;
     font-weight: $font-medium;
     text-transform: uppercase;
@@ -54,7 +55,7 @@
   .hero-title {
     font-size: $text-4xl;
     font-weight: $font-bold;
-    color: $white;
+    color: $gray-900;
     margin-bottom: $space-3;
     line-height: $leading-tight;
 
@@ -69,7 +70,7 @@
 
   .hero-subtitle {
     font-size: $text-lg;
-    color: $gray-400;
+    color: $gray-600;
     line-height: $leading-relaxed;
     max-width: 600px;
     margin: 0 auto;
@@ -97,17 +98,18 @@
   }
 
   .stat-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: $white;
+    border: 1px solid $gray-200;
     border-radius: $radius-lg;
     padding: $space-4 $space-3;
     text-align: center;
     transition: all $transition-base;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 
     &:hover {
-      background: rgba(255, 255, 255, 0.08);
       border-color: rgba($brand-cyan, 0.3);
       transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     }
   }
 
@@ -115,10 +117,10 @@
     display: block;
     font-size: $text-2xl;
     font-weight: $font-bold;
-    background: linear-gradient(135deg, $brand-cyan, $brand-blue);
+    background: linear-gradient(135deg, $brand-blue, $brand-cyan);
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    -webkit-text-fill-color: transparent;
     margin-bottom: $space-1;
 
     @media (max-width: $breakpoint-sm) {
@@ -128,15 +130,15 @@
 
   .stat-label {
     font-size: $text-sm;
-    color: $gray-400;
+    color: $gray-600;
     font-weight: $font-medium;
   }
 }
 
 .platforms-strip {
-  background: $gray-900;
+  background: $background-off-white;
   padding: $space-5 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid $gray-200;
 
   .container {
     max-width: 1200px;
@@ -160,7 +162,7 @@
   .platforms-label {
     font-size: $text-sm;
     font-weight: $font-medium;
-    color: $gray-400;
+    color: $gray-600;
     text-transform: uppercase;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -176,10 +178,10 @@
 
   .platform-item {
     font-size: $text-sm;
-    color: $gray-300;
+    color: $gray-700;
     padding: $space-2 $space-4;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: $white;
+    border: 1px solid $gray-200;
     border-radius: $radius-full;
     white-space: nowrap;
     transition: all $transition-base;
@@ -187,7 +189,7 @@
     &:hover {
       background: rgba($brand-cyan, 0.1);
       border-color: rgba($brand-cyan, 0.3);
-      color: $brand-cyan;
+      color: $brand-blue-dark;
     }
   }
 }

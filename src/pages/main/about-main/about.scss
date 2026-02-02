@@ -63,7 +63,7 @@
   align-items: center;
   gap: $space-8;
   padding: $space-7;
-  background: $surface-dark;
+  background: $gray-100;
   border-radius: $radius-xl;
 
   @media (max-width: $breakpoint-lg) {
@@ -97,7 +97,7 @@
   .stat-label {
     font-size: $text-sm;
     font-weight: $font-medium;
-    color: $gray-400;
+    color: $gray-600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
@@ -106,7 +106,7 @@
 .stat-divider {
   width: 1px;
   height: 48px;
-  background: $gray-700;
+  background: $gray-300;
 
   @media (max-width: $breakpoint-md) {
     width: 60px;
@@ -129,7 +129,7 @@
 
 .mission-vision-section {
   padding: $space-10 0;
-  background: $surface-dark;
+  background: $gray-50;
 }
 
 .mission-vision-grid {
@@ -146,13 +146,14 @@
 .vision-card {
   padding: $space-7;
   border-radius: $radius-xl;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: $white;
+  border: 1px solid $gray-200;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 
   &:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(0, 255, 251, 0.2);
+    border-color: rgba(126, 70, 225, 0.3);
+    box-shadow: 0 8px 30px rgba(126, 70, 225, 0.08);
   }
 }
 
@@ -168,7 +169,7 @@
 .mv-text {
   font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.7;
-  color: $gray-300;
+  color: $gray-700;
   margin: 0;
 }
 

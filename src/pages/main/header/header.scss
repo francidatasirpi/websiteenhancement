@@ -14,9 +14,9 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0, 198, 255, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(0, 255, 251, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 30% at 10% 60%, rgba(0, 163, 255, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0, 198, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 70%, rgba(126, 70, 225, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 10% 60%, rgba(234, 23, 129, 0.08) 0%, transparent 50%);
   z-index: 0;
 }
 
@@ -31,8 +31,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
   background-size: 80px 80px;
   z-index: 2;
   pointer-events: none;
@@ -66,7 +66,7 @@
 .hero-subheading {
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: $font-normal;
-  color: $gray-300;
+  color: $gray-600;
   max-width: 680px;
   margin: 0 auto $space-7;
   line-height: 1.7;
@@ -92,9 +92,9 @@
   gap: 10px;
   padding: 16px 28px;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: $radius-full;
-  color: $white;
+  color: $gray-800;
   font-size: $text-base;
   font-weight: $font-medium;
   cursor: pointer;
@@ -102,13 +102,13 @@
   text-decoration: none;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.3);
-    color: $white;
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.3);
+    color: $gray-900;
   }
 
   svg {
-    color: $brand-cyan;
+    color: $brand-purple;
     transition: transform 0.25s ease;
   }
 
@@ -144,18 +144,20 @@
   flex-direction: column;
   justify-content: space-between;
   padding: $space-5;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: $radius-lg;
   text-align: left;
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 
   &:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(0, 255, 251, 0.25);
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(126, 70, 225, 0.3);
     transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(126, 70, 225, 0.12);
   }
 
   .service-card-content {
@@ -165,14 +167,14 @@
   .service-card-title {
     font-size: $text-base;
     font-weight: $font-semibold;
-    color: $white;
+    color: $gray-900;
     margin-bottom: $space-2;
     line-height: 1.3;
   }
 
   .service-card-desc {
     font-size: $text-sm;
-    color: $gray-400;
+    color: $gray-600;
     margin-bottom: $space-3;
     line-height: 1.5;
   }
@@ -181,20 +183,20 @@
     display: inline-block;
     font-size: $text-xs;
     font-weight: $font-medium;
-    color: $brand-cyan;
+    color: $brand-purple;
     padding: 4px 10px;
-    background: rgba(0, 255, 251, 0.1);
+    background: rgba(126, 70, 225, 0.1);
     border-radius: $radius-full;
   }
 
   .service-card-arrow {
-    color: $gray-500;
+    color: $gray-400;
     margin-top: $space-4;
     transition: all 0.25s ease;
   }
 
   &:hover .service-card-arrow {
-    color: $brand-cyan;
+    color: $brand-purple;
     transform: translateX(4px);
   }
 }
@@ -216,7 +218,7 @@
   .scroll-line {
     width: 1px;
     height: 32px;
-    background: linear-gradient(to bottom, $brand-cyan, transparent);
+    background: linear-gradient(to bottom, $brand-purple, transparent);
     animation: scrollPulse 2.5s ease-in-out infinite;
   }
 
@@ -226,10 +228,13 @@
 }
 
 @keyframes scrollPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.2;
     height: 32px;
   }
+
   50% {
     opacity: 0.8;
     height: 44px;
@@ -246,6 +251,7 @@
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -265,19 +271,21 @@
   0% {
     background-position: 0% center;
   }
+
   50% {
     background-position: 100% center;
   }
+
   100% {
     background-position: 0% center;
   }
 }
 
 .header-separate {
-  background: $surface-dark;
+  background: $surface-base;
   position: sticky;
   top: 0;
   z-index: $z-sticky;
   backdrop-filter: blur($blur-md);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }

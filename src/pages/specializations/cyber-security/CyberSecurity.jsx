@@ -84,16 +84,16 @@ export default function CyberSecurity() {
         <div className="hero-gradient-overlay" />
         <div className="container">
           <div className="hero-content">
-            <span className="hero-badge">Enterprise Security</span>
-            <h1 className="hero-title">Cyber Security</h1>
-            <p className="hero-subtitle">
+            <span className="hero-badge" data-aos="fade-down">Enterprise Security</span>
+            <h1 className="hero-title" data-aos="fade-up" data-aos-delay="100">Cyber Security</h1>
+            <p className="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
               Protect your digital assets with cutting-edge security solutions. We deliver comprehensive
               cyber defense strategies that safeguard your business against evolving threats.
             </p>
           </div>
           <div className="hero-stats">
             {stats.map((stat, index) => (
-              <div key={index} className="stat-card">
+              <div key={index} className="stat-card" data-aos="zoom-in" data-aos-delay={300 + index * 100}>
                 <span className="stat-value">{stat.value}</span>
                 <span className="stat-label">{stat.label}</span>
               </div>

@@ -2,7 +2,7 @@
 
 .contact-section {
   padding: $space-10 0;
-  background: $surface-dark;
+  background: $gray-50;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   padding-left: calc(50vw - 50%);
@@ -30,12 +30,12 @@
     align-items: center;
     gap: $space-2;
     padding: 8px 16px;
-    background: rgba(0, 255, 251, 0.08);
-    border: 1px solid rgba(0, 255, 251, 0.15);
+    background: rgba(126, 70, 225, 0.08);
+    border: 1px solid rgba(126, 70, 225, 0.2);
     border-radius: $radius-full;
     font-size: $text-xs;
     font-weight: $font-medium;
-    color: $brand-cyan;
+    color: $brand-purple;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: $space-4;
@@ -43,7 +43,7 @@
     .badge-dot {
       width: 6px;
       height: 6px;
-      background: $brand-cyan;
+      background: $brand-purple;
       border-radius: 50%;
     }
   }
@@ -51,7 +51,7 @@
   .contact-heading {
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: $font-bold;
-    color: $white;
+    color: $gray-900;
     margin-bottom: $space-4;
     line-height: 1.2;
 
@@ -65,7 +65,7 @@
 
   .contact-description {
     font-size: $text-lg;
-    color: $gray-400;
+    color: $gray-600;
     margin-bottom: $space-6;
     line-height: 1.6;
     max-width: 440px;
@@ -82,20 +82,21 @@
     align-items: center;
     gap: $space-3;
     font-size: $text-sm;
-    color: $gray-400;
+    color: $gray-600;
 
     svg {
-      color: $brand-cyan;
+      color: $brand-purple;
       flex-shrink: 0;
     }
   }
 }
 
 .contact-form-wrapper {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: $white;
+  border: 1px solid $gray-200;
   border-radius: $radius-xl;
   padding: $space-7;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 
   @media (max-width: $breakpoint-sm) {
     padding: $space-5;
@@ -107,20 +108,20 @@
   padding: $space-8 0;
 
   svg {
-    color: $brand-cyan;
+    color: $brand-purple;
     margin-bottom: $space-4;
   }
 
   h3 {
     font-size: $text-2xl;
     font-weight: $font-semibold;
-    color: $white;
+    color: $gray-900;
     margin-bottom: $space-2;
   }
 
   p {
     font-size: $text-base;
-    color: $gray-400;
+    color: $gray-600;
   }
 }
 
@@ -151,33 +152,34 @@
     label {
       font-size: $text-sm;
       font-weight: $font-medium;
-      color: $gray-300;
+      color: $gray-600;
     }
 
     input,
     select,
     textarea {
       padding: 14px 16px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: $gray-50;
+      border: 1px solid $gray-300;
       border-radius: $radius-md;
       font-size: $text-base;
-      color: $white;
+      color: $gray-900;
       transition: all 0.2s ease;
       font-family: inherit;
 
       &::placeholder {
-        color: $gray-500;
+        color: $gray-400;
       }
 
       &:focus {
         outline: none;
-        border-color: $brand-cyan;
-        background: rgba(255, 255, 255, 0.08);
+        border-color: $brand-purple;
+        background: $white;
+        box-shadow: 0 0 0 3px rgba(126, 70, 225, 0.1);
       }
 
       &:hover {
-        border-color: rgba(255, 255, 255, 0.2);
+        border-color: $gray-400;
       }
     }
 
@@ -190,8 +192,8 @@
       padding-right: 40px;
 
       option {
-        background: $surface-dark;
-        color: $white;
+        background: $white;
+        color: $gray-900;
       }
     }
 

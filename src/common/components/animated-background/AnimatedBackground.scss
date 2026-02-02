@@ -1,0 +1,136 @@
+@import "../../../assets/scss/variables.scss";
+
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.grid-lines {
+    position: absolute;
+    inset: 0;
+
+    .grid-line {
+        position: absolute;
+        background: rgba($brand-cyan, 0.06);
+
+        &.vertical {
+            width: 1px;
+            height: 100%;
+        }
+
+        &.horizontal {
+            height: 1px;
+            width: 100%;
+        }
+    }
+}
+
+.floating-dots {
+    position: absolute;
+    inset: 0;
+
+    .dot {
+        position: absolute;
+        border-radius: 50%;
+        background: $brand-cyan;
+        opacity: 0.4;
+
+        &.dot-1 {
+            width: 8px;
+            height: 8px;
+            top: 15%;
+            left: 20%;
+            animation: floatDot 8s ease-in-out infinite;
+        }
+
+        &.dot-2 {
+            width: 6px;
+            height: 6px;
+            top: 25%;
+            right: 25%;
+            animation: floatDot 10s ease-in-out infinite 1s;
+        }
+
+        &.dot-3 {
+            width: 10px;
+            height: 10px;
+            top: 45%;
+            left: 60%;
+            animation: floatDot 7s ease-in-out infinite 2s;
+        }
+
+        &.dot-4 {
+            width: 5px;
+            height: 5px;
+            top: 65%;
+            left: 15%;
+            animation: floatDot 9s ease-in-out infinite 0.5s;
+        }
+
+        &.dot-5 {
+            width: 7px;
+            height: 7px;
+            top: 80%;
+            right: 30%;
+            animation: floatDot 11s ease-in-out infinite 1.5s;
+        }
+
+        &.dot-6 {
+            width: 4px;
+            height: 4px;
+            top: 35%;
+            left: 80%;
+            animation: floatDot 8s ease-in-out infinite 3s;
+        }
+
+        &.dot-7 {
+            width: 9px;
+            height: 9px;
+            bottom: 20%;
+            left: 40%;
+            animation: floatDot 12s ease-in-out infinite 2.5s;
+        }
+
+        &.dot-8 {
+            width: 6px;
+            height: 6px;
+            top: 10%;
+            right: 15%;
+            animation: floatDot 9s ease-in-out infinite 4s;
+        }
+    }
+}
+
+.gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 20%, rgba($brand-cyan, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba($brand-blue, 0.03) 0%, transparent 50%);
+}
+
+@keyframes floatDot {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(10px, -15px);
+    }
+
+    50% {
+        transform: translate(-5px, -25px);
+    }
+
+    75% {
+        transform: translate(-15px, -10px);
+    }
+}

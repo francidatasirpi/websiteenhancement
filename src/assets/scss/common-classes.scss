@@ -116,12 +116,12 @@ a {
     transition: all $transition-base;
     font-size: $text-sm;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: $white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: $gray-800;
 
     &:hover {
-        background: rgba(255, 255, 255, 0.05);
-        border-color: rgba(255, 255, 255, 0.3);
+        background: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.3);
         transform: translateY(-2px);
     }
 
@@ -163,8 +163,8 @@ a {
 
     &:hover {
         transform: translateY(-4px);
-        border-color: rgba(255, 255, 255, 0.15);
-        box-shadow: $glass-card-shadow, $glow-brand;
+        border-color: rgba(126, 70, 225, 0.2);
+        box-shadow: 0 12px 40px rgba(126, 70, 225, 0.1);
     }
 }
 
@@ -219,12 +219,12 @@ a {
 }
 
 .section-dark {
-    background: $surface-dark;
+    background: $gray-900;
     color: $white;
 }
 
 .section-light {
-    background: $background-off-white;
+    background: $surface-base;
     color: $gray-900;
 }
 
@@ -295,12 +295,12 @@ a {
     align-items: center;
     gap: 6px;
     padding: 6px 16px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: $radius-full;
     font-size: $text-sm;
     font-weight: $font-medium;
-    color: $gray-300;
+    color: $gray-600;
 }
 
 // ============================================
@@ -423,7 +423,7 @@ a {
     .stat-label {
         font-size: $text-sm;
         font-weight: $font-medium;
-        color: $gray-400;
+        color: $gray-600;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
